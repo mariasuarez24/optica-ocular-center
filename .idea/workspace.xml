@@ -2,22 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18b4d782-248f-447e-a40e-e5897b8218f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/img/AdminLTELogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/img/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/img/weber-icon-large.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/img/weber-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/partials/routes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/optica-ocular-center.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/optica-ocular-center.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vistas/partials/footer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vistas/partials/head_imports.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vistas/partials/navbar_customization.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vistas/partials/scripts.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vistas/partials/sliderbar_main_menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vistas/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +17,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -62,7 +54,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Vistas/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Vistas/partials" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -73,8 +65,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\optica-ocular-center\Vistas\img" />
       <recent name="C:\laragon\www\optica-ocular-center\Vistas\partials" />
+      <recent name="C:\laragon\www\optica-ocular-center\Vistas\img" />
       <recent name="C:\laragon\www\optica-ocular-center\Vistas" />
     </key>
   </component>
@@ -103,7 +95,8 @@
       <workItem from="1575313252610" duration="6365000" />
       <workItem from="1575415175141" duration="156000" />
       <workItem from="1575461160835" duration="2219000" />
-      <workItem from="1575463457950" duration="4659000" />
+      <workItem from="1575463457950" duration="15233000" />
+      <workItem from="1575548267359" duration="211000" />
     </task>
     <task id="LOCAL-00001" summary="cree clases Examenes_Cita; FormulaMedica y MotivoConsulta">
       <created>1575318072940</created>
@@ -126,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575322620245</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="PhpStorm">
+      <created>1575469204309</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1575469204309</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +135,31 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -143,6 +168,11 @@
           </value>
         </entry>
       </map>
+    </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
