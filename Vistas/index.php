@@ -132,18 +132,11 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.0.0-rc.5
     </div>
-    <strong>Copyright &copy; 2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
+    <strong>Copyright &copy; 2019 <a href="http://adminlte.io">Optica-Ocular-Center</a>.</strong> All rights
     reserved.
   </footer>
 
 
-<!-- jQuery -->
-<script src="<?= $adminlteURL; ?>/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="<?= $adminlteURL; ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="<?= $adminlteURL; ?>/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="<?= $adminlteURL; ?>/dist/js/demo.js"></script>
+
 </body>
 </html>
