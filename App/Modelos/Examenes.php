@@ -11,7 +11,7 @@ private $Nombre;
 private $Descripcion;
 
     /**
-     * Examenes constructor.
+     * examenes constructor.
      * @param $id
      * @param $Nombre
      * @param $Descripcion
