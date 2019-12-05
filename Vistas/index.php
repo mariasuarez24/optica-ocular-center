@@ -1,15 +1,15 @@
 <?php require("partials/routes.php"); ?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= getenv('TITLE_SITE')?> | Layout</title>
-    <?php require ("partials/head_imports.php");?>
+    <title><?= getenv('TITLE_SITE') ?> | Layout</title>
+    <?php require("partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
+
 <!-- Site wrapper -->
 <div class="wrapper">
-    <?php require ("partials/navbar_customization.php");?>
+    <?php require("partials/navbar_customization.php"); ?>
 
     <?php require("partials/sliderbar_main_menu.php"); ?>
 
@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="<?= $baseURL; ?>/Vistas/">optica-ocular-center"</a></li>
+                            <li class="breadcrumb-item"><a href="<?= $baseURL; ?>/Vistas/">optica-ocular-center</a></li>
                             <li class="breadcrumb-item active">Inicio</li>
                         </ol>
                     </div>
@@ -52,7 +52,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    Pie de pagina.
+                    Pie de Página.
                 </div>
                 <!-- /.card-footer-->
             </div>
@@ -65,7 +65,6 @@
     <?php require ('partials/footer.php');?>
 </div>
 <!-- ./wrapper -->
-
 <?php require ('partials/scripts.php');?>
 </body>
 </html>

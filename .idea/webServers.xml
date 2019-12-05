@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="c72c1081-bb67-4a05-b9cf-85e047f3cb07" name="Laragon" url="http://localhost/">
-        <fileTransfer port="0" mountedRoot="C:\laragon\www" accessType="MOUNT" />
+      <webServer id="7c56ab52-9712-4e14-af70-6f4b73f0cc2c" name="laragon" url="http://localhost">
+        <fileTransfer port="0" mountedRoot="C:\laragon\www\optica-ocular-center" accessType="MOUNT" />
       </webServer>
     </option>
   </component>
