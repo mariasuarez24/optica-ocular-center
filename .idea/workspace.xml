@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18b4d782-248f-447e-a40e-e5897b8218f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Vistas/partials/footer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/partials/head_imports.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/partials/navbar_customization.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/partials/scripts.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/partials/sliderbar_main_menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vistas/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/index.php" afterDir="false" />
     </list>
@@ -96,7 +90,7 @@
       <workItem from="1575415175141" duration="156000" />
       <workItem from="1575461160835" duration="2219000" />
       <workItem from="1575463457950" duration="15233000" />
-      <workItem from="1575548267359" duration="211000" />
+      <workItem from="1575548267359" duration="2483000" />
     </task>
     <task id="LOCAL-00001" summary="cree clases Examenes_Cita; FormulaMedica y MotivoConsulta">
       <created>1575318072940</created>
@@ -126,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575469204309</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="PhpStorm">
+      <created>1575548542997</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1575548542997</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

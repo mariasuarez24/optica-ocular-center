@@ -4,7 +4,7 @@
 <head>
     <title><?= getenv ( 'TITLE_SITE')?> | Layout</title>
     <?php require ("partials/head_imports.php");?>
-    <?php require("partials/sliderbar_main_menu.php"); ?>
+
 </head>
 <body class="hold-transition sidebar-mini layout-footer-fixed">
 <!-- Site wrapper -->
@@ -132,17 +132,10 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.0.0-rc.5
     </div>
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
+    <strong>Copyright &copy; 2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
     reserved.
   </footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
 
 <!-- jQuery -->
 <script src="<?= $adminlteURL; ?>/plugins/jquery/jquery.min.js"></script>
