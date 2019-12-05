@@ -68,3 +68,4 @@
 <?php require ('partials/scripts.php');?>
 </body>
 </html>
+
