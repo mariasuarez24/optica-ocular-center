@@ -4,7 +4,7 @@
 namespace App\Modelos;
 
 
-class Examenes_Historial
+class ExamenesHistorial
 {
     private $idExamenHistorial;
     private $ojoderecho;
