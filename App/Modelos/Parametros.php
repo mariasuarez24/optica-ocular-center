@@ -11,7 +11,7 @@ private $Nombre;
 private $Descripcion;
 
     /**
-     * Parametros constructor.
+     * parametros constructor.
      * @param $idparametros
      * @param $Nombre
      * @param $Descripcion
