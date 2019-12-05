@@ -4,21 +4,21 @@
 namespace App\Modelos;
 
 
-class Examenes_Cita
+class ExamenesHistorial
 {
-    private $idExamenCita;
+    private $idExamenHistorial;
     private $ojoderecho;
     private $ojoizquierdo;
 
     /**
-     * Examenes_Cita constructor.
-     * @param $idExamenCita
+     * Examenes_Historial constructor.
+     * @param $idExamenHistorial
      * @param $ojoderecho
      * @param $ojoizquierdo
      */
-    public function __construct($idExamenCita, $ojoderecho, $ojoizquierdo)
+    public function __construct($idExamenHistorial, $ojoderecho, $ojoizquierdo)
     {
-        $this->idExamenCita = $idExamenCita;
+        $this->idExamenHistorial = $idExamenHistorial;
         $this->ojoderecho = $ojoderecho;
         $this->ojoizquierdo = $ojoizquierdo;
     }
@@ -26,17 +26,17 @@ class Examenes_Cita
     /**
      * @return mixed
      */
-    public function getIdExamenCita()
+    public function getIdExamenHistorial()
     {
-        return $this->idExamenCita;
+        return $this->idExamenHistorial;
     }
 
     /**
-     * @param mixed $idExamenCita
+     * @param mixed $idExamenHistorial
      */
-    public function setIdExamenCita($idExamenCita)
+    public function setIdExamenHistorial($idExamenHistorial)
     {
-        $this->idExamenCita = $idExamenCita;
+        $this->idExamenHistorial = $idExamenHistorial;
     }
 
     /**
