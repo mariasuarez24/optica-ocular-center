@@ -1,6 +1,5 @@
-<?php
-require('../vendor/autoload.php'); ?>
-<?php
+<?php 
+require('../vendor/autoload.php');
 $dotenv = Dotenv\Dotenv::create("../");
 $dotenv->load();
 
