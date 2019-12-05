@@ -1,4 +1,4 @@
-<?php require("partials/routes.php"); ?>
+<?php require("modules/routes.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>
