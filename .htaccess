@@ -1,6 +1,6 @@
 RewriteEngine on
-RewriteRule ^$ vista [L]
-<FilesMatch "\.(env)$" >
+RewriteRule ^$ Vistas [L]
+<FilesMatch "\.(env)$">
 Order allow,deny
 Deny from all
 </FilesMatch>
