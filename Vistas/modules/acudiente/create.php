@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= getenv('TITLE_SITE') ?> | Crear Acudiente</title>
+    <title><?= getenv('TITLE_SITE') ?> | Acudiente</title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -20,7 +20,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Crear nuevo Acudiente</h1>
+                        <h1>Crear Acudiente</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -37,19 +37,19 @@
             <!-- Horizontal Form -->
             <div class="card card-info">
                 <div class="card-header">
-                    <h3 class="card-title">Parentezco</h3>
+                    <h3 class="card-title">Acudiente</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form class="form-horizontal">
                     <div class="card-body">
                         <div class="form-group row">
-                            <label for="parentezco" class="col-sm-2 col-form-label">Parentezco</label>
+                            <label for="Prentezco" class="col-sm-2 col-form-label">Parentezco</label>
                             <div class="col-sm-10">
-                                <input required type="text" class="form-control" id="parentezco" name="" placeholder="Ingrese sus parentezco">
+                                <input required type="text" class="form-control" id="Parentezco" name="Parentezco" placeholder="Ingrese parentezco">
                             </div>
                         </div>
-                    </div>
+
                     <!-- /.card-body -->
                     <div class="card-footer">
                         <button type="submit" class="btn btn-info">Enviar</button>

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= getenv('TITLE_SITE') ?> | Crear Medico</title>
+    <title><?= getenv('TITLE_SITE') ?> | Medico</title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -20,7 +20,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Crear Medico</h1>
+                        <h1>Medico</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -41,22 +41,35 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
+
                 <form class="form-horizontal">
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="Especializacion" class="col-sm-2 col-form-label">Especializacion</label>
                             <div class="col-sm-10">
-                                <input required type="text" class="form-control" id="Especializacion" name="" placeholder="Ingrese sus Especializacion">
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="form-group row">
-                                <label for="Licencia" class="col-sm-2 col-form-label">Licencia</label>
-                                <div class="col-sm-10">
-                                    <input required type="text" class="form-control" id="Licencia" name="" placeholder="Ingrese su Licencia">
+                                <input required type="text" class="form-control" id="Especializacion" name="Especializacion" placeholder="Ingrese Especializacion">
+                                    </div>
                                 </div>
-                            </div>
+                        <form class="form-horizontal">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="Licencia" class="col-sm-2 col-form-label">Licencia</label>
+                                    <div class="col-sm-10">
+                                        <input required type="text" class="form-control" id="Licencia" name="Licencia" placeholder="Ingrese Licencia">
+                                    </div>
+                                </div>
+
+                    <div class="form-group row">
+                        <label for="persona_id_persona" class="col-sm-2 col-form-label">persona_id_persona</label>
+                        <div class="col-sm-10">
+                            <select id="persona_id_persona" name="persona_id_persona" class="custom-select">
+                                <option value=""></option>
+                                <option value=""></option>
+
+                            </select>
+                        </div>
                     </div>
+
                     <!-- /.card-body -->
                     <div class="card-footer">
                         <button type="submit" class="btn btn-info">Enviar</button>
