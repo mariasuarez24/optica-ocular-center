@@ -1,17 +1,17 @@
-<?php require("partials/routes.php"); ?>
+<?php require("../../partials/routes.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title><?= getenv('TITLE_SITE') ?> | Layout</title>
-    <?php require("partials/head_imports.php"); ?>
+    <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
 
 <!-- Site wrapper -->
 <div class="wrapper">
-    <?php require("partials/navbar_customization.php"); ?>
+    <?php require("../../partials/navbar_customization.php"); ?>
 
-    <?php require("partials/sliderbar_main_menu.php"); ?>
+    <?php require("../../partials/sliderbar_main_menu.php"); ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -62,10 +62,9 @@
     </div>
     <!-- /.content-wrapper -->
 
-    <?php require ('partials/footer.php');?>
+    <?php require ('../../partials/footer.php');?>
 </div>
 <!-- ./wrapper -->
-<?php require ('partials/scripts.php');?>
+<?php require ('../../partials/scripts.php');?>
 </body>
 </html>
-
