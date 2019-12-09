@@ -57,15 +57,15 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\optica-ocular-center\Modules\MotivosConsulta" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\examen_historial" />
       <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\formula_medica" />
       <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\prescripcion_final" />
       <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\motivos_consulta" />
       <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\parametros" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\optica-ocular-center\Modules\MotivosConsulta" />
     </key>
   </component>
   <component name="RunDashboard">
