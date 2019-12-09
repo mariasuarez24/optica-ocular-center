@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18b4d782-248f-447e-a40e-e5897b8218f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/examenes/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/formula_medica/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/formula_medica/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/motivos_consulta/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/parametros/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/prescripcion_final/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/prescripcion_final/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/optica-ocular-center.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/optica-ocular-center.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vistas/modules/acudiente/create.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vistas/modules/medico/create.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/examenes/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/examenes/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/motivos_consulta/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/motivos_consulta/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/parametros/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/parametros/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/partials/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/partials/routes.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +49,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Vistas/modules/formula_medica" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Vistas/modules/medico" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -71,15 +59,15 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\optica-ocular-center\Modules\MotivosConsulta" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\medico" />
+      <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\acudiente" />
       <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\formula_medica" />
       <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\prescripcion_final" />
       <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\motivos_consulta" />
-      <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\parametros" />
-      <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\examenes" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\optica-ocular-center\Modules\MotivosConsulta" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -171,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575571956063</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="PhpStorm">
+      <created>1575918351691</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1575918351691</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
