@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18b4d782-248f-447e-a40e-e5897b8218f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/examenes/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/formula_medica/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/formula_medica/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/motivos_consulta/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/parametros/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/prescripcion_final/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/prescripcion_final/index.php" afterDir="false" />
+    <list default="true" id="de9b5631-6234-4b1e-b598-477967716226" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/optica-ocular-center.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/optica-ocular-center.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/examenes/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/examenes/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/motivos_consulta/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/motivos_consulta/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/parametros/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/parametros/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/partials/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/partials/routes.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +28,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Maria" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,11 +36,11 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2">
     <include_path>
-      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
-      <path value="$PROJECT_DIR$/vendor/almasaeed2010/adminlte" />
       <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/almasaeed2010/adminlte" />
     </include_path>
   </component>
   <component name="ProjectId" id="1URIzaX97335QhBbD2CGKoDtn0T" />
@@ -61,25 +51,24 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Vistas/modules/formula_medica" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EjemploMVCVeterinaria" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\optica-ocular-center\Modules" />
+      <recent name="C:\laragon\www\optica-ocular-center\Vistas\partials" />
+      <recent name="C:\laragon\www\optica-ocular-center\Vistas\img" />
+      <recent name="C:\laragon\www\optica-ocular-center\Vistas" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\laragon\www\optica-ocular-center\Modules\MotivosConsulta" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\formula_medica" />
-      <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\prescripcion_final" />
-      <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\motivos_consulta" />
-      <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\parametros" />
-      <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\examenes" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -99,7 +88,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="18b4d782-248f-447e-a40e-e5897b8218f9" name="Default Changelist" comment="" />
+      <changelist id="de9b5631-6234-4b1e-b598-477967716226" name="Default Changelist" comment="" />
       <created>1575313244614</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -110,10 +99,7 @@
       <workItem from="1575463457950" duration="15233000" />
       <workItem from="1575548267359" duration="4140000" />
       <workItem from="1575571748294" duration="434000" />
-      <workItem from="1575661356666" duration="2879000" />
-      <workItem from="1575664816467" duration="4144000" />
-      <workItem from="1575896504427" duration="881000" />
-      <workItem from="1575907215468" duration="3814000" />
+      <workItem from="1575907007297" duration="2095000" />
     </task>
     <task id="LOCAL-00001" summary="cree clases Examenes_Cita; FormulaMedica y MotivoConsulta">
       <created>1575318072940</created>
