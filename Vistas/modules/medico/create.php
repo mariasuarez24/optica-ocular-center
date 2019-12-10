@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= getenv('TITLE_SITE') ?> | Formula Medica</title>
+    <title><?= getenv('TITLE_SITE') ?> | Medico</title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -12,6 +12,7 @@
     <?php require("../../partials/navbar_customization.php"); ?>
 
     <?php require("../../partials/sliderbar_main_menu.php"); ?>
+
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -19,7 +20,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Formula Medica</h1>
+                        <h1>Medico</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -36,40 +37,38 @@
             <!-- Horizontal Form -->
             <div class="card card-info">
                 <div class="card-header">
-                    <h3 class="card-title">Formula Medica</h3>
+                    <h3 class="card-title">Medico</h3>
                 </div>
-            </div>
                 <!-- /.card-header -->
                 <!-- form start -->
+
                 <form class="form-horizontal">
+                    <div class="card-body">
                         <div class="form-group row">
-                            <label for="fecha" class="col-sm-2 col-form-label">Fecha</label for="fecha">
+                            <label for="Especializacion" class="col-sm-2 col-form-label">Especializacion</label>
                             <div class="col-sm-10">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                <input required type="text" class="form-control" id="Especializacion" name="Especializacion" placeholder="Ingrese Especializacion">
                                     </div>
-                                    <input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
                                 </div>
-                            </div>
-                        </div>
+                        <form class="form-horizontal">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="Licencia" class="col-sm-2 col-form-label">Licencia</label>
+                                    <div class="col-sm-10">
+                                        <input required type="text" class="form-control" id="Licencia" name="Licencia" placeholder="Ingrese Licencia">
+                                    </div>
+                                </div>
 
-                        <div class="form-group row">
-                            <label for="Descripcion" class="col-sm-2 col-form-label">Descripcion</label>
-                            <div class="col-sm-10">
-                                <input required type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingresar descripcion">
-                            </div>
-                        </div>
+                    <div class="form-group row">
+                        <label for="persona_id_persona" class="col-sm-2 col-form-label">persona_id_persona</label>
+                        <div class="col-sm-10">
+                            <select id="persona_id_persona" name="persona_id_persona" class="custom-select">
+                                <option value=""></option>
+                                <option value=""></option>
 
-                        <div class="form-group row">
-                            <label for="Prescripcion_idPrescripcion_final" class="col-sm-2 col-form-label">Prescripcion</label>
-                            <div class="col-sm-10">
-                                <select id="Prescripcion_idPrescripcion_final" name="Prescripcion_idPrescripcion_final" class="custom-select">
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                </select>
-                            </div>
+                            </select>
                         </div>
+                    </div>
 
                     <!-- /.card-body -->
                     <div class="card-footer">
