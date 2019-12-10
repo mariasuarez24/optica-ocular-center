@@ -68,9 +68,9 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="documento" class="col-sm-2 col-form-label">Documento</label>
+                            <label for="numero_documento" class="col-sm-2 col-form-label">Documento</label>
                             <div class="col-sm-10">
-                                <input required type="number" max="11" min="7" class="form-control" id="documento" name="documento" placeholder="Ingrese su documento">
+                                <input required type="number" max="11" min="7" class="form-control" id="numero_documento" name="numero_documento" placeholder="Ingrese su documento">
                             </div>
                         </div>
                     <div class="form-group row">
@@ -104,7 +104,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="fecha" class="col-sm-2 col-form-label">Fecha</label for="fecha">
+                            <label for="fecha_nacimiento" class="col-sm-2 col-form-label">Fecha</label for="fecha_nacimiento">
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
@@ -112,6 +112,17 @@
                                     </div>
                                     <input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
                                 </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="rol" class="col-sm-2 col-form-label">Rol</label>
+                            <div class="col-sm-10">
+                                <select id="rol" name="rol" class="custom-select">
+                                    <option value="">Medico</option>
+                                    <option value="">Secretaria</option>
+                                    <option value="">Paciente</option>
+                                    <option value="">Administrador</option>
+                                </select>
                             </div>
                         </div>
                     </div>
