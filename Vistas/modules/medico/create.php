@@ -59,16 +59,7 @@
                                     </div>
                                 </div>
 
-                    <div class="form-group row">
-                        <label for="persona_id_persona" class="col-sm-2 col-form-label">persona_id_persona</label>
-                        <div class="col-sm-10">
-                            <select id="persona_id_persona" name="persona_id_persona" class="custom-select">
-                                <option value=""></option>
-                                <option value=""></option>
 
-                            </select>
-                        </div>
-                    </div>
 
                     <!-- /.card-body -->
                     <div class="card-footer">
