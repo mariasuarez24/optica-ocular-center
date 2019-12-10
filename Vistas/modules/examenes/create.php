@@ -56,7 +56,9 @@
                             </div>
                         </div>
 
-                    <!-- /.card-body -->
+
+
+                        <!-- /.card-body -->
                     <div class="card-footer">
                         <button type="submit" class="btn btn-info">Enviar</button>
                         <button type="submit" class="btn btn-default float-right">Cancelar</button>
