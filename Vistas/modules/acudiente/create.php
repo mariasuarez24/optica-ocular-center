@@ -41,7 +41,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form class="form-horizontal">
+                <form class="form-horizontal" method="post" id="frmCreateacudiente" name="frmCreateacudiente" action="../../../app/Controlador/acudientecontrolador.php?action=create">
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="parentezco" class="col-sm-2 col-form-label">Parentezco</label>

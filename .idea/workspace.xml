@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18b4d782-248f-447e-a40e-e5897b8218f9" name="Default Changelist" comment="* CAMBIOS">
+    <list default="true" id="18b4d782-248f-447e-a40e-e5897b8218f9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/App/Modelos/db_abstract_class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/controlador/acudientecontrolador.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/controlador/medicocontrolador.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/controlador/personacontrolador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Modelos/acudiente.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/acudiente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Modelos/medico.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/medico.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Modelos/persona.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/persona.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vistas/modules/acudiente/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/acudiente/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vistas/modules/acudiente/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/acudiente/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vistas/modules/medico/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/medico/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vistas/modules/medico/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/medico/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vistas/modules/persona/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/persona/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vistas/modules/persona/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/persona/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,12 +55,6 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="Laragon" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="new_schema: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Laragon" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="optica: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
       <path>
@@ -77,11 +83,11 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2">
     <include_path>
-      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
-      <path value="$PROJECT_DIR$/vendor/almasaeed2010/adminlte" />
       <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/almasaeed2010/adminlte" />
     </include_path>
   </component>
   <component name="ProjectId" id="1URIzaX97335QhBbD2CGKoDtn0T" />
@@ -93,7 +99,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Vistas/modules/examen_historial" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/App/controlador" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -104,11 +110,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\optica-ocular-center\App\controlador" />
+      <recent name="C:\laragon\www\optica-ocular-center\App\Modelos" />
       <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\examen_historial" />
       <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\formula_medica" />
       <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\prescripcion_final" />
-      <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\motivos_consulta" />
-      <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\parametros" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\laragon\www\optica-ocular-center\Modules\MotivosConsulta" />
@@ -146,7 +152,12 @@
       <workItem from="1575664816467" duration="4144000" />
       <workItem from="1575896504427" duration="881000" />
       <workItem from="1575907215468" duration="3814000" />
-      <workItem from="1575979554425" duration="2051000" />
+      <workItem from="1575979554425" duration="6215000" />
+      <workItem from="1575997605234" duration="11208000" />
+      <workItem from="1576024325517" duration="1289000" />
+      <workItem from="1576076677883" duration="7388000" />
+      <workItem from="1576088756593" duration="11417000" />
+      <workItem from="1576153077200" duration="10952000" />
     </task>
     <task id="LOCAL-00001" summary="cree clases Examenes_Cita; FormulaMedica y MotivoConsulta">
       <created>1575318072940</created>
@@ -239,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575926830933</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="* Cambios tablas">
+      <created>1575981727860</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1575981727864</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,6 +313,7 @@
     <MESSAGE value="cree clases Examenes_Cita; FormulaMedica y MotivoConsulta" />
     <MESSAGE value="PhpStorm" />
     <MESSAGE value="* CAMBIOS" />
-    <option name="LAST_COMMIT_MESSAGE" value="* CAMBIOS" />
+    <MESSAGE value="* Cambios tablas" />
+    <option name="LAST_COMMIT_MESSAGE" value="* Cambios tablas" />
   </component>
 </project>
