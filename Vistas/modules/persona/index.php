@@ -35,6 +35,20 @@
         <!-- Main content -->
         <section class="content">
 
+            <?php if(!empty($_GET['respuesta']) && !empty($_GET['action'])){ ?>
+                <?php if ($_GET['respuesta'] == "correcto"){ ?>
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h5><i class="icon fas fa-check"></i> Correcto!</h5>
+                        <?php if ($_GET['action'] == "create"){ ?>
+                            El usuario ha sido creado con exito!
+                        <?php }else if($_GET['action'] == "update"){ ?>
+                            Los datos del usuario han sido actualizados correctamente!
+                        <?php } ?>
+                    </div>
+                <?php } ?>
+            <?php } ?>
+
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">

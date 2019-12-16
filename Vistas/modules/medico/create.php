@@ -42,7 +42,7 @@
                 <!-- /.card-header -->
                 <!-- form start -->
 
-                <form class="form-horizontal">
+                <form class="form-horizontal"method="post" id="frmCreatemedico" name="frmCreatemedico" action="../../../app/Controlador/medicocontrolador.php?action=create">
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="Especializacion" class="col-sm-2 col-form-label">Especializacion</label>
@@ -50,13 +50,12 @@
                                 <input required type="text" class="form-control" id="Especializacion" name="Especializacion" placeholder="Ingrese Especializacion">
                                     </div>
                                 </div>
-                        <form class="form-horizontal">
-                            <div class="card-body">
-                                <div class="form-group row">
-                                    <label for="Licencia" class="col-sm-2 col-form-label">Licencia</label>
-                                    <div class="col-sm-10">
-                                        <input required type="text" class="form-control" id="Licencia" name="Licencia" placeholder="Ingrese Licencia">
-                                    </div>
+                        <div class="form-group row">
+                            <label for="Licencia" class="col-sm-2 col-form-label">Licencia</label>
+                            <div class="col-sm-10">
+                                <input required type="text" class="form-control" id="Licencia" name="Licencia" placeholder="Ingrese sus Licencia">
+                            </div>
+                        </div>
                                 </div>
 
 
