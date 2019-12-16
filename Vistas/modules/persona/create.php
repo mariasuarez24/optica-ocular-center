@@ -41,7 +41,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form class="form-horizontal">
+                <form class="form-horizontal" method="post" id="frmCreatepersona" name="frmCreatepersona" action="../../../app/Controlador/personacontrolador.php?action=create">
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="nombres" class="col-sm-2 col-form-label">Nombres</label>
@@ -59,18 +59,15 @@
                             <label for="tipo_documento" class="col-sm-2 col-form-label">Tipo Documento</label>
                             <div class="col-sm-10">
                                 <select id="tipo_documento" name="tipo_documento" class="custom-select">
-                                    <option value="C.C">Cedula de Ciudadania</option>
-                                    <option value="T.I">Tarjeta de Identidad</option>
-                                    <option value="R.C">Registro Civil</option>
-                                    <option value="Pasaporte">Pasaporte</option>
-                                    <option value="C.E">Cedula de Extranjeria</option>
+                                    <option value="TARJETA DE IDENTIDAD">Tarjeta de Identidad</option>
+                                    <option value="CEDULA DE CIUDADANIA">Cedula de Ciudadania</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="numero_documento" class="col-sm-2 col-form-label">Documento</label>
                             <div class="col-sm-10">
-                                <input required type="number" max="11" min="7" class="form-control" id="numero_documento" name="numero_documento" placeholder="Ingrese su documento">
+                                <input required type="number" maxlength="10" class="form-control" id="numero_documento" name="numero_documento" placeholder="Ingrese su documento">
                             </div>
                         </div>
                     <div class="form-group row">
@@ -88,7 +85,7 @@
                         <div class="form-group row">
                             <label for="telefono" class="col-sm-2 col-form-label">Telefono</label>
                             <div class="col-sm-10">
-                                <input required type="number" max="11" min="6" class="form-control" id="telefono" name="telefono" placeholder="Ingrese su telefono">
+                                <input required type="number" maxlength="10" class="form-control" id="telefono" name="telefono" placeholder="Ingrese su telefono">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -97,20 +94,21 @@
                                 <input required type="text" class="form-control" id="email" name="email" placeholder="Ingrese su email">
                             </div>
                         </div>
+
                         <div class="form-group row">
-                            <label for="direccion" class="col-sm-2 col-form-label">Direccion</label>
+                            <label for="direccion" class="col-sm-2 col-form-label">direccion</label>
                             <div class="col-sm-10">
-                                <input required type="number" class="form-control" id="direccion" name="direccion" placeholder="Ingrese su direccion">
+                                <input required type="text" class="form-control" id="direccion" name="direccion" placeholder="Ingrese su direccion">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="fecha_nacimiento" class="col-sm-2 col-form-label">Fecha</label for="fecha_nacimiento">
+                            <label for="fecha_nacimiento" class="col-sm-2 col-form-label">Fecha nacimiento</label for="fecha_nacimiento">
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
+                                    <input type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" id="fecha_nacimiento" name="fecha_nacimiento" im-insert="false">
                                 </div>
                             </div>
                         </div>
