@@ -54,9 +54,10 @@ class acudiente extends db_abstract_class
     }
     public function store()
     {
-        $this->insertRow("INSERT INTO optica.acudiente VALUES (NULL, ?)", array(
+        $this->insertRow("INSERT INTO optica.acudiente VALUES (NULL, ?, ?, ?)", array(
                 $this->parentezco,
-
+                123,
+                1,
             )
         );
         $this->Disconnect();
@@ -118,7 +119,7 @@ class acudiente extends db_abstract_class
 
     public static function acudienteregistrada ($parentezco) : bool
     {
-        $result = acudiente::search("SELECT idAcudiente FROM optica.acudiente where parentezco = ".$parentezco);
+        $result = acudiente::search("SELECT idAcudiente FROM optica.acudiente where parentezco = '".$parentezco."'");
         if (count($result) > 0){
             return true;
         }else{

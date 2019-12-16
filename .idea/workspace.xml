@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18b4d782-248f-447e-a40e-e5897b8218f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/App/Modelos/db_abstract_class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/controlador/acudientecontrolador.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/controlador/medicocontrolador.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/controlador/personacontrolador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Modelos/acudiente.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/acudiente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Modelos/medico.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/medico.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Modelos/persona.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/persona.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/acudiente/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/acudiente/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/acudiente/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/acudiente/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/medico/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/medico/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/medico/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/medico/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/persona/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/persona/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/persona/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/persona/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -157,7 +144,8 @@
       <workItem from="1576024325517" duration="1289000" />
       <workItem from="1576076677883" duration="7388000" />
       <workItem from="1576088756593" duration="11417000" />
-      <workItem from="1576153077200" duration="10952000" />
+      <workItem from="1576153077200" duration="11047000" />
+      <workItem from="1576501663018" duration="1249000" />
     </task>
     <task id="LOCAL-00001" summary="cree clases Examenes_Cita; FormulaMedica y MotivoConsulta">
       <created>1575318072940</created>
@@ -257,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575981727864</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="* Cambios controladores">
+      <created>1576169238272</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1576169238272</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,6 +309,7 @@
     <MESSAGE value="PhpStorm" />
     <MESSAGE value="* CAMBIOS" />
     <MESSAGE value="* Cambios tablas" />
-    <option name="LAST_COMMIT_MESSAGE" value="* Cambios tablas" />
+    <MESSAGE value="* Cambios controladores" />
+    <option name="LAST_COMMIT_MESSAGE" value="* Cambios controladores" />
   </component>
 </project>
