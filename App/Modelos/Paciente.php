@@ -4,70 +4,70 @@
 namespace App\Modelos;
 
 
-class Paciente
+class Paciente  extends basicModel
 {
-    private $IdPaciente;
-    private $Ocupacion;
-    private $Estado_Civil ;
-    private $Tipo_Afiliacion;
-    private $TipoVinculacion;
-    private $Fecha_Ultima_Cita;
-    private $Acudiente_Id_Acudiente;
-    private $Persona_Id_Persona;
+    private $idPaciente;
+    private $ocupacion;
+    private $estado_civil ;
+    private $tipo_afiliacion;
+    private $tipo_vinculacion;
+    private $fecha_ultima_cita;
 
+    /* Metodo destructor cierra la conexion. */
+    function __destruct() {
+        $this->Disconnect();
+    }
     /**
      * Paciente constructor.
-     * @param $IdPaciente
-     * @param $Ocupacion
+     * @param idPaciente
+     * @param $ocupacion
      * @param $Estado_Civil
      * @param $Tipo_Afiliacion
      * @param $TipoVinculacion
      * @param $Fecha_Ultima_Cita
-     * @param $Acudiente_Id_Acudiente
-     * @param $Persona_Id_Persona
      */
-    public function __construct($IdPaciente, $Ocupacion, $Estado_Civil, $Tipo_Afiliacion, $TipoVinculacion, $Fecha_Ultima_Cita, $Acudiente_Id_Acudiente, $Persona_Id_Persona)
+    public function __construct($Paciente = array())
     {
-        $this->IdPaciente = $IdPaciente;
-        $this->Ocupacion = $Ocupacion;
-        $this->Estado_Civil = $Estado_Civil;
-        $this->Tipo_Afiliacion = $Tipo_Afiliacion;
-        $this->TipoVinculacion = $TipoVinculacion;
-        $this->Fecha_Ultima_Cita = $Fecha_Ultima_Cita;
-        $this->Acudiente_Id_Acudiente = $Acudiente_Id_Acudiente;
-        $this->Persona_Id_Persona = $Persona_Id_Persona;
+        parent::__construct(); //Llama al contructor padre "la clase conexion" para conectarme a la BD
+        $this->idPaciente= $Paciente['idPaciente'] ?? null;
+        $this->ocupacion = $Paciente['ocupacion'] ?? null;
+        $this->estado_civil = $Paciente['estado_civil'] ?? null;
+        $this->tipo_afiliacion = $Paciente['tipo_afiliacion'] ?? null;
+        $this->tipo_vinculacion = $Paciente['tipo_vinculacion'] ?? null;
+        $this->fecha_ultima_cita = $Paciente['fecha_ultima_cita'] ?? null;
+
     }
 
     /**
      * @return mixed
      */
-    public function getIdPaciente()
+    public function getIdPaciente(int $id): int
     {
-        return $this->IdPaciente;
+        return $this->idPaciente;
     }
 
     /**
-     * @param mixed $IdPaciente
+     * @param mixed $idPaciente
      */
-    public function setIdPaciente($IdPaciente)
+    public function setIdPaciente($idPaciente): void
     {
-        $this->IdPaciente = $IdPaciente;
+        $this->idPaciente = $idPaciente;
     }
 
     /**
      * @return mixed
      */
-    public function getOcupacion()
+    public function getocupacion(): string
     {
-        return $this->Ocupacion;
+        return $this->ocupacion;
     }
 
     /**
-     * @param mixed $Ocupacion
+     * @param mixed $ocupacion
      */
-    public function setOcupacion($Ocupacion)
+    public function setOcupacion(string $ocupacion): void
     {
-        $this->Ocupacion = $Ocupacion;
+        $this->ocupacion = $ocupacion;
     }
 
     /**
@@ -75,109 +75,158 @@ class Paciente
      */
     public function getEstadoCivil()
     {
-        return $this->Estado_Civil;
+        return $this->estado_civil;
     }
 
     /**
-     * @param mixed $Estado_Civil
+     * @param mixed $estado_civil
      */
-    public function setEstadoCivil($Estado_Civil)
+    public function setEstadoCivil(int $estado_civil): void
     {
-        $this->Estado_Civil = $Estado_Civil;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTipoAfiliacion()
-    {
-        return $this->Tipo_Afiliacion;
-    }
-
-    /**
-     * @param mixed $Tipo_Afiliacion
-     */
-    public function setTipoAfiliacion($Tipo_Afiliacion)
-    {
-        $this->Tipo_Afiliacion = $Tipo_Afiliacion;
+        $this->estado_civil = $estado_civil;
     }
 
     /**
      * @return mixed
      */
-    public function getTipoVinculacion()
+    public function getTipoAfiliacion(string $tipo_afiliacion):string
     {
-        return $this->TipoVinculacion;
+        return $this->tipo_afiliacion;
     }
 
     /**
-     * @param mixed $TipoVinculacion
+     * @param mixed $tipo_afiliacion
      */
-    public function setTipoVinculacion($TipoVinculacion)
+    public function setTipoAfiliacion(string $tipo_afiliacion): void
     {
-        $this->TipoVinculacion = $TipoVinculacion;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFechaUltimaCita()
-    {
-        return $this->Fecha_Ultima_Cita;
-    }
-
-    /**
-     * @param mixed $Fecha_Ultima_Cita
-     */
-    public function setFechaUltimaCita($Fecha_Ultima_Cita)
-    {
-        $this->Fecha_Ultima_Cita = $Fecha_Ultima_Cita;
+        $this->tipo_afiliacion = $tipo_afiliacion;
     }
 
     /**
      * @return mixed
      */
-    public function getAcudienteIdAcudiente()
+    public function getTipoVinculacion(): string
     {
-        return $this->Acudiente_Id_Acudiente;
+        return $this->tipo_vinculacion;
     }
 
     /**
-     * @param mixed $Acudiente_Id_Acudiente
+     * @param mixed $tipo_vinculacion
      */
-    public function setAcudienteIdAcudiente($Acudiente_Id_Acudiente)
+    public function setTipoVinculacion(string $tipo_vinculacion): void
     {
-        $this->Acudiente_Id_Acudiente = $Acudiente_Id_Acudiente;
+        $this->tipo_vinculacion = $tipo_vinculacion;
     }
 
     /**
      * @return mixed
      */
-    public function getPersonaIdPersona()
+    public function getFechaUltimaCita(): string
     {
-        return $this->Persona_Id_Persona;
+        return $this->fecha_ultima_cita;
     }
 
     /**
-     * @param mixed $Persona_Id_Persona
+     * @param mixed $fecha_ultima_cita
      */
-    public function setPersonaIdPersona($Persona_Id_Persona)
+    public function setFechaUltimaCita(string $fecha_ultima_cita): void
     {
-        $this->Persona_Id_Persona = $Persona_Id_Persona;
+        $this->fecha_ultima_cita = $fecha_ultima_cita;
+    }
+
+    protected function create(): bool
+    {
+        $result= $this->insertRow("INSERT INTO optica.Paciente VALUES (NULL, ?, ?, ?, ?, ?)", array(
+                $this->ocupacion,
+                $this->estado_civil,
+                $this->tipo_afiliacion,
+                $this->tipo_vinculacion,
+                $this->fecha_ultima_cita,
+            )
+        );
+        $this->Disconnect();
+        return $result;
+    }
+    protected function update(): bool
+    {
+        $result=  $this->updateRow("UPDATE optica.paciente SET idPaciente = ?, ocupacion = ?, estado_civil = ?, tipo_afiliacion = ?, tipo_vinculacion = ?, fecha_ultima_cita = ? WHERE id = ?", array(
+                $this->idPaciente,
+                $this->ocupacion,
+                $this->estado_civil,
+                $this->tipo_afiliacion,
+                $this->tipo_vinculacion,
+                $this->fecha_ultima_cita,
+
+
+            )
+        );
+        $this->Disconnect();
+        return $result;
+    }
+    protected function deleted($id)
+    {
+        // TODO: Implement deleted() method.
+    }
+
+    protected static function search($query)
+    {
+        $arrPaciente = array();
+        $tmp = new Paciente();
+        $getrows = $tmp->getRows($query);
+
+        foreach ($getrows as $valor) {
+            $Paciente = new Paciente();
+            $Paciente->idPaciente = $valor['idPaciente'];
+            $Paciente->ocupacion = $valor['ocupacion'];
+            $Paciente->estado_civil = $valor['estado_civil'];
+            $Paciente->tipo_afiliacion = $valor['tipo_afiliacion'];
+            $Paciente->fecha_ultima_cita = $valor['fecha_ultima_cita'];
+
+            $Paciente->Disconnect();
+            array_push($arrPaciente, $Paciente);
+        }
+        $tmp->Disconnect();
+        return $arrPaciente;
+    }
+
+    protected static function searchForId($id)
+    {
+        $Paciente= new Paciente();
+        if ($id > 0){
+            $getrow = $Paciente->getRow("SELECT * FROM optica.paciente WHERE id =?", array($id));
+            $Paciente->idPaciente = $getrow['idPaciente'];
+            $Paciente->ocupacion = $getrow['ocupacion'];
+            $Paciente->estado_civil = $getrow['estado_civil'];
+            $Paciente->tipo_afiliacion = $getrow['tipo_afiliacion'];
+            $Paciente->tipo_vinculacion = $getrow['tipo_vinculacion'];
+            $Paciente->fecha_ultima_cita = $getrow['fecha_ultima_cita'];
+            $Paciente->acudiente_idAcudiente = $getrow['acudiente_idAcudiente'];
+            $Paciente->persona_idPersona = $getrow['persona_idPersona'];
+        }else{
+            $Paciente->Disconnect();
+            unset($Paciente);
+            return NULL;
+        }
+    }
+
+    protected static function getAll() : array
+    {
+        return Paciente::search("SELECT * FROM optica.paciente");
+    }
+
+    public static function pacienteRegistrado ($documento) : bool
+    {
+        $result = Paciente::search("SELECT id FROM optica.paciente where documento = ".$documento);
+        if (count($result) > 0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 
-    public function mostrardatos()
+    protected function store()
     {
-        echo"<h4>los datos del paciente son:</h4>";
-        echo"li><strong>IdPaciente</strong>".$this->getIdPaciente()."</li>";
-        echo"li><strong>Ocupacion</strong>".$this->getOcupacion()."</li>";
-        echo"li><strong>Estado_Civil</strong>".$this->getEstadoCivil()."</li>";
-        echo"li><strong>Tipo_Afiliacion</strong>".$this->getTipoAfiliacion()."</li>";
-        echo"li><strong>Tipo_Vinculacion</strong>".$this->getTipoVinculacion()."</li>";
-        echo"li><strong>Fecha_ultima_cita</strong>".$this->getFechaUltimaCita()."</li>";
-        echo"li><strong>Acudiente_Id_Acudiente</strong>".$this->getAcudienteIdAcudiente()."</li>";
-        echo"li><strong>Persona_Id_Persona</strong>".$this->getPersonaIdPersona()."</li>";
-
+        // TODO: Implement store() method.
     }
 }
