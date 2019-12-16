@@ -41,12 +41,12 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form class="form-horizontal">
+                <form class="form-horizontal" method="post" id="frmCreateExamen" name="frmCreateExamen" action="../../../App/Controlador/Examenescontrolador.php?action=create">
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
                             <div class="col-sm-10">
-                                <input required type="text" class="form-control" id="idExamenes" name="Nombre" placeholder="Ingrese nombre">
+                                <input required type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Ingrese nombre">
                             </div>
                         </div>
                         <div class="form-group row">
