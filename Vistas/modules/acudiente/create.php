@@ -41,12 +41,12 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form class="form-horizontal">
+                <form class="form-horizontal" method="post" id="frmCreateacudiente" name="frmCreateacudiente" action="../../../app/Controlador/acudientecontrolador.php?action=create">
                     <div class="card-body">
                         <div class="form-group row">
-                            <label for="Prentezco" class="col-sm-2 col-form-label">Parentezco</label>
+                            <label for="parentezco" class="col-sm-2 col-form-label">Parentezco</label>
                             <div class="col-sm-10">
-                                <input required type="text" class="form-control" id="Parentezco" name="Parentezco" placeholder="Ingrese parentezco">
+                                <input required type="text" class="form-control" id="parentezco" name="parentezco" placeholder="Ingrese parentezco">
                             </div>
                         </div>
 
