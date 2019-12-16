@@ -1,35 +1,35 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controlador;
 
 require('../Modelos/paciente.php');
 use App\Modelos\citas;
 
 if(!empty($_GET['action'])){
-    pacienteController::main($_GET['action']);
+    pacientecontrolador::main($_GET['action']);
 }else{
     echo "No se encontro ninguna accion...";
 }
 
 class
-pacienteController{
+pacientecontrolador{
 
     static function main($action)
     {
         if ($action == "create") {
-            pacienteController::create();
+            pacientecontrolador::create();
         }/* else if ($action == "editar") {
-            UsuariosController::editar();
+            pacientecontrolador::editar();
         } else if ($action == "buscarID") {
-            UsuariosController::buscarID($_REQUEST['idPersona']);
+            pacientecontrolador::buscarID($_REQUEST['idPersona']);
         } else if ($action == "Activarcitas") {
-            UsuariosController::Activarcitas();
+            pacientecontrolador::Activarcitas();
         } else if ($action == "Inactivarcitas") {
-            UsuariosController::Inactivarcitas();
+            pacientecontrolador::Inactivarcitas();
         }else if ($action == "login"){
-            UsuariosController::login();
+            pacientecontrolador::login();
         }else if($action == "cerrarSession"){
-            UsuariosController::cerrarSession();
+            pacientecontrolador::cerrarSession();
         }*/
 
     }
@@ -42,22 +42,12 @@ pacienteController{
             $arraypaciente ['estado_civil'] = $_POST['estado_civil'];
             $arraypaciente ['tipo_afiliacion'] = $_POST['tipo_afiliacion'];
             $arraypaciente ['tipo_vinculacion'] = $_POST['tipo_vinculacion'];
-            $arraypaciente ['fecha_ultima_cita'] = $_POST['fecha_ultima_cita'];
-
-
-
-            if(!paciente::pacienteRegistrado($arraypaciente['documento'])){
-                $citas = new citas ($arraypaciente);
-                $citas->create();
-                header("Location: ../../Vistas/modules/paciente/index.php?respuesta=correcto&action=create");
-            }else{
-                header("Location: ../../Vistas/modules/paciente/create.php?respuesta=error&mensaje=paciente ya registrado");
-            }
+            $arraypaciente->create();
         } catch (Exception $e) {
-            header("Location: ../../Vistas/modules/paciente/create.php?respuesta=error&mensaje=" . $e->getMessage());
+            header("Location: ../../Vistas/modules/historial/create.php?respuesta=error&mensaje=" . $e->getMessage());
         }
     }
-
+}
  /*public static function personaIsInArray($idPersona, $ArrPersonas){
     if(count($ArrPersonas) > 0){
         foreach ($ArrPersonas as $Persona){

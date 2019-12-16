@@ -32,14 +32,26 @@
             </div><!-- /.container-fluid -->
         </section>
 
+
         <!-- Main content -->
         <section class="content">
+            <?php if(!empty($_GET['respuesta'])){ ?>
+                <?php if ($_GET['respuesta'] != "correcto"){ ?>
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h5><i class="icon fas fa-ban"></i> Error!</h5>
+                        Error al crear la cita: <?= $_GET['mensaje'] ?>
+                    </div>
+                <?php } ?>
+            <?php } ?>
             <!-- Horizontal Form -->
             <div class="card card-info">
                 <div class="card-header">
                     <h3 class="card-title">Informacion de la cita</h3>
                 </div>
                 <!-- /.card-header -->
+                <form class="form-horizontal" method="post" id="frmcreatecitas" name="frmcreatecitas" action="../../../App/Controlador/citascontrolador.php?action=create">
+
                 <!-- form start -->
                 <form class="form-horizontal">
                     <div class="card-body">
@@ -74,39 +86,20 @@
                         <div class="form-group row">
                             <label for="motivos_consulta_idMotivos_consulta" class="col-sm-2 col-form-label">Motivos de Consulta</label>
                             <div class="col-sm-10">
-                                <select id="motivos_consulta_idMotivos_consulta" name="motivos_consulta_idMotivos_consulta" class="custom-select">
-                                    <option value="C.C"></option>
-                                    <option value="T.I"></option>
-                                    <option value="R.C"></option>
-                                    <option value="Pasaporte"></option>
-                                    <option value="C.E"></option>
-                                </select>
+                                <input required type="text" class="form-control" id="motivos_consulta_idMotivos_consulta" name="motivos_consulta_idMotivos_consulta" placeholder="Ingrese el motivo de consulta">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="paciente_idPaciente" class="col-sm-2 col-form-label">ID Paciente</label>
                             <div class="col-sm-10">
-                                <select id="paciente_idPaciente" name="paciente_idPaciente" class="custom-select">
-                                    <option value="C.C"></option>
-                                    <option value="T.I"></option>
-                                    <option value="R.C"></option>
-                                    <option value="Pasaporte"></option>
-                                    <option value="C.E"></option>
-                                </select>
-                            </div>
+                                <input required type="text" class="form-control" id="paciente_idPaciente" name="paciente_idPaciente" placeholder="Ingrese el Id del paciente">                            </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="Medico_idMedico" class="col-sm-2 col-form-label">ID Medico</label>
                             <div class="col-sm-10">
-                                <select id="Medico_idMedico" name="Medico_idMedico" class="custom-select">
-                                    <option value="C.C"></option>
-                                    <option value="T.I"></option>
-                                    <option value="R.C"></option>
-                                    <option value="Pasaporte"></option>
-                                    <option value="C.E"></option>
-                                </select>
+                                <input required type="text" class="form-control" id="Medico_idMedico" name="Medico_idMedico" placeholder="Ingrese el Id del medico">
                             </div>
                         </div>
 

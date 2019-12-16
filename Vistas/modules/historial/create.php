@@ -11,6 +11,7 @@
 <div class="wrapper">
     <?php require("../../partials/navbar_customization.php"); ?>
 
+
     <?php require("../../partials/sliderbar_main_menu.php"); ?>
 
     <!-- Content Wrapper. Contains page content -->
@@ -34,6 +35,16 @@
 
         <!-- Main content -->
         <section class="content">
+            <?php if(!empty($_GET['respuesta'])){ ?>
+                <?php if ($_GET['respuesta'] != "correcto"){ ?>
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h5><i class="icon fas fa-ban"></i> Error!</h5>
+                        Error al crear el historial: <?= $_GET['mensaje'] ?>
+                    </div>
+                <?php } ?>
+            <?php } ?>
+
             <!-- Horizontal Form -->
             <div class="card card-info">
                 <div class="card-header">
@@ -41,7 +52,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form class="form-horizontal">
+                <form class="form-horizontal" method="post" id="frmcreatehistorial" name="frmcreatehistorial" action="../../../App/Controlador/historialcontrolador.php?action=create">
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="Codg_Rips" class="col-sm-2 col-form-label">Codigo Rips</label>
@@ -69,39 +80,23 @@
                         <div class="form-group row">
                             <label for="Citas_idCitas" class="col-sm-2 col-form-label">ID Citas</label>
                             <div class="col-sm-10">
-                                <select id="Citas_idCitas" name="Citas_idCitas" class="custom-select">
-                                    <option value="C.C"></option>
-                                    <option value="T.I"></option>
-                                    <option value="R.C"></option>
-                                    <option value="Pasaporte"></option>
-                                    <option value="C.E"></option>
-                                </select>
+                                <input required type="text" class="form-control" id="Citas_idCitas" name="Citas_idCitas" placeholder="Ingrese el id de la cita">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="paciente_idPaciente" class="col-sm-2 col-form-label">ID Paciente</label>
                             <div class="col-sm-10">
-                                <select id="paciente_idPaciente" name="paciente_idPaciente" class="custom-select">
-                                    <option value="C.C"></option>
-                                    <option value="T.I"></option>
-                                    <option value="R.C"></option>
-                                    <option value="Pasaporte"></option>
-                                    <option value="C.E"></option>
-                                </select>
+                                <input required type="text" class="form-control" id="paciente_idPaciente" name="paciente_idPaciente" placeholder="Ingrese el id del paciente">
+
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="Diagnostico" class="col-sm-2 col-form-label">Diagnostico</label>
                             <div class="col-sm-10">
-                                <select id="Diagnostico" name="Diagnostico" class="custom-select">
-                                    <option value="C.C"></option>
-                                    <option value="T.I"></option>
-                                    <option value="R.C"></option>
-                                    <option value="Pasaporte"></option>
-                                    <option value="C.E"></option>
-                                </select>
+                                <input required type="text" class="form-control" id="Diagnostico" name="Diagnostico" placeholder="Ingrese el diagnostico">
+
                             </div>
                         </div>
 
@@ -134,14 +129,8 @@
                         <div class="form-group row">
                             <label for="Prescripcion_idPrescripcion_final" class="col-sm-2 col-form-label">ID Prescripcion</label>
                             <div class="col-sm-10">
-                                <select id="Prescripcion_idPrescripcion_final" name="Prescripcion_idPrescripcion_final" class="custom-select">
-                                    <option value="Alergias"></option>
-                                    <option value="Familiares"></option>
-                                    <option value="Miopia"></option>
-                                    <option value="Astigmatismo"></option>
+                                <input required type="text" class="form-control" id="Prescripcion_idPrescripcion_final" name="Prescripcion_idPrescripcion_final" placeholder="Ingrese la prescripcion final">
 
-
-                                </select>
                             </div>
                         </div>
 

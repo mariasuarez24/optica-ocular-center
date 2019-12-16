@@ -34,6 +34,15 @@
 
         <!-- Main content -->
         <section class="content">
+            <?php if(!empty($_GET['respuesta'])){ ?>
+                <?php if ($_GET['respuesta'] != "correcto"){ ?>
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h5><i class="icon fas fa-ban"></i> Error!</h5>
+                        Error al crear el paciente: <?= $_GET['mensaje'] ?>
+                    </div>
+                <?php } ?>
+            <?php } ?>
             <!-- Horizontal Form -->
             <div class="card card-info">
                 <div class="card-header">
@@ -41,7 +50,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form class="form-horizontal">
+                <form class="form-horizontal" method="post" id="frmcreatepaciente" name="frmcreatepaciente" action="../../../App/Controlador/pacientecontrolador.php?action=create">
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="nombres" class="col-sm-2 col-form-label">Ocupacion</label>
@@ -74,13 +83,7 @@
                         <div class="form-group row">
                             <label for="acudiente_idAcudiente" class="col-sm-2 col-form-label">ID Acudiente</label>
                             <div class="col-sm-10">
-                                <select id="acudiente_idAcudiente" name="acudiente_idAcudiente" class="custom-select">
-                                    <option value="C.C"></option>
-                                    <option value="T.I"></option>
-                                    <option value="R.C"></option>
-                                    <option value="Pasaporte"></option>
-                                    <option value="C.E"></option>
-                                </select>
+                                <input required type="text" max="11" min="7" class="form-control" id="acudiente_idAcudiente" name="acudiente_idAcudiente" placeholder="Ingrese el Id del acudiente">
                             </div>
                         </div>
 
@@ -88,11 +91,12 @@
                             <label for="tipo_documento" class="col-sm-2 col-form-label">Tipo Documento</label>
                             <div class="col-sm-10">
                                 <select id="tipo_documento" name="tipo_documento" class="custom-select">
-                                    <option value="C.C"></option>
-                                    <option value="T.I"></option>
-                                    <option value="R.C"></option>
-                                    <option value="Pasaporte"></option>
-                                    <option value="C.E"></option>
+                                    <option value=""></option>
+                                    <option value="C.C">Cedula de ciudadania</option>
+                                    <option value="T.I">Targeta de identidad </option>
+                                    <option value="R.C">Registro Civil</option>
+                                    <option value="Pasaporte">Pasaporte</option>
+                                    <option value="C.E">Cedula de Extrangeria</option>
                                 </select>
                             </div>
                         </div>

@@ -8,7 +8,7 @@ namespace App\Modelos;
  * Date: 10/12/2019
  * Time: 9:17
  */
-abstract class db_abstract_class {
+abstract class basicModel {
 
     public $isConnected;
     protected $datab;

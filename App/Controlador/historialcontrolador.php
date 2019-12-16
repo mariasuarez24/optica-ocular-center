@@ -1,36 +1,34 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controlador;
 
 require('../Modelos/historial.php');
-use App\Modelos\citas;
 use App\Modelos\historial;
 
 if(!empty($_GET['action'])){
-    historialController::main($_GET['action']);
+    historialcontrolador::main($_GET['action']);
 }else{
     echo "No se encontro ninguna accion...";
 }
 
-class
-citasController{
+class historialcontrolador{
 
     static function main($action)
     {
         if ($action == "create") {
-            historialController::create();
+            historialcontrolador::create();
         }/* else if ($action == "editar") {
-            UsuariosController::editar();
+            historialcontrolador::editar();
         } else if ($action == "buscarID") {
-            UsuariosController::buscarID($_REQUEST['idPersona']);
+            historialcontrolador::buscarID($_REQUEST['idPersona']);
         } else if ($action == "Activarcitas") {
-            UsuariosController::Activarcitas();
+            historialcontrolador::Activarcitas();
         } else if ($action == "Inactivarcitas") {
-            UsuariosController::Inactivarcitas();
+            historialcontrolador::Inactivarcitas();
         }else if ($action == "login"){
-            UsuariosController::login();
+            historialcontrolador::login();
         }else if($action == "cerrarSession"){
-            UsuariosController::cerrarSession();
+            historialcontrolador::cerrarSession();
         }*/
 
     }
@@ -38,26 +36,22 @@ citasController{
     static public function create()
     {
         try {
-            $arrayUsuario = array();
-            $arrayUsuario['fecha'] = $_POST['fecha'];
-            $arrayUsuario['hora'] = $_POST['hora'];
-            $arrayUsuario['duracion'] = $_POST['duracion'];
-            $arrayUsuario['estado'] = $_POST['estado'];
-            $arrayUsuario['telefono'] = $_POST['telefono'];
-            $arrayUsuario['direccion'] = $_POST['direccion'];
-
-
-            if(!citas::citasRegistrado($arrayhistorial['documento'])){
-                $citas = new citas ($arrayhistorial);
-                $citas->create();
-                header("Location: ../../Vistas/modules/historial/index.php?respuesta=correcto&action=create");
-            }else{
-                header("Location: ../../Vistas/modules/historial/create.php?respuesta=error&mensaje=citas ya registrado");
-            }
+            $arrayhistorial = array();
+            $arrayhistorial['Codg_Rips'] = $_POST['Codg_Rips'];
+            $arrayhistorial['Conducta'] = $_POST['Conducta'];
+            $arrayhistorial['Control'] = $_POST['Control'];
+            $arrayhistorial['Diagnostico'] = $_POST['Diagnostico'];
+            $arrayhistorial['Anamnesis'] = $_POST['Anamnesis'];
+            $arrayhistorial['Antecedentes'] = $_POST['Antecedentes'];
+            $arrayhistorial->create();
+            header("Location: ../../Vistas/modules/historial/index.php?respuesta=correcto&actioncreate");
         } catch (Exception $e) {
             header("Location: ../../Vistas/modules/historial/create.php?respuesta=error&mensaje=" . $e->getMessage());
         }
     }
+}
+
+
 
  /*public static function personaIsInArray($idPersona, $ArrPersonas){
     if(count($ArrPersonas) > 0){

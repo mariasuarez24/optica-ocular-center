@@ -2,21 +2,20 @@
 
 
 namespace App\Modelos;
+include("BasicModel.php");
 
-
-class Cita  extends db_abstract_class
-
+class Citas  extends basicModel
 {
 private $idCitas;
 private $fecha;
 private $hora;
 private $duracion;
 private $estado;
-private $motivos_consulta_idMotivos_consulta;
-private $paciente_idPaciente;
-private $Medico_idMedico;
 
-
+    /* Metodo destructor cierra la conexion. */
+    function __destruct() {
+        $this->Disconnect();
+    }
     /**
      * Cita constructor.
      * @param $idCitas
@@ -28,14 +27,14 @@ private $Medico_idMedico;
      * @param $paciente_idPaciente
      * @param $Medico_idMedico
      */
-    public function __construct($Cita= array())
+    public function __construct($Citas= array())
     {
         parent::__construct(); //Llama al contructor padre "la clase conexion" para conectarme a la BD
-        $this->idCitas= $Cita['idCitas'];
-        $this->fecha = $Cita['fecha'];
-        $this->hora = $Cita['hora'];
-        $this->duracion = $Cita['duracion'];
-        $this->estado = $Cita['estado'];
+        $this->idCitas= $Citas['idCitas'] ?? null;
+        $this->fecha = $Citas['fecha'] ?? null;
+        $this->hora = $Citas['hora'] ?? null;
+        $this->duracion = $Citas['duracion'] ?? null;
+        $this->estado = $Citas['estado'] ?? null;
 
 
     }
@@ -43,7 +42,7 @@ private $Medico_idMedico;
     /**
      * @return mixed
      */
-    public function getidCitas()
+    public function getidCitas(int $id): int
     {
         return $this->idCitas;
     }
@@ -51,7 +50,7 @@ private $Medico_idMedico;
     /**
      * @param mixed $idCitas
      */
-    public function setidCitas($idCitas)
+    public function setidCitas($idCitas): void
     {
         $this->Id_citas = $idCitas;
     }
@@ -59,7 +58,7 @@ private $Medico_idMedico;
     /**
      * @return mixed
      */
-    public function getfecha()
+    public function getfecha(): string
     {
         return $this->fecha;
     }
@@ -67,7 +66,7 @@ private $Medico_idMedico;
     /**
      * @param mixed $fecha
      */
-    public function setfecha($fecha)
+    public function setfecha(string $fecha): void
     {
         $this->Fecha = $fecha;
     }
@@ -75,7 +74,7 @@ private $Medico_idMedico;
     /**
      * @return mixed
      */
-    public function gethora()
+    public function gethora(): string
     {
         return $this->hora;
     }
@@ -83,7 +82,7 @@ private $Medico_idMedico;
     /**
      * @param mixed $hora
      */
-    public function setHora($hora)
+    public function setHora(string $hora):void
     {
         $this->Hora = $hora;
     }
@@ -91,7 +90,7 @@ private $Medico_idMedico;
     /**
      * @return mixed
      */
-    public function getduracion()
+    public function getduracion():string
     {
         return $this->duracion;
     }
@@ -99,7 +98,7 @@ private $Medico_idMedico;
     /**
      * @param mixed $duracion
      */
-    public function setDuracion($duracion)
+    public function setDuracion(string $duracion):void
     {
         $this->Duracion = $duracion;
     }
@@ -107,7 +106,7 @@ private $Medico_idMedico;
     /**
      * @return mixed
      */
-    public function getestado()
+    public function getestado():string
     {
         return $this->estado;
     }
@@ -115,15 +114,13 @@ private $Medico_idMedico;
     /**
      * @param mixed $estado
      */
-    public function setEstado($estado)
+    public function setestado(string $estado):void
     {
         $this->Estado = $estado;
     }
-
-
-    protected function store()
+    protected function create(): bool
     {
-        $this->insertRow("INSERT INTO optica.citas VALUES (NULL, ?, ?, ?, ?, ?)", array(
+        $result= $this->insertRow("INSERT INTO optica.citas VALUES (NULL, ?, ?, ?, ?, ?)", array(
                 $this->idCitas,
                 $this->fecha,
                 $this->hora,
@@ -132,23 +129,95 @@ private $Medico_idMedico;
             )
         );
         $this->Disconnect();
+        return $result;
     }
 
-    protected function update()
+    protected function store()
     {
-        $this->updateRow("UPDATE optica.citas SET idPaciente = ?, ocupacion = ?, estado_civil = ?, tipo_afiliacion = ?, tipo_vinculacion = ?, fecha_ultima_cita = ? WHERE id = ?", array(
-                $this->idPaciente,
-                $this->ocupacion,
-                $this->estado_civil,
-                $this->tipo_afiliacion,
-                $this->tipo_vinculacion,
-                $this->fecha_ultima_cita,
+        $result=   $this->insertRow("INSERT INTO optica.Citas VALUES (NULL, ?, ?, ?, ?, ?)", array(
+                $this->idCitas,
+                $this->fecha,
+                $this->hora,
+                $this->duracion,
+                $this->estado,
+            )
+        );
+        $this->Disconnect();
+        return $result;
+    }
+
+    protected function update():bool
+    {
+        $result= $this->updateRow("UPDATE optica.Citas SET idCitas = ?, fecha = ?, hora = ?, duracion = ?, estado = ? WHERE id = ?", array(
+                $this->idCitas,
+                $this->fecha,
+                $this->hora,
+                $this->duracion,
+                $this->estado,
 
 
             )
         );
         $this->Disconnect();
+        return $result;
+    }
+        protected function deleted($id)
+    {
+        // TODO: Implement deleted() method.
+    }
 
+        protected static function search($query)
+    {
+        $arrCitas = array();
+        $tmp = new Citas();
+        $getrows = $tmp->getRows($query);
 
+        foreach ($getrows as $valor) {
+            $Citas = new Citas();
+            $Citas->idCitas = $valor['idCitas'];
+            $Citas->ocupacion = $valor['ocupacion'];
+            $Citas->estado_civil = $valor['estado_civil'];
+            $Citas->tipo_afiliacion = $valor['tipo_afiliacion'];
+            $Citas->fecha_ultima_cita = $valor['fecha_ultima_cita'];
 
+            $Citas->Disconnect();
+            array_push($arrCitas, $Citas);
+        }
+        $tmp->Disconnect();
+        return $arrCitas;
+    }
+
+    protected static function searchForId($id)
+    {
+        $Citas = new Citas();
+        if ($id > 0){
+            $getrow = $Citas->getRow("SELECT * FROM optica.citas WHERE idCitas =?", array($id));
+            $Citas->idCitas = $getrow['idCitas'];
+            $Citas->ocupacion = $getrow['ocupacion'];
+            $Citas->estado_civil = $getrow['estado_civil'];
+            $Citas->tipo_afiliacion = $getrow['tipo_afiliacion'];
+            $Citas->fecha_ultima_cita = $getrow['fecha_ultima_cita'];
+
+            $Citas->Disconnect();
+            return $Citas;
+        }else{
+            $Citas->Disconnect();
+            unset($Citas);
+            return NULL;
+        }
+    }
+
+    protected static function getAll()
+    {
+        return Citas::search("SELECT * FROM optica.citas");
+    }
+    public static function citasRegistrado ($documento) : bool
+    {
+        $result = Paciente::search("SELECT id FROM optica.citas where documento = ".$documento);
+        if (count($result) > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
