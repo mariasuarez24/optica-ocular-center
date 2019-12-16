@@ -1,4 +1,4 @@
-<?php require("../../../partials/routes.php"); ?>
+<?php require("../../partials/routes.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +9,9 @@
 
 <!-- Site wrapper -->
 <div class="wrapper">
-    <?php require("../../../partials/navbar_customization.php"); ?>
+    <?php require("../../partials/navbar_customization.php"); ?>
 
-    <?php require("../../../partials/sliderbar_main_menu.php"); ?>
+    <?php require("../../partials/sliderbar_main_menu.php"); ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -62,9 +62,9 @@
     </div>
     <!-- /.content-wrapper -->
 
-    <?php require ('../../../partials/footer.php');?>
+    <?php require ('../../partials/footer.php');?>
 </div>
 <!-- ./wrapper -->
-<?php require ('../../../partials/scripts.php');?>
+<?php require ('../../partials/scripts.php');?>
 </body>
 </html>
