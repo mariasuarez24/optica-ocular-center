@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18b4d782-248f-447e-a40e-e5897b8218f9" name="Default Changelist" comment="">
+    <list default="true" id="18b4d782-248f-447e-a40e-e5897b8218f9" name="Default Changelist" comment="PhpStorm">
+      <change afterPath="$PROJECT_DIR$/App/Controlador/ExamenesHistorialControlador.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Controlador/FormulaMedicaControlador.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Controlador/MotivoConsultaControlador.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Modelos/db_abstract_class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Modelos/acudiente.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/acudiente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Modelos/ExamenesHistorial.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/ExamenesHistorial.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Modelos/FormulaMedica.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/FormulaMedica.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Modelos/MotivoConsulta.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/MotivoConsulta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vistas/modules/examen_historial/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/examen_historial/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vistas/modules/examen_historial/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/examen_historial/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vistas/modules/formula_medica/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/formula_medica/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vistas/modules/formula_medica/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/formula_medica/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vistas/modules/motivos_consulta/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/motivos_consulta/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vistas/modules/motivos_consulta/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/motivos_consulta/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vistas/partials/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/partials/routes.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,10 +64,13 @@
         <item name="Laragon" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="optica: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="acudiente: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="formula_medica: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="optica-ocular-center" />
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -70,11 +88,11 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2">
     <include_path>
-      <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
-      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
       <path value="$PROJECT_DIR$/vendor/almasaeed2010/adminlte" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
     </include_path>
   </component>
   <component name="ProjectId" id="1URIzaX97335QhBbD2CGKoDtn0T" />
@@ -86,18 +104,19 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/App/controlador" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../WebER" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\optica-ocular-center\App\controlador" />
+      <recent name="C:\laragon\www\optica-ocular-center\App\Controlador" />
       <recent name="C:\laragon\www\optica-ocular-center\App\Modelos" />
       <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\examen_historial" />
       <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\formula_medica" />
@@ -117,6 +136,26 @@
           <option name="name" value="StatusDashboardGroupingRule" />
         </RuleState>
       </list>
+    </option>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@fa42b022" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@fa42b022" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@60fa2c80" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
     </option>
   </component>
   <component name="SvnConfiguration">
@@ -139,13 +178,16 @@
       <workItem from="1575664816467" duration="4144000" />
       <workItem from="1575896504427" duration="881000" />
       <workItem from="1575907215468" duration="3814000" />
-      <workItem from="1575979554425" duration="6215000" />
-      <workItem from="1575997605234" duration="11208000" />
-      <workItem from="1576024325517" duration="1289000" />
-      <workItem from="1576076677883" duration="7388000" />
-      <workItem from="1576088756593" duration="11417000" />
-      <workItem from="1576153077200" duration="11047000" />
-      <workItem from="1576501663018" duration="1249000" />
+      <workItem from="1575979554425" duration="2051000" />
+      <workItem from="1576006985240" duration="5022000" />
+      <workItem from="1576012144069" duration="109000" />
+      <workItem from="1576066831016" duration="16160000" />
+      <workItem from="1576092836511" duration="1018000" />
+      <workItem from="1576096243435" duration="4313000" />
+      <workItem from="1576111431538" duration="9976000" />
+      <workItem from="1576152902745" duration="5414000" />
+      <workItem from="1576501149990" duration="1275000" />
+      <workItem from="1576503221318" duration="15245000" />
     </task>
     <task id="LOCAL-00001" summary="cree clases Examenes_Cita; FormulaMedica y MotivoConsulta">
       <created>1575318072940</created>
@@ -238,21 +280,7 @@
       <option name="project" value="LOCAL" />
       <updated>1575926830933</updated>
     </task>
-    <task id="LOCAL-00014" summary="* Cambios tablas">
-      <created>1575981727860</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1575981727864</updated>
-    </task>
-    <task id="LOCAL-00015" summary="* Cambios controladores">
-      <created>1576169238272</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1576169238272</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,8 +336,6 @@
     <MESSAGE value="cree clases Examenes_Cita; FormulaMedica y MotivoConsulta" />
     <MESSAGE value="PhpStorm" />
     <MESSAGE value="* CAMBIOS" />
-    <MESSAGE value="* Cambios tablas" />
-    <MESSAGE value="* Cambios controladores" />
-    <option name="LAST_COMMIT_MESSAGE" value="* Cambios controladores" />
+    <option name="LAST_COMMIT_MESSAGE" value="* CAMBIOS" />
   </component>
 </project>
