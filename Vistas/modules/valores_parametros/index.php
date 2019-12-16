@@ -1,4 +1,4 @@
-<?php require("../../partials/routes.php"); ?>
+<?php require("../../../partials/routes.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +9,9 @@
 
 <!-- Site wrapper -->
 <div class="wrapper">
-    <?php require("../../partials/navbar_customization.php"); ?>
+    <?php require("../../../partials/navbar_customization.php"); ?>
 
-    <?php require("../../partials/sliderbar_main_menu.php"); ?>
+    <?php require("../../../partials/sliderbar_main_menu.php"); ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="<?= $baseURL; ?>/Vistas/">optica-ocular-center</a></li>
+                            <li class="breadcrumb-item"><a href="<?= $baseURL; ?>/Vistas/">Optica Ocular Center </a></li>
                             <li class="breadcrumb-item active">Inicio</li>
                         </ol>
                     </div>
@@ -34,20 +34,6 @@
 
         <!-- Main content -->
         <section class="content">
-
-            <?php if(!empty($_GET['respuesta']) && !empty($_GET['action'])){ ?>
-                <?php if ($_GET['respuesta'] == "correcto"){ ?>
-                    <div class="alert alert-success alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <h5><i class="icon fas fa-check"></i> Correcto!</h5>
-                        <?php if ($_GET['action'] == "create"){ ?>
-                            El usuario ha sido creado con exito!
-                        <?php }else if($_GET['action'] == "update"){ ?>
-                            Los datos del usuario han sido actualizados correctamente!
-                        <?php } ?>
-                    </div>
-                <?php } ?>
-            <?php } ?>
 
             <!-- Default box -->
             <div class="card">
@@ -76,9 +62,9 @@
     </div>
     <!-- /.content-wrapper -->
 
-    <?php require ('../../partials/footer.php');?>
+    <?php require ('../../../partials/footer.php');?>
 </div>
 <!-- ./wrapper -->
-<?php require ('../../partials/scripts.php');?>
+<?php require ('../../../partials/scripts.php');?>
 </body>
 </html>
