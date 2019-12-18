@@ -4,7 +4,7 @@
 namespace App\Modelos;
 
 
-class PrescripcionFinal
+class  PrescripcionFinal
 {
 private $id;
 private $Diagnostico_OI;

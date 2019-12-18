@@ -38,7 +38,7 @@ private $Descripcion;
     /**
      * @param mixed|null $idExamenes
      */
-    public function setIdExamenes( string $idExamenes): void
+    public function setIdExamenes( int $idExamenes): void
     {
         $this->idExamenes = $idExamenes;
     }
@@ -80,8 +80,7 @@ private $Descripcion;
     {
         $result = $this->insertRow("INSERT INTO optica.examenes VALUES (NULL, ?, ?)", array(
                 $this->Nombre,
-                $this->Descripcion,
-
+                $this->Descripcion
             )
         );
         $this->Disconnect();
@@ -92,6 +91,7 @@ private $Descripcion;
         $result = $this->updateRow("UPDATE optica.examenes SET Nombre = ?, Descripcion  = ? WHERE idExamenes = ?", array(
             $this->Nombre,
             $this->Descripcion,
+            $this->idExamenes
         ));
         $this->Disconnect();
         return $result;
