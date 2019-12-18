@@ -3,11 +3,13 @@
 
 namespace App\Controlador;
 
-require(__DIR__.'/../Models/Usuarios.php');
-use App\Models\Usuarios;
+require(__DIR__.'/../Modelos/PrescripcionFinal.php');
+
+use App\Modelos\PrescripcionFinal;
+
 
 if(!empty($_GET['action'])){
-    UsuariosController::main($_GET['action']);
+    Prescripcionfinalcontrolador::main($_GET['action']);
 }
 
 
@@ -37,27 +39,74 @@ class Prescripcionfinalcontrolador
     static public function create()
     {
         try {
-            $arrayUsuario = array();
-            $arrayUsuario['nombres'] = $_POST['nombres'];
-            $arrayUsuario['apellidos'] = $_POST['apellidos'];
-            $arrayUsuario['tipo_documento'] = $_POST['tipo_documento'];
-            $arrayUsuario['documento'] = $_POST['documento'];
-            $arrayUsuario['telefono'] = $_POST['telefono'];
-            $arrayUsuario['direccion'] = $_POST['direccion'];
-            $arrayUsuario['rol'] = 'Cliente';
-            $arrayUsuario['estado'] = 'Activo';
-            if(!Usuarios::usuarioRegistrado($arrayUsuario['documento'])){
-                $Usuario = new Usuarios ($arrayUsuario);
-                if($Usuario->create()){
-                    header("Location: ../../views/modules/usuarios/index.php?respuesta=correcto");
-                }
-            }else{
-                header("Location: ../../views/modules/usuarios/create.php?respuesta=error&mensaje=Usuario ya registrado");
+            $arrayprescripcionfinal = array();
+            $arrayprescripcionfinal['Diagnostico_OI'] = $_POST['Diagnostico_OI'];
+            $arrayprescripcionfinal['Diagnostico_OD'] = $_POST['Diagnostico_OD'];
+            $arrayprescripcionfinal['AV_OD'] = $_POST['AV_OD'];
+            $arrayprescripcionfinal['VL_OD'] = $_POST['VL_OD'];
+            $arrayprescripcionfinal['AV_OI'] = $_POST['AV_OI'];
+            $arrayprescripcionfinal['VL_OI'] = $_POST['VL_OI'];
+            $arrayprescripcionfinal['VP_OD'] = $_POST['VP_OD'];
+            $arrayprescripcionfinal['VP_OI'] = $_POST['VP_OI'];
+            $arrayprescripcionfinal['DNP_OD'] = $_POST['DNP_OD'];
+            $arrayprescripcionfinal['DNP_OI'] = $_POST['DNP_OI'];
+            $arrayprescripcionfinal['AB_OD'] = $_POST['AB_OD'];
+            $arrayprescripcionfinal['AB_OI'] = $_POST['AB_OI'];
+
+
+            $prescripcionfinal = new PrescripcionFinal ($arrayprescripcionfinal);
+            if($prescripcionfinal->create()){
+                header("Location: ../../Vistas/modules/prescripcion_final/index.php?respuesta=correcto");
             }
+
         } catch (Exception $e) {
-            header("Location: ../../views/modules/usuarios/create.php?respuesta=error&mensaje=" . $e->getMessage());
+            header("Location: ../../Vistas/modules/prescripcion_final/create.php?respuesta=error&mensaje=" . $e->getMessage());
         }
     }
+    static public function edit (){
+        try {
+            $arrayprescripcionfinal = array();
+            $arrayprescripcionfinal['Diagnostico_OI'] = $_POST['Diagnostico_OI'];
+            $arrayprescripcionfinal['Diagnostico_OD'] = $_POST['Diagnostico_OD'];
+            $arrayprescripcionfinal['AV_OD'] = $_POST['AV_OD'];
+            $arrayprescripcionfinal['VL_OD'] = $_POST['VL_OD'];
+            $arrayprescripcionfinal['AV_OI'] = $_POST['AV_OI'];
+            $arrayprescripcionfinal['VL_OI'] = $_POST['VL_OI'];
+            $arrayprescripcionfinal['VP_OD'] = $_POST['VP_OD'];
+            $arrayprescripcionfinal['VP_OI'] = $_POST['VP_OI'];
+            $arrayprescripcionfinal['DNP_OD'] = $_POST['DNP_OD'];
+            $arrayprescripcionfinal['DNP_OI'] = $_POST['DNP_OI'];
+            $arrayprescripcionfinal['AB_OD'] = $_POST['AB_OD'];
+            $arrayprescripcionfinal['AB_OI'] = $_POST['AB_OI'];
+            $arrayprescripcionfinal['idPrescripcion_Final'] = $_POST['idPrescripcion_Final'];
+
+            $user = new PrescripcionFinal($arrayprescripcionfinal);
+            $user->update();
+
+            header("Location: ../../Vistas/modules/prescripcion_final/show.php?id=".$user->getIdPrescripcionFinal()."&respuesta=correcto");
+        } catch (\Exception $e) {
+            //var_dump($e);
+            header("Location: ../../Vistas/modules/prescripcion_final/edit.php?respuesta=error&mensaje=".$e->getMessage());
+        }
+    }
+    static public function searchForID ($idPrescripcion_Final){
+        try {
+            return PrescripcionFinal::searchForId($idPrescripcion_Final);
+        } catch (\Exception $e) {
+            var_dump($e);
+            //header("Location: ../../Vistas/modules/prescripcion_final/manager.php?respuesta=error");
+        }
+    }
+
+    static public function getAll (){
+        try {
+            return PrescripcionFinal::getAll();
+        } catch (\Exception $e) {
+            var_dump($e);
+            //header("Location: ../Vistas/modules/prescripcion_final/manager.php?respuesta=error");
+        }
+    }
+
 
 
 
