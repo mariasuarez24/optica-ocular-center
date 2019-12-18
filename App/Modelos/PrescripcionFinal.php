@@ -41,7 +41,6 @@ class PrescripcionFinal extends db_abstract_class
     public function __construct($prescripcionfinal = array())
     {
         parent::__construct(); //Llama al contructor padre "la clase conexion" para conectarme a la BD
-        $this->idPrescripcion_Final = $prescripcionfinal['idPrescripcion_Final'] ?? null;
         $this->Diagnostico_OI = $prescripcionfinal['Diagnostico_OI'] ?? null;
         $this->Diagnostico_OD = $prescripcionfinal['Diagnostico_OD'] ?? null;
         $this->AV_OD = $prescripcionfinal['AV_OD'] ?? null ;
@@ -63,7 +62,7 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @return mixed|null
+     * @return mixed
      */
     public function getIdPrescripcionFinal(): int
     {
@@ -71,7 +70,7 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @param mixed|null $idPrescripcion_Final
+     * @param mixed $idPrescripcion_Final
      */
     public function setIdPrescripcionFinal(int $idPrescripcion_Final): void
     {
@@ -79,7 +78,7 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @return mixed|null
+     * @return mixed
      */
     public function getDiagnosticoOI(): string
     {
@@ -87,7 +86,7 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @param mixed|null $Diagnostico_OI
+     * @param mixed $Diagnostico_OI
      */
     public function setDiagnosticoOI(string $Diagnostico_OI): void
     {
@@ -95,7 +94,7 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @return mixed|null
+     * @return mixed
      */
     public function getDiagnosticoOD(): string
     {
@@ -103,7 +102,7 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @param mixed|null $Diagnostico_OD
+     * @param mixed $Diagnostico_OD
      */
     public function setDiagnosticoOD(string $Diagnostico_OD): void
     {
@@ -111,7 +110,7 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @return mixed|null
+     * @return mixed
      */
     public function getAVOD(): string
     {
@@ -127,7 +126,7 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @return mixed|null
+     * @return mixed
      */
     public function getVLOD(): string
     {
@@ -135,7 +134,7 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @param mixed|null $VL_OD
+     * @param mixed $VL_OD
      */
     public function setVLOD(string $VL_OD): void
     {
@@ -143,15 +142,15 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @return mixed|null
+     * @return mixed
      */
-    public function getAVOI(): string
+    public function getAVOI(): void
     {
-        return $this->AV_OI;
+         $this->AV_OI;
     }
 
     /**
-     * @param mixed|null $AV_OI
+     * @param mixed $AV_OI
      */
     public function setAVOI(string $AV_OI): void
     {
@@ -159,7 +158,7 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @return mixed|null
+     * @return mixed
      */
     public function getVLOI(): string
     {
@@ -167,7 +166,7 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @param mixed|null $VL_OI
+     * @param mixed $VL_OI
      */
     public function setVLOI(string $VL_OI): void
     {
@@ -175,15 +174,15 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @return mixed|null
+     * @return mixed
      */
-    public function getVPOD(): string
+    public function getVPOD(): void
     {
-        return $this->VP_OD;
+         $this->VP_OD;
     }
 
     /**
-     * @param mixed|null $VP_OD
+     * @param mixed  $VP_OD
      */
     public function setVPOD(string $VP_OD): void
     {
@@ -191,7 +190,7 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @return mixed|null
+     * @return mixed
      */
     public function getVPOI(): string
     {
@@ -199,7 +198,7 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @param mixed|null $VP_OI
+     * @param mixed $VP_OI
      */
     public function setVPOI(string $VP_OI): void
     {
@@ -207,7 +206,7 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @return mixed|null
+     * @return mixed
      */
     public function getDNPOD(): string
     {
@@ -215,7 +214,7 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @param mixed|null $DNP_OD
+     * @param mixed $DNP_OD
      */
     public function setDNPOD(string $DNP_OD): void
     {
@@ -223,7 +222,7 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @return mixed|null
+     * @return mixed
      */
     public function getDNPOI(): string
     {
@@ -231,7 +230,7 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @param mixed|null $DNP_OI
+     * @param mixed $DNP_OI
      */
     public function setDNPOI(string $DNP_OI): void
     {
@@ -239,7 +238,7 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @return mixed|null
+     * @return mixed
      */
     public function getABOD(): string
     {
@@ -247,7 +246,7 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @param mixed|null $AB_OD
+     * @param mixed $AB_OD
      */
     public function setABOD(string $AB_OD): void
     {
@@ -255,7 +254,7 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @return mixed|null
+     * @return mixed
      */
     public function getABOI(): string
     {
@@ -263,7 +262,7 @@ class PrescripcionFinal extends db_abstract_class
     }
 
     /**
-     * @param mixed|null $AB_OI
+     * @param mixed $AB_OI
      */
     public function setABOI(string $AB_OI): void
     {

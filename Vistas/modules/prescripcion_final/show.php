@@ -1,8 +1,8 @@
 <?php
 require("../../partials/routes.php");
-require("../../../App/Controlador/Prescripcionfinalcontrolador.php.php.php");
+require("../../../App/Controlador/Prescripcionfinalcontrolador.php");
 
-use App\Controlador\personacoPrescripcionfinalcontroladorntrolador; ?>
+use App\Controlador\Prescripcionfinalcontroladorntrolador; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +16,7 @@ use App\Controlador\personacoPrescripcionfinalcontroladorntrolador; ?>
     <?php require("../../partials/navbar_customization.php"); ?>
 
     <?php require("../../partials/sliderbar_main_menu.php"); ?>
+
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -55,8 +56,8 @@ use App\Controlador\personacoPrescripcionfinalcontroladorntrolador; ?>
             <!-- Horizontal Form -->
             <div class="card card-info">
                 <?php if(!empty($_GET["id"]) && isset($_GET["id"])){
-                    $Dataprescripcionfinal = \App\Controlador\Prescripcionfinalcontrolador::searchForID($_GET["id"]);
-                    if(!empty($DataUsuario)){
+                    $Dataprescripcionfinal = Prescripcionfinalcontrolador::searchForID($_GET["id"]);
+                    if(!empty($Dataprescripcionfinal)){
                         ?>
                         <div class="card-header">
                             <h3 class="card-title"><?= $Dataprescripcionfinal->getDiagnosticoOI()  ?></h3>
@@ -69,40 +70,40 @@ use App\Controlador\personacoPrescripcionfinalcontroladorntrolador; ?>
                             </p>
                             <hr>
                             <strong><i class="fas fa-book mr-1"></i> Diagnostico ojo derecho</strong>
-                            <p class="text-muted"><?= $DataUsuario->getDiagnosticoOD() ?></p>
+                            <p class="text-muted"><?= $Dataprescripcionfinal->getDiagnosticoOD() ?></p>
                             <hr>
                             <strong><i class="fas fa-book mr-1"></i> AV- ojo derecho</strong>
-                            <p class="text-muted"><?= $DataUsuario->getAVOD() ?></p>
+                            <p class="text-muted"><?= $Dataprescripcionfinal->getAVOD() ?></p>
                             <hr>
                             <strong><i class="fas fa-book mr-1"></i> VL- ojo derecho</strong>
-                            <p class="text-muted"><?= $DataUsuario->getVLOD() ?></p>
+                            <p class="text-muted"><?= $Dataprescripcionfinal->getVLOD() ?></p>
                             <hr>
                             <strong><i class="fas fa-book mr-1"></i> AV- ojo izquierdo</strong>
-                            <p class="text-muted"><?= $DataUsuario->getAVOI() ?></p>
+                            <p class="text-muted"><?= $Dataprescripcionfinal->getAVOI() ?></p>
                             <hr>
                             <strong><i class="fas fa-book mr-1"></i> VL- ojo izquierdo</strong>
-                            <p class="text-muted"><?= $DataUsuario->getVLOI() ?></p>
+                            <p class="text-muted"><?= $Dataprescripcionfinal->getVLOI() ?></p>
                             <hr>
                             <strong><i class="fas fa-book mr-1"></i> VL- ojo derecho</strong>
-                            <p class="text-muted"><?= $DataUsuario->getVLOD() ?></p>
+                            <p class="text-muted"><?= $Dataprescripcionfinal->getVLOD() ?></p>
                             <hr>
                             <strong><i class="fas fa-book mr-1"></i> VP- ojo derecho</strong>
-                            <p class="text-muted"><?= $DataUsuario->getVPOD() ?></p>
+                            <p class="text-muted"><?= $Dataprescripcionfinal->getVPOD() ?></p>
                             <hr>
                             <strong><i class="fas fa-book mr-1"></i> VP- ojo izquierdo</strong>
-                            <p class="text-muted"><?= $DataUsuario->getVPOI() ?></p>
+                            <p class="text-muted"><?= $Dataprescripcionfinal->getVPOI() ?></p>
                             <hr>
                             <strong><i class="fas fa-book mr-1"></i> DNP- ojo derecho</strong>
-                            <p class="text-muted"><?= $DataUsuario->getDNPOD() ?></p>
+                            <p class="text-muted"><?= $Dataprescripcionfinal->getDNPOD() ?></p>
                             <hr>
                             <strong><i class="fas fa-book mr-1"></i> DNP- ojo izquierdo</strong>
-                            <p class="text-muted"><?= $DataUsuario->getDNPOI() ?></p>
+                            <p class="text-muted"><?= $Dataprescripcionfinal->getDNPOI() ?></p>
                             <hr>
                             <strong><i class="fas fa-book mr-1"></i> AB- ojo derecho</strong>
-                            <p class="text-muted"><?= $DataUsuario->getABOD() ?></p>
+                            <p class="text-muted"><?= $Dataprescripcionfinal->getABOD() ?></p>
                             <hr>
                             <strong><i class="fas fa-book mr-1"></i> AB- ojo izquierdo</strong>
-                            <p class="text-muted"><?= $DataUsuario->getABOI() ?></p>
+                            <p class="text-muted"><?= $Dataprescripcionfinal->getABOI() ?></p>
                             <hr>
 
 
@@ -142,8 +143,3 @@ use App\Controlador\personacoPrescripcionfinalcontroladorntrolador; ?>
 <?php require ('../../partials/scripts.php');?>
 </body>
 </html>
-
-
-
-
-
