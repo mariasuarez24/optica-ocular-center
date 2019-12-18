@@ -56,8 +56,8 @@ class acudiente extends db_abstract_class
     {
         $this->insertRow("INSERT INTO optica.acudiente VALUES (NULL, ?, ?, ?)", array(
                 $this->parentezco,
-                123,
                 1,
+                2,
             )
         );
         $this->Disconnect();
@@ -114,7 +114,7 @@ class acudiente extends db_abstract_class
 
     public static function getAll()
     {
-        return acudiente::buscar("SELECT * FROM optica.acudiente");
+        return acudiente::search("SELECT * FROM optica.acudiente");
     }
 
     public static function acudienteregistrada ($parentezco) : bool

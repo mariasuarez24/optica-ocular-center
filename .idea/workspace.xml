@@ -104,7 +104,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/App/controlador" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Vistas/modules/medico" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -115,11 +115,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\medico" />
+      <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\acudiente" />
+      <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\persona" />
       <recent name="C:\laragon\www\optica-ocular-center\App\controlador" />
       <recent name="C:\laragon\www\optica-ocular-center\App\Modelos" />
-      <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\examen_historial" />
-      <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\formula_medica" />
-      <recent name="C:\laragon\www\optica-ocular-center\Vistas\modules\prescripcion_final" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\laragon\www\optica-ocular-center\Modules\MotivosConsulta" />
@@ -283,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576169238272</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="* Controladores">
+      <created>1576502980243</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1576502980243</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,6 +348,7 @@
     <MESSAGE value="* CAMBIOS" />
     <MESSAGE value="* Cambios tablas" />
     <MESSAGE value="* Cambios controladores" />
-    <option name="LAST_COMMIT_MESSAGE" value="* Cambios controladores" />
+    <MESSAGE value="* Controladores" />
+    <option name="LAST_COMMIT_MESSAGE" value="* Controladores" />
   </component>
 </project>

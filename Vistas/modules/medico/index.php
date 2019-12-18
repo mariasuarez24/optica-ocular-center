@@ -1,9 +1,18 @@
-<?php require("../../partials/routes.php"); ?>
+<?php require("../../partials/routes.php");
+require("../../../App/controlador/medicocontrolador.php");
+
+
+use App\controlador\medicocontrolador; ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title><?= getenv('TITLE_SITE') ?> | Layout</title>
     <?php require("../../partials/head_imports.php"); ?>
+    <!-- DataTables -->
+    <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-responsive/css/responsive.bootstrap4.css">
+    <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-buttons/css/buttons.bootstrap4.css">
+
 </head>
 <body class="hold-transition sidebar-mini">
 
@@ -20,7 +29,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Pagina Principal</h1>
+                        <h1>Medico</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -53,13 +62,66 @@
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Título Modulo</h3>
+                    <h3 class="card-title">Gestionar Medico</h3>
 
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                             <i class="fas fa-minus"></i></button>
                         <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
                             <i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-auto mr-auto"></div>
+                        <div class="col-auto">
+                            <a role="button" href="create.php" class="btn btn-primary float-right" style="margin-right: 5px;">
+                                <i class="fas fa-plus"></i> Crear Medico
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <table id="tblacudiente" class="datatable table table-bordered table-striped">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Especializacion</th>
+                                    <th>Licencia</th>
+                                    <th>Acciones</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                $arrmedico = medicocontrolador::getAll();
+                                foreach ($arrmedico as $medico){
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $medico->getIdMedico(); ?></td>
+                                        <td><?php echo $medico->getEspecializacion(); ?></td>
+                                        <td><?php echo $medico->getLicencia(); ?></td>
+
+                                        <td>
+                                            <a href="edit.php?id=<?php echo $medico->getIdMedico(); ?>" type="button" data-toggle="tooltip" title="Actualizar" class="btn docs-tooltip btn-primary btn-xs"><i class="fa fa-edit"></i></a>
+                                            <a href="show.php?id=<?php echo $medico->getEspecializacion(); ?>" type="button" data-toggle="tooltip" title="Ver" class="btn docs-tooltip btn-warning btn-xs"><i class="fa fa-eye"></i></a>
+                                            <a href="show.php?id=<?php echo $medico->getLicencia(); ?>" type="button" data-toggle="tooltip" title="Ver" class="btn docs-tooltip btn-warning btn-xs"><i class="fa fa-eye"></i></a>
+
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Especializacion</th>
+                                    <th>Licencia</th>
+                                    <th>Acciones</th>
+
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 <div class="card-body">
@@ -81,6 +143,43 @@
 </div>
 <!-- ./wrapper -->
 <?php require ('../../partials/scripts.php');?>
+
+<!-- DataTables -->
+<script src="<?= $adminlteURL ?>/plugins/datatables/jquery.dataTables.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-responsive/js/dataTables.responsive.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-responsive/js/responsive.bootstrap4.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-buttons/js/dataTables.buttons.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-buttons/js/buttons.bootstrap4.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/jszip/jszip.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/pdfmake/pdfmake.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-buttons/js/buttons.html5.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-buttons/js/buttons.print.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-buttons/js/buttons.colVis.js"></script>
+
+<script>
+    $(function () {
+        $('.datatable').DataTable({
+            "dom": 'Bfrtip',
+            "paging": true,
+            "lengthChange": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": true,
+            "language": {
+                "url": "../../components/Spanish.json" //Idioma
+            },
+            "buttons": [
+                'copy', 'print', 'excel', 'pdf'
+            ],
+            "pagingType": "full_numbers",
+            "responsive": true,
+            "stateSave" : true, //Guardar la configuracion del usuario
+        });
+    });
+</script>
+
 </body>
 </html>
 
