@@ -1,29 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18b4d782-248f-447e-a40e-e5897b8218f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/acudiente/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/acudiente/show.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/medico/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/medico/show.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/persona/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/persona/show.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controlador/pacientecontrolador.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controlador/pacientecontrolador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Modelos/acudiente.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/acudiente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Modelos/medico.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/medico.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Modelos/persona.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/persona.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controlador/acudientecontrolador.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controlador/acudientecontrolador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controlador/medicocontrolador.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controlador/medicocontrolador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/controlador/personacontrolador.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/controlador/personacontrolador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/acudiente/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/acudiente/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/medico/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/medico/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/medico/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/medico/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/persona/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/persona/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/persona/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/persona/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexacudiente.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexmedico.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpersona.php" beforeDir="false" />
+    <list default="true" id="a8a912c3-aa07-481e-93fd-4db48831a2ef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Vistas/modules/valores_parametros/edit.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,14 +48,14 @@
         <item name="Laragon" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="optica: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="medico: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="examenes: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="Laragon" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="optica: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="persona: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="parametros: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -146,12 +125,22 @@
       </list>
     </option>
   </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="18b4d782-248f-447e-a40e-e5897b8218f9" name="Default Changelist" comment="" />
+      <changelist id="a8a912c3-aa07-481e-93fd-4db48831a2ef" name="Default Changelist" comment="" />
       <created>1575313244614</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -172,9 +161,10 @@
       <workItem from="1576076677883" duration="7388000" />
       <workItem from="1576088756593" duration="11417000" />
       <workItem from="1576153077200" duration="11047000" />
-      <workItem from="1576501663018" duration="13042000" />
-      <workItem from="1576585891939" duration="24137000" />
-      <workItem from="1576672599562" duration="13044000" />
+      <workItem from="1576501663018" duration="1249000" />
+      <workItem from="1576586975329" duration="25770000" />
+      <workItem from="1576682157905" duration="2697000" />
+      <workItem from="1576685567467" duration="3869000" />
     </task>
     <task id="LOCAL-00001" summary="cree clases Examenes_Cita; FormulaMedica y MotivoConsulta">
       <created>1575318072940</created>
