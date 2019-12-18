@@ -1,34 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18b4d782-248f-447e-a40e-e5897b8218f9" name="Default Changelist" comment="PhpStorm">
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/examen_historial/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/examen_historial/show.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/formula_medica/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/formula_medica/show.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/motivos_consulta/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/motivos_consulta/show.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/prescripcion_final/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/prescripcion_final/show.php" afterDir="false" />
+    <list default="true" id="18b4d782-248f-447e-a40e-e5897b8218f9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controlador/ExamenesHistorialControlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controlador/ExamenesHistorialControlador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controlador/FormulaMedicaControlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controlador/FormulaMedicaControlador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controlador/MotivoConsultaControlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controlador/MotivoConsultaControlador.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Controlador/Prescripcionfinalcontrolador.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controlador/Prescripcionfinalcontrolador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Modelos/BasicModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/BasicModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Modelos/ExamenesHistorial.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/ExamenesHistorial.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Modelos/FormulaMedica.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/FormulaMedica.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Modelos/MotivoConsulta.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/MotivoConsulta.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Modelos/PrescripcionFinal.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/PrescripcionFinal.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/examen_historial/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/examen_historial/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/examen_historial/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/examen_historial/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/formula_medica/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/formula_medica/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/formula_medica/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/formula_medica/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/motivos_consulta/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/motivos_consulta/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/motivos_consulta/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/motivos_consulta/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/prescripcion_final/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/prescripcion_final/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vistas/modules/prescripcion_final/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/prescripcion_final/edit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vistas/modules/prescripcion_final/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/prescripcion_final/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/valores_parametros/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/valores_parametros/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vistas/modules/prescripcion_final/show.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/prescripcion_final/show.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,6 +61,13 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="optica: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="motivos_consulta: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="optica" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="optica: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="prescripcion_final: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
