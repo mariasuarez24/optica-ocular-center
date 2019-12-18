@@ -3,7 +3,7 @@
 namespace App\Controlador;
 
 require('../Modelos/paciente.php');
-use App\Modelos\citas;
+use App\Modelos\paciente;
 
 if(!empty($_GET['action'])){
     pacientecontrolador::main($_GET['action']);

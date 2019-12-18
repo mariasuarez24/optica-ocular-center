@@ -34,6 +34,18 @@
 
         <!-- Main content -->
         <section class="content">
+            
+            <?php if(!empty($_GET['respuesta'])){ ?>
+                <?php if ($_GET['respuesta'] != "correcto"){ ?>
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h5><i class="icon fas fa-ban"></i> Error!</h5>
+                        Error al crear el usuario: <?= $_GET['mensaje'] ?>
+                    </div>
+                <?php } ?>
+            <?php } ?>
+
+            
             <!-- Horizontal Form -->
             <div class="card card-info">
                 <div class="card-header">
@@ -41,7 +53,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form class="form-horizontal" method="post" id="frmCreatepersona" name="frmCreatepersona" action="../../../app/Controlador/personacontrolador.php?action=create">
+                <form class="form-horizontal" method="post" id="frmCreatepersona" name="frmCreatepersona" action="../../../App/Controlador/personacontrolador.php?action=create">
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="nombres" class="col-sm-2 col-form-label">Nombres</label>
