@@ -27,56 +27,58 @@ class Parametros extends db_abstract_class
 
     }
 
-    /* Metodo destructor cierra la conexion. */
-
-
     /**
-     * @return mixed
+     * @return mixed|null
      */
-    public function getIdparametros()
+    public function getIdParametros(): int
     {
-        return $this->id;
+        return $this->idParametros;
     }
 
     /**
-     * @param mixed $idparametros
+     * @param mixed|null $idParametros
      */
-    public function setIdparametros($id)
+    public function setIdParametros(int $idParametros): void
     {
-        $this->id = $id;
+        $this->idParametros = $idParametros;
     }
 
     /**
-     * @return mixed
+     * @return mixed|null
      */
-    public function getNombre()
+    public function getNombre(): string
     {
         return $this->Nombre;
     }
 
     /**
-     * @param mixed $Nombre
+     * @param mixed|null $Nombre
      */
-    public function setNombre($Nombre)
+    public function setNombre(string $Nombre): void
     {
         $this->Nombre = $Nombre;
     }
 
     /**
-     * @return mixed
+     * @return mixed|null
      */
-    public function getDescripcion()
+    public function getDescripcion(): string
     {
         return $this->Descripcion;
     }
 
     /**
-     * @param mixed $Descripcion
+     * @param mixed|null $Descripcion
      */
-    public function setDescripcion($Descripcion)
+    public function setDescripcion(string $Descripcion): void
     {
         $this->Descripcion = $Descripcion;
     }
+
+    /* Metodo destructor cierra la conexion. */
+
+
+
     public function create() : bool
     {
         $result = $this->insertRow("INSERT INTO optica.parametros VALUES (NULL, ?, ?)", array(
@@ -91,16 +93,16 @@ class Parametros extends db_abstract_class
 
     public function update() : bool
     {
-        $result = $this->updateRow("UPDATE optica.parametros SET Nombre = ?, Descripcion = ? WHERE id = ?", array(
+        $result = $this->updateRow("UPDATE optica.parametros SET Nombre = ?, Descripcion = ? WHERE idParametros = ?", array(
                 $this->Nombre,
                 $this->Descripcion,
-            )
-        );
-
+                $this->idParametros,
+            ));
         $this->Disconnect();
+        return $result;
     }
 
-    public function deleted($id) : void
+    public function deleted($idParametros) : void
     {
         // TODO: Implement deleted() method.
     }
@@ -113,7 +115,7 @@ class Parametros extends db_abstract_class
 
         foreach ($getrows as $valor) {
             $Parametros = new Parametros();
-            $Parametros->idParametros = $valor['id'];
+            $Parametros->idParametros = $valor['idParametros'];
             $Parametros->Nombre = $valor['Nombre'];
             $Parametros->Descripcion = $valor['Descripcion'];
             $Parametros->Disconnect();
@@ -123,11 +125,11 @@ class Parametros extends db_abstract_class
         return $arrParametros;
 
     }
-    public static function searchForId($id) : Parametros
+    public static function searchForId($idParametros) : Parametros
     {
         $Parametros = new Parametros();
-        if ($id > 0){
-            $getrow = $Parametros->getRow("SELECT * FROM optica.parametros WHERE id =?", array($id));
+        if ($idParametros > 0){
+            $getrow = $Parametros->getRow("SELECT * FROM optica.parametros WHERE idParametros =?", array($idParametros));
             $Parametros->idParametros = $getrow['idParametros'];
             $Parametros->Nombre = $getrow['Nombre'];
             $Parametros->Descripcion = $getrow['Descripcion'];
@@ -142,7 +144,7 @@ class Parametros extends db_abstract_class
     }
     public static function getAll() : array
     {
-        return Parametros::search("SELECT * FROM optica.parametrosarametros");
+        return Parametros::search("SELECT * FROM optica.parametros");
     }
 
     public static function parametrosRegistrados ($Nombre) : bool

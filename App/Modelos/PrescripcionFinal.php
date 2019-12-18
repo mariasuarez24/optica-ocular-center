@@ -4,8 +4,8 @@
 namespace App\Modelos;
 include ('db_abstract_class.php');
 
-
 class PrescripcionFinal extends db_abstract_class
+
 {
     private $idPrescripcion_Final;
     private $Diagnostico_OI;

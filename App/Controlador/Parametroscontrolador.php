@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Controll;
+namespace App\Controlador;
 
-require('../Modelos/Parametros.php');
+require(__DIR__.'/../Modelos/Parametros.php');
 use App\Modelos\Parametros;
 
 if(!empty($_GET['action'])){
     Parametroscontrolador::main($_GET['action']);
-}else{
-    echo "No se encontro ninguna accion...";
 }
 
 
@@ -20,39 +18,64 @@ class Parametroscontrolador
     {
         if ($action == "create") {
             Parametroscontrolador::create();
-        }/* else if ($action == "editar") {
-            Parametroscontrolador::editar();
-        } else if ($action == "buscarID") {
-            Parametroscontrolador::buscarID($_REQUEST['idPersona']);
-        } else if ($action == "ActivarParametro") {
-            Parametroscontrolador::ActivarParametro();
-        } else if ($action == "ActivarParametro") {
-            Parametroscontrolador::InactivarParametro();
-        }else if ($action == "login"){
+        } else if ($action == "edit") {
+            Parametroscontrolador::edit();
+        } else if ($action == "searchForID") {
+            Parametroscontrolador::searchForID($_REQUEST['idExamenes']);
+        } else if ($action == "searchAll") {
+            Parametroscontrolador::getAll();
+
+        }/*else if ($action == "login"){
             Parametroscontrolador::login();
         }else if($action == "cerrarSession"){
             Parametroscontrolador::cerrarSession();
         }*/
 
     }
-
     static public function create()
     {
         try {
-            $arrParametros = array();
-            $arrParametros['Nombre'] = $_POST['Nombre'];
-            $arrParametros['Descripcion'] = $_POST['Descripcion'];
-
-
-            if(!Parametros::parametrosRegistrados($arrParametros['Nombre'])){
-                $Parametros = new Parametros ($arrParametros);
-                $Parametros->create();
-                header("Location: ../../Vistas/modules/parametros/index.php?respuesta=correcto&action=create");
-            }else{
-                header("Location: ../../Vistas/modules/parametros/create.php?respuesta=error&mensaje=Parametros ya registrados");
-            }
+            $arrayParametros = array();
+            $arrayParametros['Nombre'] = $_POST['Nombre'];
+            $arrayParametros['Descripcion'] = $_POST['Descripcion'];
+            $Parametros = new Parametros ($arrayParametros);
+            $Parametros->create();
+            header("Location: ../../Vistas/modules/parametros/index.php?respuesta=correcto&action=create");
         } catch (Exception $e) {
-            header("Location: ../../Vistas/modules/parametros/create.php?respuesta=error&mensaje=" . $e->getMessage());
+            header("Location: ../../Vistas/modules/parametros /create.php?respuesta=error&mensaje=" . $e->getMessage());
+        }
+    }
+    static public function edit (){
+        try {
+            $arrayParametros = array();
+            $arrayParametros['Nombre'] = $_POST['Nombre'];
+            $arrayParametros['Descripcion'] = $_POST['Descripcion'];
+            $arrayExamen['idParametros'] = $_POST['idParametros'];
+
+            $user = new Parametros($arrayParametros);
+            $user->update();
+
+            header("Location: ../../Vistas/modules/parametros/show.php?id=".$user->getIdParametros()."&respuesta=correcto");
+        } catch (\Exception $e) {
+            //var_dump($e);
+            header("Location: ../../Vistas/modules/parametros/edit.php?respuesta=error&mensaje=".$e->getMessage());
+        }
+    }
+    static public function searchForID ($idParametros){
+        try {
+            return Parametros::searchForId($idParametros);
+        } catch (\Exception $e) {
+            var_dump($e);
+            //header("Location: ../../views/modules/parametros/manager.php?respuesta=error");
+        }
+    }
+
+    static public function getAll (){
+        try {
+            return Parametros::getAll();
+        } catch (\Exception $e) {
+            var_dump($e);
+            //header("Location: ../Vista/modules/parametros/manager.php?respuesta=error");
         }
     }
 

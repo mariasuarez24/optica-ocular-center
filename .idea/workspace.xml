@@ -175,7 +175,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="18b4d782-248f-447e-a40e-e5897b8218f9" name="Default Changelist" comment="" />
+      <changelist id="a8a912c3-aa07-481e-93fd-4db48831a2ef" name="Default Changelist" comment="" />
       <created>1575313244614</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -298,7 +298,28 @@
       <option name="project" value="LOCAL" />
       <updated>1575926830933</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="* Cambios tablas">
+      <created>1575981727860</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1575981727864</updated>
+    </task>
+    <task id="LOCAL-00015" summary="* Cambios controladores">
+      <created>1576169238272</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1576169238272</updated>
+    </task>
+    <task id="LOCAL-00016" summary="* Controladores">
+      <created>1576502980243</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1576502980243</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,6 +375,9 @@
     <MESSAGE value="cree clases Examenes_Cita; FormulaMedica y MotivoConsulta" />
     <MESSAGE value="PhpStorm" />
     <MESSAGE value="* CAMBIOS" />
-    <option name="LAST_COMMIT_MESSAGE" value="* CAMBIOS" />
+    <MESSAGE value="* Cambios tablas" />
+    <MESSAGE value="* Cambios controladores" />
+    <MESSAGE value="* Controladores" />
+    <option name="LAST_COMMIT_MESSAGE" value="* Controladores" />
   </component>
 </project>

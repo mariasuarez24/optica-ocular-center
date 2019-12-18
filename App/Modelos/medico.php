@@ -80,7 +80,7 @@ private $Licencia;
         $this->insertRow("INSERT INTO optica.medico VALUES (NULL, ?, ?, ?)", array(
                 $this->Especializacion,
                 $this->Licencia,
-                123,
+                1,
             )
         );
         $this->Disconnect();
@@ -138,7 +138,7 @@ private $Licencia;
 
     public static function getAll()
     {
-        return medico::buscar("SELECT * FROM optica.medico");
+        return medico::search("SELECT * FROM optica.medico");
     }
 
     public static function medicoregistrada ($Licencia) : bool
