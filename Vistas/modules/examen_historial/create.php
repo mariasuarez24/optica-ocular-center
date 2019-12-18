@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= getenv('TITLE_SITE') ?> | Examen_Historial</title>
+    <title><?= getenv('TITLE_SITE') ?> | Examenes Historial</title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -15,16 +15,16 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
+    <!-- Content Header (Page header) -->
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Examenes_historial</h1>
+                        <h1>Examenes Historial</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="<?= $baseURL; ?>/Vistas/">Optica Ocular Center</a></li>
+                            <li class="breadcrumb-item"><a href="<?= $baseURL; ?>/Vistas/">optica-ocular-center</a></li>
                             <li class="breadcrumb-item active">Inicio</li>
                         </ol>
                     </div>
@@ -34,55 +34,64 @@
 
         <!-- Main content -->
         <section class="content">
+
+            <?php if(!empty($_GET['respuesta'])){ ?>
+                <?php if ($_GET['respuesta'] != "correcto"){ ?>
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h5><i class="icon fas fa-ban"></i> Error!</h5>
+                        Error al crear el examen historial: <?= $_GET['mensaje'] ?>
+                    </div>
+                <?php } ?>
+            <?php } ?>
+
             <!-- Horizontal Form -->
             <div class="card card-info">
                 <div class="card-header">
-                    <h3 class="card-title">Examenes_Historial</h3>
+                    <h3 class="card-title">Examenes Historial</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-
-                        <div class="form-group row">
-                            <label for="Valores_Parametros_id_ValoresParametros" class="col-sm-2 col-form-label">Valores_Parametros_id_ValoresParametros</label>
-                            <div class="col-sm-10">
-                                <select id="Estado" name="Estado" class="custom-select">
-                                    <option value=""></option>
-                                    <option value=""></option>
-
-                                </select>
+            <form class="form-horizontal" method="post" id="frmCreateExamenesHistorial" name="frmCreateExamenesHistorial" action="../../../App/Controlador/ExamenesHistorialControlador.php?action=create">
+                    <div class="card-body">
+                            <div class="form-group row">
+                                <label for="Valores_Parametros_idValoresParametros" class="col-sm-2 col-form-label">Valores_Parametros_idValoresParametros</label>
+                                <div class="col-sm-10">
+                                    <select id="Valores_Parametros_idValoresParametros" name="Valores_Parametros_idValoresParametros" class="custom-select">
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="Ojo Derecho" class="col-sm-2 col-form-label">Ojo Derecho</label>
-                            <div class="col-sm-10">
-                                <input required type="text" class="form-control" id="Ojo Derecho" name="Ojo Derecho" placeholder="Ingrese valor Ojo Derecho">
+                        <form class="form-horizontal"
+                  <div class="card-body">
+                            <div class="form-group row">
+                                <label for="Ojo_Derecho " class="col-sm-2 col-form-label">Ojo_Derecho</label>
+                                <div class="col-sm-10">
+                                    <input required type="text" class="form-control" id="Ojo_Derecho" name="Ojo_Derecho" placeholder="Ingrese Valor Ojo Derecho">
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="Ojo Izquierdo" class="col-sm-2 col-form-label">Ojo Izquierdo</label>
-                            <div class="col-sm-10">
-                                <input required type="text" class="form-control" id="Ojo Izquierdo" name="Ojo Izquierdo" placeholder="Ingrese valor Ojo Izquierdo">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="Historial_id_Historial" class="col-sm-2 col-form-label">Historial_id_Historial</label>
-                            <div class="col-sm-10">
-                                <select id="Historial_id_Historial" name="Historial_id_Historial" class="custom-select">
-                                    <option value=""></option>
-                                    <option value=""></option>
+                                <div class="card-body">
+                                    <div class="form-group row">
+                                        <label for="Ojo_Izquierdo " class="col-sm-2 col-form-label">Ojo_Izquierdo</label>
+                                        <div class="col-sm-10">
+                                            <input required type="text" class="form-control" id="Ojo_Izquierdo" name="Ojo_Izquierdo" placeholder="Ingrese Valor Ojo Izquierdo">
+                                        </div>
+                                    </div>
 
-                                </select>
-                            </div>
-                        </div>
-                    <!-- /.card-body -->
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-info">Enviar</button>
-                        <button type="submit" class="btn btn-default float-right">Cancelar</button>
-                    </div>
-                    <!-- /.card-footer -->
-                </form>
+                                    <div class="form-group row">
+                                        <label for="historial_idHistorial" class="col-sm-2 col-form-label">historial_idHistorial</label>
+                                        <div class="col-sm-10">
+                                            <select id="historial_idHistorial" name="historial_idHistorial" class="custom-select">
+                                                <option value=""></option>
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-footer -->
+            </form>
             </div>
             <!-- /.card -->
         </section>
