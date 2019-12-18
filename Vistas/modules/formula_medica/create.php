@@ -12,6 +12,7 @@
     <?php require("../../partials/navbar_customization.php"); ?>
 
     <?php require("../../partials/sliderbar_main_menu.php"); ?>
+
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -23,7 +24,7 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="<?= $baseURL; ?>/Vistas/">Optica Ocular Center</a></li>
+                            <li class="breadcrumb-item"><a href="<?= $baseURL; ?>/Vistas/">optica-ocular-center</a></li>
                             <li class="breadcrumb-item active">Inicio</li>
                         </ol>
                     </div>
@@ -31,40 +32,44 @@
             </div><!-- /.container-fluid -->
         </section>
 
-        <!-- Main content -->
-        <section class="content">
-            <!-- Horizontal Form -->
-            <div class="card card-info">
-                <div class="card-header">
-                    <h3 class="card-title">Formula Medica</h3>
-                </div>
-            </div>
-                <!-- /.card-header -->
-                <!-- form start -->
-                <form class="form-horizontal">
+
+            <!-- Main content -->
+            <section class="content">
+
+                <!-- Horizontal Form -->
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h3 class="card-title">Formula Medica </h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form class="form-horizontal" method="post" id="frmCreateFormulamedica" name="frmCreateFormulamedica" action="../../../App/Controlador/FormulaMedicaControlador.php?action=create">
                         <div class="form-group row">
-                            <label for="fecha" class="col-sm-2 col-form-label">Fecha</label for="fecha">
+                            <label for="Fecha" class="col-sm-2 col-form-label">Fecha</label for="Fecha">
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
+                                    <input type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" id="Fecha" name="Fecha" im-insert="false">
                                 </div>
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="Descripcion" class="col-sm-2 col-form-label">Descripcion</label>
-                            <div class="col-sm-10">
-                                <input required type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingresar descripcion">
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <label for="Descripcion" class="col-sm-2 col-form-label">Descripcion </label>
+                                <div class="col-sm-10">
+                                    <input required type="text" class="form-control" id="Descripcion" name="Descripcion" placeholder="Ingrese Descripcion">
+                                </div>
                             </div>
-                        </div>
 
                         <div class="form-group row">
-                            <label for="Prescripcion_idPrescripcion_final" class="col-sm-2 col-form-label">Prescripcion</label>
+                            <label for="Prescripcion_idPrescripcion_final" class="col-sm-2 col-form-label">Prescripcion_idPrescripcion_final</label>
                             <div class="col-sm-10">
                                 <select id="Prescripcion_idPrescripcion_final" name="Prescripcion_idPrescripcion_final" class="custom-select">
+                                    <option value=""></option>
+                                    <option value=""></option>
                                     <option value=""></option>
                                     <option value=""></option>
                                 </select>

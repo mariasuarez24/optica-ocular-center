@@ -4,7 +4,7 @@ namespace App\Modelos;
 
 /**
  * Created by PhpStorm.
- * User: Diego-PC
+ * User: Maria Suárez
  * Date: 10/12/2019
  * Time: 9:17
  */
@@ -29,18 +29,18 @@ abstract class basicModel {
     public function __construct(){
         $this->isConnected = true;
         try {
-            $this->datab = new PDO(
+            $this->datab = new \PDO(
                 ($this->driver != "sqlsrv") ?
                     "$this->driver:host={$this->host};dbname={$this->dbname};charset=utf8" :
                     "$this->driver:Server=$this->host;Database=$this->dbname",
-                $this->username, $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8')
+                $this->username, $this->password, array(\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8')
             );
-            $this->datab->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $this->datab->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-            $this->datab->setAttribute(PDO::ATTR_PERSISTENT, true);
-        }catch(PDOException $e) {
+            $this->datab->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+            $this->datab->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
+            $this->datab->setAttribute(\PDO::ATTR_PERSISTENT, true);
+        }catch(\PDOException $e) {
             $this->isConnected = false;
-            throw new Exception($e->getMessage());
+            throw new \Exception($e->getMessage());
         }
     }
 
@@ -58,8 +58,8 @@ abstract class basicModel {
             $stmt = $this->datab->prepare($query);
             $stmt->execute($params);
             return $stmt->fetch();
-        }catch(PDOException $e){
-            throw new Exception($e->getMessage());
+        }catch(\PDOException $e){
+            throw new \Exception($e->getMessage());
         }
     }
 
@@ -70,8 +70,8 @@ abstract class basicModel {
             $stmt = $this->datab->prepare($query);
             $stmt->execute($params);
             return $stmt->fetchAll();
-        }catch(PDOException $e){
-            throw new Exception($e->getMessage());
+        }catch(\PDOException $e){
+            throw new \Exception($e->getMessage());
         }
     }
 
@@ -80,8 +80,8 @@ abstract class basicModel {
     public function getLastId(){
         try{
             return $this->datab->lastInsertId();
-        }catch(PDOException $e){
-            throw new Exception($e->getMessage());
+        }catch(\PDOException $e){
+            throw new \Exception($e->getMessage());
         }
     }
 
@@ -94,8 +94,8 @@ abstract class basicModel {
             }
             $stmt = $this->datab->prepare($query);
             return $stmt->execute($params);
-        }catch(PDOException $e){
-            throw new Exception($e->getMessage());
+        }catch(\PDOException $e){
+            throw new \Exception($e->getMessage());
         }
     }
 

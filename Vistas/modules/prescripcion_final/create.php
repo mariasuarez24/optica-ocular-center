@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= getenv('TITLE_SITE') ?> | Examen</title>
+    <title><?= getenv('TITLE_SITE') ?> | Prescripción Final</title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -41,12 +41,12 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form class="form-horizontal" method="post" id="frmCreateParametros" name="frmCreateParametros" action="../../../app/Controller/ParametrosController.php?action=create">
+                <form class="form-horizontal" method="post" id="frmCreateParametros" name="frmCreateParametros" action="../../../App/Controlador/Prescripcionfinalcontrolador.php?action=create">
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="Diagnostico_OI" class="col-sm-2 col-form-label">Diagnostico ojo izquierdo</label>
                             <div class="col-sm-10">
-                                <input required type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Ingrese diagnostico ojo izquierdo">
+                                <input required type="text" class="form-control" id="Diagnostico_OI" name="Diagnostico_OI" placeholder="Ingrese diagnostico ojo izquierdo">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -56,47 +56,66 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="AV-OD" class="col-sm-2 col-form-label">AV- Ojo derecho</label>
+                            <label for="AV_OD" class="col-sm-2 col-form-label">AV- Ojo derecho</label>
                             <div class="col-sm-10">
-                                <input required type="text" class="form-control" id="AV-OD" name="AV-OD" placeholder="Ingrese AV- ojo derecho">
+                                <input required type="text" class="form-control" id="AV_OD" name="AV_OD" placeholder="Ingrese AV- ojo derecho">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="VL-OD" class="col-sm-2 col-form-label">VL- Ojo derecho</label>
+                            <label for="VL_OD" class="col-sm-2 col-form-label">VL- Ojo derecho</label>
                             <div class="col-sm-10">
-                                <input required type="text" class="form-control" id="VL-OD" name="VL-OD" placeholder="Ingrese VL- ojo derecho">
+                                <input required type="text" class="form-control" id="VL_OD" name="VL_OD" placeholder="Ingrese VL- ojo derecho">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="AV-OI" class="col-sm-2 col-form-label">AV- Ojo izquierdo</label>
+                            <label for="AV_OI" class="col-sm-2 col-form-label">AV- Ojo izquierdo</label>
                             <div class="col-sm-10">
-                                <input required type="text" class="form-control" id="AV-OI" name="AV-OI" placeholder="Ingrese AV ojo izquierdo">
+                                <input required type="text" class="form-control" id="AV_OI" name="AV_OI" placeholder="Ingrese AV- ojo izquierdo">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="VL-OI" class="col-sm-2 col-form-label">VL- Ojo izquierdo</label>
+                            <label for="VL_OI" class="col-sm-2 col-form-label">VL- Ojo izquierdo</label>
                             <div class="col-sm-10">
-                                <input required type="text" class="form-control" id="VL-OI" name="VL-OI" placeholder="Ingrese VL ojo izquierdo">
+                                <input required type="text" class="form-control" id="VL_OI" name="VL_OI" placeholder="Ingrese VL- ojo izquierdo">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="VP-OD" class="col-sm-2 col-form-label">VP- Ojo derecho</label>
+                            <label for="VP_OD" class="col-sm-2 col-form-label">VP- Ojo derecho</label>
                             <div class="col-sm-10">
-                                <input required type="text" class="form-control" id="VP-OD" name="VP-OD" placeholder="Ingrese VP ojo derecho">
+                                <input required type="text" class="form-control" id="VP_OD" name="VP_OD" placeholder="Ingrese VP- ojo derecho">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="VP-OI" class="col-sm-2 col-form-label">VP- Ojo izquierdo</label>
+                            <label for="VP_OI" class="col-sm-2 col-form-label">VP- Ojo izquierdo</label>
                             <div class="col-sm-10">
-                                <input required type="text" class="form-control" id="VP-OI" name="VP-OI" placeholder="Ingrese VP ojo izquierdo">
+                                <input required type="text" class="form-control" id="VP_OI" name="VP_OI" placeholder="Ingrese VP- ojo izquierdo">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="VP-OI" class="col-sm-2 col-form-label">VP- Ojo izquierdo</label>
+                            <label for="DNP_OD" class="col-sm-2 col-form-label">DNP- Ojo derecho</label>
                             <div class="col-sm-10">
-                                <input required type="text" class="form-control" id="VP-OI" name="VP-OI" placeholder="Ingrese VP ojo izquierdo">
+                                <input required type="text" class="form-control" id="DNP_OD" name="DNP_OD" placeholder="Ingrese DNP- ojo derecho">
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="DNP_OI" class="col-sm-2 col-form-label">DNP- Ojo izquierdo</label>
+                            <div class="col-sm-10">
+                                <input required type="text" class="form-control" id="DNP_OI" name="DNP_OI" placeholder="Ingrese DNP- ojo izquierdo">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="AB_OD" class="col-sm-2 col-form-label">AB- Ojo derecho</label>
+                            <div class="col-sm-10">
+                                <input required type="text" class="form-control" id="AB_OD" name="AB_OD" placeholder="Ingrese AB- ojo derecho">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="AB_OI" class="col-sm-2 col-form-label">AB- Ojo izquierdo</label>
+                            <div class="col-sm-10">
+                                <input required type="text" class="form-control" id="AB_OI" name="AB_OI" placeholder="Ingrese AB- ojo izquierdo">
+                            </div>
+                        </div>
+
 
                         <!-- /.card-body -->
                         <div class="card-footer">
