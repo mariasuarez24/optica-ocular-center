@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="<?= $baseURL; ?>/Vistas/">Optica-Ocular-Center</a></li>
+                            <li class="breadcrumb-item"><a href="<?= $baseURL; ?>/Vistas/">optica-ocular-center</a></li>
                             <li class="breadcrumb-item active">Inicio</li>
                         </ol>
                     </div>
@@ -41,7 +41,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form class="form-horizontal" method="post" id="frmCreateMotivoConsulta" name="frmCreateMotivoConsulta" action="../../../app/Controlador/MotivoConsultaControlador.php?action=create">
+                <form class="form-horizontal" method="post" id="frmCreateMotivoConsulta" name="frmCreateMotivoConsulta" action="../../../App/Controlador/MotivoConsultaControlador.php?action=create">
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="Motivos Consulta" class="col-sm-2 col-form-label">Motivos Consulta</label>
@@ -54,8 +54,8 @@
                         <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                         <div class="col-sm-10">
                             <select id="Estado" name="Estado" class="custom-select">
-                                <option value="C.C">Activo</option>
-                                <option value="T.I">Inactivo</option>
+                                <option value="Activo">Activo</option>
+                                <option value="Inactivo">Inactivo</option>
 
                             </select>
                         </div>

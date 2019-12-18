@@ -6,14 +6,14 @@ include ('db_abstract_class.php');
 
 class FormulaMedica extends db_abstract_class
 {
-    private $idFormulaMedica;
+    private $idFormulamedica;
     private $Fecha;
     private $Descripcion;
     private $Prescripcion_idPrescripcion_final;
 
     /**
      * FormulaMedica constructor.
-     * @param $idFormulaMedica
+     * @param $idFormulamedica
      * @param $Fecha
      * @param $Descripcion
      * @param $Prescripcion_idPrescripcion_final
@@ -22,7 +22,7 @@ class FormulaMedica extends db_abstract_class
     public function __construct($idFormulaMedica = array())
     {
         parent::__construct();
-        $this->idFormulaMedica = $FormulaMedica ['$idFormulaMedica'] ?? null;
+        $this->idFormulamedica = $FormulaMedica ['$idFormulamedica'] ?? null;
         $this->Fecha = $FormulaMedica['Fecha'] ?? null;
         $this->Descripcion = $FormulaMedica ['Descripcion'] ?? null;
         $this->Prescripcion_idPrescripcion_final = $FormulaMedica ['$Prescripcion_idPrescripcion_final'] ?? null;
@@ -38,17 +38,17 @@ class FormulaMedica extends db_abstract_class
      * @return mixed
      */
 
-    public function getIdFormulaMedica()
+    public function getidFormulamedica()
     {
-        return $this->idFormulaMedica;
+        return $this->idFormulamedica;
     }
 
     /**
-     * @param mixed $idFormulaMedica
+     * @param mixed $idFormulamedica
      */
-    public function setIdFormulaMedica( $idFormulaMedica): void
+    public function setIdFormulaMedica( $idFormulamedica): void
     {
-        $this->idFormulaMedica = $idFormulaMedica;
+        $this->idFormulamedica = $idFormulamedica;
     }
 
     /**
@@ -94,7 +94,7 @@ class FormulaMedica extends db_abstract_class
     /**
      * @param mixed $Prescripcion_idPrescripcion_final
      */
-    public function setPrescripcionIdPrescripcionFinal($Prescripcion_idPrescripcion_final): void
+    public function setPrescripcionIdPrescripcionFinal($Prescripcion_idPrescripcion_final):string
     {
         $this->Prescripcion_idPrescripcion_final = $Prescripcion_idPrescripcion_final;
     }
@@ -127,7 +127,7 @@ class FormulaMedica extends db_abstract_class
         $this->Disconnect();
         return $result;
     }
-    public function deleted($idFormulaMedica) : void
+    public function deleted($idFormulamedica) : void
     {
         // TODO: Implement deleted() method.
     }
@@ -140,31 +140,31 @@ class FormulaMedica extends db_abstract_class
 
 
         foreach ($getrows as $valor) {
-            $idFormulaMedica = new FormulaMedica();
-            $idFormulaMedica->idFormulaMedica = $valor['$idFormulaMedica'];
-            $idFormulaMedica->Fecha = $valor['Fecha'];
-            $idFormulaMedica->Descripcion = $valor['Descripcion'];
-            $idFormulaMedica->Prescripcion_idPrescripcion_final = $valor['Prescripcion_idPrescripcion_final'];
-            $idFormulaMedica->Disconnect();
-            array_push($arrFormulaMedica, $idFormulaMedica);
+            $idFormulamedica = new FormulaMedica();
+            $idFormulamedica->idFormulamedica = $valor['$idFormulamedica'];
+            $idFormulamedica->Fecha = $valor['Fecha'];
+            $idFormulamedica->Descripcion = $valor['Descripcion'];
+            $idFormulamedica->Prescripcion_idPrescripcion_final = $valor['Prescripcion_idPrescripcion_final'];
+            $idFormulamedica->Disconnect();
+            array_push($arrFormulaMedica, $idFormulamedica);
         }
         $tmp->Disconnect();
         return $arrFormulaMedica;
     }
-    public static function searchForId($idFormulaMedica) : FormulaMedica
+    public static function searchForId($idFormulamedica) : FormulaMedica
     {
-        $idFormulaMedica = new FormulaMedica();
-        if ($idFormulaMedica > 0){
-            $getrow = $idFormulaMedica->getRow("SELECT * FROM optica.formula_medica WHERE $idFormulaMedica =?", array($idFormulaMedica));
-            $idFormulaMedica->id = $getrow['$idFormulaMedica'];
-            $idFormulaMedica->Fecha = $getrow['Fecha'];
-            $idFormulaMedica->Descripcion = $getrow['Descripcion'];
-            $idFormulaMedica->Prescripcion_idPrescripcion_final = $getrow['Prescripcion_idPrescripcion_final'];
-            $idFormulaMedica->Disconnect();
-            return $idFormulaMedica;
+        $idFormulamedica = new FormulaMedica();
+        if ($idFormulamedica > 0){
+            $getrow = $idFormulamedica->getRow("SELECT * FROM optica.formula_medica WHERE $idFormulamedica =?", array($idFormulamedica));
+            $idFormulamedica->idFormulamedica = $getrow['$idFormulamedica'];
+            $idFormulamedica->Fecha = $getrow['Fecha'];
+            $idFormulamedica->Descripcion = $getrow['Descripcion'];
+            $idFormulamedica->Prescripcion_idPrescripcion_final = $getrow['Prescripcion_idPrescripcion_final'];
+            $idFormulamedica->Disconnect();
+            return $idFormulamedica;
         }else{
-            $idFormulaMedica->Disconnect();
-            unset($idFormulaMedica);
+            $idFormulamedica->Disconnect();
+            unset($idFormulamedica);
             return NULL;
         }
     }
@@ -173,9 +173,9 @@ class FormulaMedica extends db_abstract_class
         return FormulaMedica::search("SELECT * FROM optica.formula_medica");
     }
 
-    public static function FormulaMedicaRegistrada ($Descripcion) : bool
+    public static function FormulaMedicaRegistrada ($Fecha) : bool
     {
-        $result = FormulaMedica::search("SELECT id FROM optica.formula_medica where Descripcion = ".$Descripcion);
+        $result = FormulaMedica::search("SELECT idFormulamedica FROM optica.formula_medica where Descripcion = ".$Fecha);
         if (count($result) > 0){
             return true;
         }else{

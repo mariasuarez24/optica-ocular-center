@@ -7,26 +7,24 @@ include ('db_abstract_class.php');
 class ExamenesHistorial extends db_abstract_class
 {
     private $idExamenesHistorial;
-    private $Valores_paremetros_idValoresParametros;
+    private $Valores_parametros_idValoresParametros;
     private $Ojo_Derecho;
     private $Ojo_Izquierdo;
     private $historial_idHistorial;
     /**
      * ExamenesHistorial constructor.
      * @param $idExamenHistorial
-     * @param $Valores_paremetros_idValoresParametros
+     * @param $Valores_parametros_idValoresParametros
      * @param $Ojo_Derecho
      * @param $Ojo_Izquierdo
      * @param $historial_idHistorial
      */
-    /**
-     * ExamenesHistorial constructor.
-     */
+
     public function __construct()
     {
         parent::__construct();
         $this->idExamenesHistorial = $ExamenesHistorial ['idExamenHistorial'] ?? null;
-        $this->Valores_paremetros_idValoresParametros = $ExamenesHistorial['Valores_paremetros_idValoresParametros'] ?? null;
+        $this->Valores_parametros_idValoresParametros = $ExamenesHistorial['Valores_parametros_idValoresParametros'] ?? null;
         $this->Ojo_Derecho = $ExamenesHistorial ['Ojo_Derecho'] ?? null;
         $this->Ojo_Izquierdo = $ExamenesHistorial['Ojo_Izquierdo'] ?? null;
         $this->historial_idHistorial = $ExamenesHistorial ['historial_idHistorial'] ?? null;
@@ -57,17 +55,17 @@ class ExamenesHistorial extends db_abstract_class
     /**
      * @return mixed
      */
-    public function getValores_paremetros_idValoresParametros()
+    public function getValores_parametros_idValoresParametros()
     {
-        return $this->Valores_paremetros_idValoresParametros;
+        return $this->Valores_parametros_idValoresParametros;
     }
 
     /**
-     * @param mixed $Descripcion
+     * @param mixed $Valores_paremetros_idValoresParametros
      */
-    public function setValores_paremetros_idValoresParametros($Valores_paremetros_idValoresParametros): void
+    public function setValores_parametros_idValoresParametros($Valores_parametros_idValoresParametros): string
     {
-        $this->Valores_paremetros_idValoresParametros = $Valores_paremetros_idValoresParametros;
+        $this->Valores_paremetros_idValoresParametros = $Valores_parametros_idValoresParametros;
     }
 
     /**
@@ -111,7 +109,7 @@ class ExamenesHistorial extends db_abstract_class
     }
 
     /**
-     * @param mixed $Ojo_Historial
+     * @param mixed $Historial
      */
     public function sethistorial_idHistorial($historial_idHistorial): void
     {
@@ -126,7 +124,7 @@ class ExamenesHistorial extends db_abstract_class
     public function create(): bool
     {
         $result = $this->insertRow("INSERT INTO optica.examenes_historial  VALUES (NULL, ?, ?, ?, ?)", array(
-                $this->Valores_paremetros_idValoresParametros,
+                $this->Valores_parametros_idValoresParametros,
                 $this->Ojo_Derecho,
                 $this->Ojo_Izquierdo,
                 $this->historial_idHistorial,
@@ -139,8 +137,8 @@ class ExamenesHistorial extends db_abstract_class
 
     public function update(): bool
     {
-        $result = $this->updateRow("UPDATE optica.examenes_historial SET $this->Valores_paremetros_idValoresParametros = ?, $this->Ojo_Derecho = ?,  $this->Ojo_Izquierdo = ?, $this->historial_idHistorial = ? WHERE $this->idExamenesHistorial = ?", array(
-                $this->Valores_paremetros_idValoresParametros,
+        $result = $this->updateRow("UPDATE optica.examenes_historial SET $this->Valores_parametros_idValoresParametros = ?, $this->Ojo_Derecho = ?,  $this->Ojo_Izquierdo = ?, $this->historial_idHistorial = ? WHERE $this->idExamenesHistorial = ?", array(
+                $this->Valores_parametros_idValoresParametros,
                 $this->Ojo_Derecho,
                 $this->Ojo_Izquierdo,
                 $this->historial_idHistorial,
@@ -165,7 +163,7 @@ class ExamenesHistorial extends db_abstract_class
         foreach ($getrows as $valor) {
             $idExamenesHistorial = new ExamenesHistorial();
             $idExamenesHistorial->idExamenesHistorial = $valor['idExamenesHistorial'];
-            $idExamenesHistorial->Valores_paremetros_idValoresParametros = $valor['Valores_paremetros_idValoresParametros'];
+            $idExamenesHistorial->Valores_parametros_idValoresParametros = $valor['Valores_parametros_idValoresParametros'];
             $idExamenesHistorial->Ojo_Derecho = $valor['Ojo_Derecho'];
             $idExamenesHistorial->Ojo_Izquierdo = $valor['Ojo_Izquierdo'];
             $idExamenesHistorial->historial_idHistorial = $valor['historial_idHistorial'];
@@ -182,7 +180,7 @@ class ExamenesHistorial extends db_abstract_class
         if ($idExamenesHistorial > 0) {
             $getrow = $idExamenesHistorial->getRow("SELECT * FROM optica.examenes_historial WHERE idExamenesHistorial =?", array($idExamenesHistorial));
             $idExamenesHistorial->idExamenesHistorial = $getrow['idExamenesHistorial'];
-            $idExamenesHistorial->Valores_paremetros_idValoresParametros = $getrow['Valores_paremetros_idValoresParametros'];
+            $idExamenesHistorial->Valores_parametros_idValoresParametros = $getrow['Valores_parametros_idValoresParametros'];
             $idExamenesHistorial->Ojo_Derecho = $getrow['Ojo_Derecho'];
             $idExamenesHistorial->Ojo_Izquierdo = $getrow['Ojo_Izquierdo'];
             $idExamenesHistorial->historial_idHistorial = $getrow['historial_idHistorial'];
@@ -197,12 +195,12 @@ class ExamenesHistorial extends db_abstract_class
 
     public static function getAll(): array
     {
-        return MotivoConsulta::search("SELECT * FROM optica.examenes_historial");
+        return ExamenesHistorial::search("SELECT * FROM optica.examenes_historial");
     }
 
-    public static function MotivoConsultaRegistrado($Descripcion): bool
+    public static function ExamenesHistorialRegistrado($Descripcion): bool
     {
-        $result = MotivoConsulta::search("SELECT id FROM optica.examenes_historial where Valores_paremetros_idValoresParametros = " . $Valores_paremetros_idValoresParametros);
+        $result = ExamenesHistorial::search("SELECT id FROM optica.examenes_historial where Valores_paremetros_idValoresParametros = " . $Valores_paremetros_idValoresParametros);
         if (count($result) > 0) {
             return true;
         } else {

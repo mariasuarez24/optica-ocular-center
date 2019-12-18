@@ -5,7 +5,7 @@ include ('db_abstract_class.php');
 
 class MotivoConsulta extends db_abstract_class
 {
-    private $idMotivoConsulta;
+    private $idMotivos_consulta;
     private $Descripcion;
     private $Estado;
 
@@ -18,7 +18,7 @@ class MotivoConsulta extends db_abstract_class
     public function __construct($MotivoConsulta = array())
     {
         parent::__construct();
-        $this->idMotivoConsulta = $MotivoConsulta ['id'] ?? null;
+        $this->idMotivoConsulta = $MotivoConsulta ['$idMotivos_consulta'] ?? null;
         $this->Descripcion = $MotivoConsulta['Descripcion'] ?? null;
         $this->Estado = $MotivoConsulta ['Estado'] ?? null;
     }
@@ -30,17 +30,17 @@ class MotivoConsulta extends db_abstract_class
     /**
      * @return mixed
      */
-    public function getIdMotivoConsulta()
+    public function getidMotivos_consulta()
     {
-        return $this->idMotivoConsulta;
+        return $this->idMotivos_consulta;
     }
 
     /**
-     * @param mixed $idMotivoConsulta
+     * @param mixed idMotivos_consulta
      */
-    public function setIdMotivoConsulta($idMotivoConsulta): void
+    public function setidMotivos_consulta($idMotivos_consulta): void
     {
-        $this->idMotivoConsulta = $idMotivoConsulta;
+        $this->idMotivos_consulta = $idMotivos_consulta;
     }
 
     /**
@@ -93,7 +93,7 @@ $this->Disconnect();
    }
 public function update(): bool
 {
-  $result = $this->updateRow ("UPDATE optica.MotivoConsulta SET $this->Descripcion = ?, $this->Estado = ? WHERE $this->idMotivoConsulta = ?", array(
+  $result = $this->updateRow ("UPDATE optica.motivos_consulta SET $this->Descripcion = ?, $this->Estado = ? WHERE $this->idMotivos_consulta = ?", array(
               $this->Descripcion,
               $this->Estado,
               )
@@ -101,7 +101,7 @@ public function update(): bool
      $this->Disconnect();
         return $result;
     }
-    public function deleted($idMotivoConsulta) : void
+    public function deleted($idMotivos_consulta) : void
     {
         // TODO: Implement deleted() method.
     }
@@ -114,40 +114,40 @@ public function update(): bool
 
 
       foreach ($getrows as $valor) {
-            $idMotivoConsulta = new MotivoConsulta();
-            $idMotivoConsulta->id = $valor['$idMotivoConsulta'];
-            $idMotivoConsulta->Descripcion = $valor['Descripcion'];
-            $idMotivoConsulta->Estado = $valor['Estado'];
-            $idMotivoConsulta->Disconnect();
-            array_push($arrMotivoConsulta, $idMotivoConsulta);
+          $idMotivos_consulta = new MotivoConsulta();
+          $idMotivos_consulta->idMotivos_consulta = $valor['idMotivos_consulta'];
+          $idMotivos_consulta->Descripcion = $valor['Descripcion'];
+          $idMotivos_consulta->Estado = $valor['Estado'];
+          $idMotivos_consulta->Disconnect();
+            array_push($arrMotivoConsulta, $idMotivos_consulta);
         }
         $tmp->Disconnect();
         return $arrMotivoConsulta;
     }
- public static function searchForId($idMotivoConsulta) : MotivoConsulta
+ public static function searchForId($idMotivos_consulta) : MotivoConsulta
     {
         $idMotivoConsulta = new MotivoConsulta();
         if ($idMotivoConsulta > 0){
-            $getrow = $idMotivoConsulta->getRow("SELECT * FROM optica.MotivoConsulta WHERE idMotivoConsulta =?", array($idMotivoConsulta));
-            $idMotivoConsulta->id = $getrow['idMotivoConsulta'];
-            $idMotivoConsulta->Descripcion = $getrow['Descripcion'];
-            $idMotivoConsulta->Estado = $getrow['Estado'];
-            $idMotivoConsulta->Disconnect();
-            return $idMotivoConsulta;
+            $getrow = $idMotivoConsulta->getRow("SELECT * FROM optica.motivos_consulta WHERE idMotivos_consulta =?", array($idMotivos_consulta));
+            $idMotivos_consulta->id = $getrow['idMotivos_consulta'];
+            $idMotivos_consulta->Descripcion = $getrow['Descripcion'];
+            $idMotivos_consulta->Estado = $getrow['Estado'];
+            $idMotivos_consulta->Disconnect();
+            return $idMotivos_consulta;
         }else{
             $idMotivoConsulta->Disconnect();
-            unset($idMotivoConsulta);
+            unset($idMotivos_consulta);
             return NULL;
         }
     }
       public static function getAll() : array
     {
-        return MotivoConsulta::search("SELECT * FROM optica.MotivoConsulta");
+        return MotivoConsulta::search("SELECT * FROM optica.motivos_consulta");
     }
 
     public static function MotivoConsultaRegistrado ($Descripcion) : bool
     {
-        $result = MotivoConsulta::search("SELECT id FROM optica.MotivoConsulta where Descripcion = ".$Descripcion);
+        $result = MotivoConsulta::search("SELECT idMotivos_consulta FROM optica.motivos_consulta where Descripcion = '".$Descripcion."';");
         if (count($result) > 0){
             return true;
         }else{

@@ -1,15 +1,13 @@
 <?php
 
 namespace App\Controlador;
-
-require('../Modelos/MotivoConsulta.php');
+require(__DIR__.'/../Modelos/MotivoConsulta.php');
 use App\Modelos\MotivoConsulta;
 
 if(!empty($_GET['action'])){
     MotivoConsultaControlador::main($_GET['action']);
-}else{
-    echo "No se encontro ninguna accion...";
 }
+
 
 class  MotivoConsultaControlador{
 
@@ -17,35 +15,106 @@ class  MotivoConsultaControlador{
     {
         if ($action == "create") {
             MotivoConsultaControlador::create();
-        }/* else if ($action == "editar") {
-            MotivoConsultaControlador::editar();
-        } else if ($action == "buscarID") {
-             MotivoConsultaControlador::buscarID($_REQUEST['idMotivoConsulta']);
-        } else if ($action == "ActivarMotivoConsulta") {
-          MotivoConsultaControlador::ActivarMotivoConsulta();
-        } else if ($action == "InactivarMotivoConsulta") {
-              MotivoConsultaControlador::InactivarMotivoConsulta();
-        }else if ($action == "Estado"){
-          MotivoConsultaControlador::login();
-        }else if($action == "cerrarsession"){
-              MotivoConsultaControlador::cerrarsession();
-
-    }*/
+        } else if ($action == "edit") {
+            MotivoConsultaControlador::edit();
+        } else if ($action == "searchForID") {
+            MotivoConsultaControlador::searchForID($_REQUEST['idMotivos_consulta']);
+        } else if ($action == "searchAll") {
+            MotivoConsultaControlador::getAll();
+        } else if ($action == "activate") {
+            MotivoConsultaControlador::activate();
+        } else if ($action == "inactivate") {
+            MotivoConsultaControlador::inactivate();
+        }/*else if ($action == "login"){
+            MotivoConsultaControlador::login();
+        }else if($action == "cerrarSession"){
+            MotivoConsultaControlador::cerrarSession();
+        }*/
 
     }
-        static public function create()
-        {
-            try {
-                $arraymotivos_consulta = array();
-                $arraymotivos_consulta['Descripcion'] = $_POST['Descripcion'];
-                $arraymotivos_consulta['Estado'] = $_POST['Estado'];
-                $motivos_consulta = new MotivoConsulta ($arraymotivos_consulta);
-                $motivos_consulta->create();
-                header("Location: ../../Vistas/modules/motivos_consulta/index.php?respuesta=correcto&action=create");
-            } catch (Exception $e) {
-                header("Location: ../../Vistas/modules/motivos_consulta/create.php?respuesta=error&mensaje=" . $e->getMessage());
+    static public function create()
+    {
+        try {
+            $arrayMotivoConsulta = array();
+            $arrayMotivoConsulta['Descripcion'] = $_POST['Descripcion'];
+            $arrayMotivoConsulta['Estado'] = 'Activo';
+            if(!MotivoConsulta::MotivoConsultaRegistrado($arrayMotivoConsulta['Descripcion'])){
+                $MotivoConsulta = new MotivoConsulta($arrayMotivoConsulta);
+                if($MotivoConsulta->create()){
+                    header("Location: ../../Vistas/modules/motivos_consulta/index.php?respuesta=correcto");
+                }
+            }else{
+                header("Location: ../../Vistas/modules/motivos_consulta/create.php?respuesta=error&mensaje=MotivoConsulta ya registrado");
             }
+        } catch (Exception $e) {
+            header("Location: ../../Vistas/modules/motivos_consulta/create.php?respuesta=error&mensaje=" . $e->getMessage());
         }
+    }
+
+    static public function edit (){
+        try {
+            $arrayMotivoConsulta = array();
+            $arrayMotivoConsulta['Descripcion'] = $_POST['Descripcion'];
+            $arrayMotivoConsulta['Estado'] = $_POST['Estado'];
+            $arrayMotivoConsulta['idMotivos_consulta'] = $_POST['id'];
+
+            $user = new MotivoConsulta($arrayMotivoConsulta);
+            $user->update();
+
+            header("Location: ../../Vistas/modules/motivos_consulta/show.php?id=".$user->getIdMotivos_consulta()."&respuesta=correcto");
+        } catch (\Exception $e) {
+            //var_dump($e);
+            header("Location: ../../Vistas/modules/motivos_consulta/edit.php?respuesta=error&mensaje=".$e->getMessage());
+        }
+    }
+
+    static public function activate (){
+        try {
+            $ObjMotivoConsulta = MotivoConsulta::searchForId($_GET['MotivoConsulta']);
+            $ObjMotivoConsulta->setEstado("Activo");
+            if($ObjMotivoConsulta->update()){
+                header("Location: ../../Vistas/modules/motivos_consulta/index.php");
+            }else{
+                header("Location: ../../Vistas/modules/motivos_consulta/index.php?respuesta=error&mensaje=Error al guardar");
+            }
+        } catch (\Exception $e) {
+            //var_dump($e);
+            header("Location: ../../Vistas/modules/motivos_consulta/index.php?respuesta=error&mensaje=".$e->getMessage());
+        }
+    }
+
+    static public function inactivate (){
+        try {
+            $ObjMotivoConsulta = MotivoConsulta::searchForId($_GET['Id']);
+            $ObjMotivoConsulta->setEstado("Inactivo");
+            if($ObjMotivoConsulta->update()){
+                header("Location: ../../Vistas/modules/motivos_consulta/index.php");
+            }else{
+                header("Location: ../../Vistas/modules/motivos_consulta/index.php?respuesta=error&mensaje=Error al guardar");
+            }
+        } catch (\Exception $e) {
+            //var_dump($e);
+            header("Location: ../../Vistas/modules/motivos_consulta/index.php?respuesta=error");
+        }
+    }
+
+    static public function searchForID ($idMotivos_consulta){
+        try {
+            return MotivoConsulta::searchForId($idMotivos_consulta);
+        } catch (\Exception $e) {
+            var_dump($e);
+            //header("Location: ../../Vistas/modules/motivos_consulta/manager.php?respuesta=error");
+        }
+    }
+
+    static public function getAll (){
+        try {
+            return MotivoConsulta::getAll();
+        } catch (\Exception $e) {
+            var_dump($e);
+            //header("Location: ../Vista/modules/motivos_consulta/manager.php?respuesta=error");
+        }
+    }
 
     /*public static function personaIsInArray($idPersona, $ArrPersonas){
         if(count($ArrPersonas) > 0){
@@ -83,91 +152,9 @@ class  MotivoConsultaControlador{
         }
         $htmlSelect .= "</select>";
         return $htmlSelect;
-    }
+    }*/
 
-
-    static public function editar (){
-        try {
-            $arrayPersona = array();
-            $arrayPersona['Tipo_Documento'] = $_POST['Tipo_Documento'];
-            $arrayPersona['Documento'] = $_POST['Documento'];
-            $arrayPersona['Nombres'] = $_POST['Nombres'];
-            $arrayPersona['Apellidos'] = $_POST['Apellidos'];
-            $arrayPersona['Telefono'] = $_POST['Telefono'];
-            $arrayPersona['Direccion'] = $_POST['Direccion'];
-            $arrayPersona['Correo'] = $_POST['Correo'];
-            $arrayPersona['NRP'] = (!empty($_POST['NRP']) ? $_POST['NRP'] : NULL);
-            $arrayPersona['Profesion'] = (!empty($_POST['NRP']) ? $_POST['Profesion'] : NULL);
-            $arrayPersona['Usuario'] = $_POST['Usuario'];
-            $arrayPersona['Contrasena'] = $_POST['Contrasena'];
-            $arrayPersona['Tipo_Usuario'] = $_POST['Tipo_Usuario'];
-            $arrayPersona['Observaciones'] = (!empty($_POST['Observaciones']) ? $_POST['Observaciones'] : NULL);
-            $arrayPersona['Estado'] = $_POST['Estado'];
-            $arrayPersona['idPersona'] = $_POST['idPersona'];
-
-            //Subir el archivo
-            if (!empty($_FILES['Foto']) && ($_FILES['Foto']["name"] != "" )){
-                var_dump($_FILES['Foto']);
-                $NameFile = GeneralFunctions::SubirArchivo($_FILES['Foto'],'../Vista/filesUploaded/');
-                if ($NameFile != false){
-                    $arrayPersona['Foto'] = $NameFile;
-                }else{
-                    throw new Exception('La imagen no se pudo subir.');
-                }
-            }else{
-                $persona = UsuariosController::buscarID($arrayPersona['idPersona']);
-                $arrayPersona['Foto'] = $persona->getFoto();
-            }
-
-            $person = new Persona($arrayPersona);
-            $person->editar();
-
-            header("Location: ../Vista/modules/persona/view.php?id=".$person->getIdPersona()."&respuesta=correcto");
-        } catch (Exception $e) {
-            var_dump($e);
-            //header("Location: ../Vista/modules/persona/edit.php?respuesta=error");
-        }
-    }
-
-    static public function ActivarPersona (){
-        try {
-            $ObjPersona = Persona::buscarForId($_GET['IdPersona']);
-            $ObjPersona->setEstado("Activo");
-            $ObjPersona->editar();
-            header("Location: ../Vista/modules/persona/manager.php");
-        } catch (Exception $e) {
-            header("Location: ../Vista/modules/persona/manager.php?respuesta=error");
-        }
-    }
-
-    static public function InactivarPersona (){
-        try {
-            $ObjPersona = Persona::buscarForId($_GET['IdPersona']);
-            $ObjPersona->setEstado("Inactivo");
-            $ObjPersona->editar();
-            header("Location: ../Vista/modules/persona/manager.php");
-        } catch (Exception $e) {
-            var_dump($e);
-            //header("Location: ../Vista/modules/persona/manager.php?respuesta=error");
-        }
-    }
-
-    static public function buscarID ($id){
-        try {
-            return Persona::buscarForId($id);
-        } catch (Exception $e) {
-            header("Location: ../Vista/modules/persona/manager.php?respuesta=error");
-        }
-    }
-
-    public function buscarAll (){
-        try {
-            return Persona::getAll();
-        } catch (Exception $e) {
-            header("Location: ../Vista/modules/persona/manager.php?respuesta=error");
-        }
-    }
-
+    /*
     public function buscar ($Query){
         try {
             return Persona::buscar($Query);

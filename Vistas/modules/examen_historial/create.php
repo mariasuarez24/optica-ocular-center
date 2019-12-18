@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="<?= $baseURL; ?>/Vistas/">Optica-Ocular-Center</a></li>
+                            <li class="breadcrumb-item"><a href="<?= $baseURL; ?>/Vistas/">optica-ocular-center</a></li>
                             <li class="breadcrumb-item active">Inicio</li>
                         </ol>
                     </div>
@@ -34,6 +34,17 @@
 
         <!-- Main content -->
         <section class="content">
+
+            <?php if(!empty($_GET['respuesta'])){ ?>
+                <?php if ($_GET['respuesta'] != "correcto"){ ?>
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h5><i class="icon fas fa-ban"></i> Error!</h5>
+                        Error al crear el examen historial: <?= $_GET['mensaje'] ?>
+                    </div>
+                <?php } ?>
+            <?php } ?>
+
             <!-- Horizontal Form -->
             <div class="card card-info">
                 <div class="card-header">
@@ -44,9 +55,9 @@
             <form class="form-horizontal" method="post" id="frmCreateExamenesHistorial" name="frmCreateExamenesHistorial" action="../../../App/Controlador/ExamenesHistorialControlador.php?action=create">
                     <div class="card-body">
                             <div class="form-group row">
-                                <label for="Valores_Paremetros_idValoresParametros" class="col-sm-2 col-form-label">Valores_Paremetros_idValoresParametros</label>
+                                <label for="Valores_Parametros_idValoresParametros" class="col-sm-2 col-form-label">Valores_Parametros_idValoresParametros</label>
                                 <div class="col-sm-10">
-                                    <select id="Valores_Paremetros_idValoresParametros" name="Valores_Paremetros_idValoresParametros" class="custom-select">
+                                    <select id="Valores_Parametros_idValoresParametros" name="Valores_Parametros_idValoresParametros" class="custom-select">
                                         <option value=""></option>
                                         <option value=""></option>
                                     </select>
@@ -78,14 +89,9 @@
                                                 <option value=""></option>
                                             </select>
                                         </div>
-                     </div>
-          <!-- /.card-body -->
-            <div class="card-footer">
-                  <button type="submit" class="btn btn-info">Enviar</button>
-                 <button type="submit" class="btn btn-default float-right">Cancelar</button>
-            </div>
-             <!-- /.card-footer -->
-                </form>
+                                    </div>
+                                    <!-- /.card-footer -->
+            </form>
             </div>
             <!-- /.card -->
         </section>

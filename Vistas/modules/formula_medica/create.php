@@ -43,15 +43,15 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form class="form-horizontal" method="post" id="frmCreateFormula Medica" name="frmCreateFormula Medica" action="../../../app/Controlador/FormulaMedicaControlador.php?action=create">
+                    <form class="form-horizontal" method="post" id="frmCreateFormulamedica" name="frmCreateFormulamedica" action="../../../App/Controlador/FormulaMedicaControlador.php?action=create">
                         <div class="form-group row">
-                            <label for="fecha" class="col-sm-2 col-form-label">Fecha</label for="fecha">
+                            <label for="Fecha" class="col-sm-2 col-form-label">Fecha</label for="Fecha">
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                     </div>
-                                    <input type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
+                                    <input type="date" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" id="Fecha" name="Fecha" im-insert="false">
                                 </div>
                             </div>
                         </div>

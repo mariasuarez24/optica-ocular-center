@@ -1,9 +1,16 @@
-<?php require("../../partials/routes.php"); ?>
+<?php require("../../partials/routes.php");
+require("../../../App/Controlador/FormulaMedicaControlador.php");
+
+use App\Controlador\FormulaMedica; ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title><?= getenv('TITLE_SITE') ?> | Layout</title>
     <?php require("../../partials/head_imports.php"); ?>
+    <!-- DataTables -->
+    <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-responsive/css/responsive.bootstrap4.css">
+    <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-buttons/css/buttons.bootstrap4.css">
 </head>
 <body class="hold-transition sidebar-mini">
 
@@ -41,7 +48,7 @@
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                         <h5><i class="icon fas fa-check"></i> Correcto!</h5>
                         <?php if ($_GET['action'] == "create"){ ?>
-                            formula medica ha sido creado con exito!
+                            Formula Medica ha sido creado con exito!
                         <?php }else if($_GET['action'] == "update"){ ?>
                             Los datos de Formula Medica han sido actualizados correctamente!
                         <?php } ?>
@@ -68,25 +75,52 @@
                             </a>
                         </div>
                     </div>
-                </div><!-- /.container-fluid -->
-        </section>
-        <!-- Main content -->
-        <section class="content">
-
-            <!-- Default box -->
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Título Modulo</h3>
-
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                            <i class="fas fa-minus"></i></button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-                            <i class="fas fa-times"></i></button>
+                    <div class="row">s
+                        <div class="col">
+                            <table id="tblFormulamedica" class="datatable table table-bordered table-striped">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Fecha</th>
+                                    <th>Descripcion</th>
+                                    <th>Prescripcion_idPrescripcion_final</th>
+                                    <th>Acciones</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                $arrFormulamedica = FormulaMedicaControlador::getAll();
+                                foreach ($arrFormulamedica as $Formulamedica){
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $Formulamedica->getidFormulamedica(); ?></td>
+                                        <td><?php echo $Formulamedica->getFecha(); ?></td>
+                                        <td><?php echo $Formulamedica->getDescripcion(); ?></td>
+                                        <td><?php echo $Formulamedica->getPrescripcion_idPrescripcion_final(); ?></td>
+                                        <td>
+                                            <a href="edit.php?id=<?php echo $Formulamedica->getidFormulamedica(); ?>" type="button" data-toggle="tooltip" title="Actualizar" class="btn docs-tooltip btn-primary btn-xs"><i class="fa fa-edit"></i></a>
+                                            <a href="show.php?id=<?php echo $Formulamedica->getidFormulamedica(); ?>" type="button" data-toggle="tooltip" title="Ver" class="btn docs-tooltip btn-warning btn-xs"><i class="fa fa-eye"></i></a>
+                                            <?php if ($Formulamedica->getPrescripcion_idPrescripcion_final() != ""){ ?>
+                                                <a href="../../../App/Controlador/FormulaMedicaControlador.php?action=activate&id=<?php echo $Formulamedica->getidFormulamedica(); ?>" type="button" data-toggle="tooltip" title="Activar" class="btn docs-tooltip btn-success btn-xs"><i class="fa fa-check-square"></i></a>
+                                            <?php }else{ ?>
+                                                <a type="button" href="../../../App/Controlador/FormulaMedicaControlador.php?action=inactivate&Id=<?php echo $Formulamedica->getidFormulamedica(); ?>" data-toggle="tooltip" title="Inactivar" class="btn docs-tooltip btn-danger btn-xs"><i class="fa fa-times-circle"></i></a>
+                                            <?php } ?>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Fecha</th>
+                                    <th>Descripcion</th>
+                                    <th>Prescripcion_idPrescripcion_final</th>
+                                    <th>Acciones</th>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
                     </div>
-                </div>
-                <div class="card-body">
-                    Contenido del modulo
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
@@ -104,5 +138,41 @@
 </div>
 <!-- ./wrapper -->
 <?php require ('../../partials/scripts.php');?>
+<!-- DataTables -->
+<script src="<?= $adminlteURL ?>/plugins/datatables/jquery.dataTables.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-responsive/js/dataTables.responsive.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-responsive/js/responsive.bootstrap4.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-buttons/js/dataTables.buttons.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-buttons/js/buttons.bootstrap4.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/jszip/jszip.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/pdfmake/pdfmake.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-buttons/js/buttons.html5.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-buttons/js/buttons.print.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-buttons/js/buttons.colVis.js"></script>
+
+<script>
+    $(function () {
+        $('.datatable').DataTable({
+            "dom": 'Bfrtip',
+            "paging": true,
+            "lengthChange": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": true,
+            "language": {
+                "url": "../../components/Spanish.json" //Idioma
+            },
+            "buttons": [
+                'copy', 'print', 'excel', 'pdf'
+            ],
+            "pagingType": "full_numbers",
+            "responsive": true,
+            "stateSave" : true, //Guardar la configuracion de formula medica
+        });
+    });
+</script>
+
 </body>
 </html>
