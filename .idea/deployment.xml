@@ -5,7 +5,7 @@
       <paths name="laragon">
         <serverdata>
           <mappings>
-            <mapping deploy="/optica-ocular-center" local="$PROJECT_DIR$" web="/optica-ocular-center" />
+            <mapping deploy="\optica-ocular-center" local="$PROJECT_DIR$" web="/optica-ocular-center" />
           </mappings>
         </serverdata>
       </paths>
