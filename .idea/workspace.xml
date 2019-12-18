@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8a912c3-aa07-481e-93fd-4db48831a2ef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/examenes/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/examenes/show.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/parametros/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vistas/modules/parametros/show.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controlador/Examenescontrolador.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controlador/Examenescontrolador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controlador/Parametroscontrolador.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controlador/Parametroscontrolador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Modelos/Examenes.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/Examenes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Modelos/Parametros.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/Parametros.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Modelos/PrescripcionFinal.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/PrescripcionFinal.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/examenes/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/examenes/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/parametros/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/parametros/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/valores_parametros/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/valores_parametros/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vistas/modules/valores_parametros/edit.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
