@@ -141,7 +141,6 @@ use App\Controlador\Prescripcionfinalcontrolador; ?>
                                     <th>AB_OD</th>
                                     <th>AB_OI</th>
                                     <th>Acciones</th>
-
                                 </tr>
                                 </tfoot>
                             </table>
