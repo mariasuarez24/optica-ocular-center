@@ -1,9 +1,9 @@
 <?php
 
-
 namespace App\Controlador;
-require('../Modelos/medico.php');
+require(__DIR__.'/../Modelos/medico.php');
 use App\Modelos\medico;
+
 
 if(!empty($_GET['action'])){
     medicocontrolador::main($_GET['action']);
@@ -11,28 +11,31 @@ if(!empty($_GET['action'])){
     echo "No se encontro ninguna accion...";
 }
 
-class medicocontrolador{
+class medicocontrolador {
+
     static function main($action)
     {
         if ($action == "create") {
             medicocontrolador::create();
-        }/* else if ($action == "editar") {
+        } else if ($action == "editar") {
             medicocontrolador::editar();
         } else if ($action == "buscarID") {
-            medicocontrolador::buscarID($_REQUEST['idPersona']);
+            medicocontrolador::buscarID($_REQUEST['idMedico']);
+        } else if ($action == "searchAll") {
+            personacontrolador::getAll();
         } else if ($action == "Activarmedico") {
             medicocontrolador::Activarmedico();
         } else if ($action == "Inactivarmedico") {
             medicocontrolador::Inactivarmedico();
-        }else if ($action == "login"){
+        }/*else if ($action == "login"){
             medicocontrolador::login();
-        }else if($action == "cerrarSession"){
+           }else if($action == "cerrarSession"){
             medicocontrolador::cerrarSession();
-        }*/
+           }*/
 
     }
 
-    static public function create()
+        static public function create()
     {
         try {
             $arraymedico = array();
@@ -47,11 +50,78 @@ class medicocontrolador{
             }else{
                 header("Location: ../../Vistas/modules/medico/create.php?respuesta=error&mensaje=persona ya registrada");
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             header("Location: ../../Vistas/modules/medico/create.php?respuesta=error&mensaje=" . $e->getMessage());
         }
     }
 
+
+    static public function editar (){
+        try {
+
+            $arraymedico = array();
+            $arraymedico['Especializacion'] = $_POST['Especializacion'];
+            $arraymedico['Licencia'] = $_POST['Licencia'];
+            $arraymedico['getIdMedico'] = $_POST['getIdMedico'];
+
+
+            $user = new medico($arraymedico);
+            $user->update();
+
+            header("Location: ../../Vistas/modules/medico/show.php?id=".$user->getIdMedico()."&respuesta=correcto");
+        } catch (\Exception $e) {
+            //var_dump($e);
+            header("Location: ../../Vistas/modules/medico/edit.php?respuesta=error&mensaje=".$e->getMessage());
+        }
+    }
+
+    static public function Activaracudiente (){
+        try {
+            $Objmedico = medico::searchForIdMedico($_GET['Id']);
+            $Objmedico->setEstado("Activo");
+            if($Objmedico->update()){
+                header("Location: ../../Vistas/modules/medico/index.php");
+            }else{
+                header("Location: ../../Vistas/modules/medico/index.php?respuesta=error&mensaje=Error al guardar");
+            }
+        } catch (\Exception $e) {
+            //var_dump($e);
+            header("Location: ../../Vistas/modules/medico/index.php?respuesta=error&mensaje=".$e->getMessage());
+        }
+    }
+
+    static public function Inactivaracudiente (){
+        try {
+            $Objacudiente = medico::searchForIdMedico($_GET['Id']);
+            $Objacudiente->setEstado("Inactivo");
+            if($Objacudiente->update()){
+                header("Location: ../../Vistas/modules/medico/index.php");
+            }else{
+                header("Location: ../../Vistas/modules/medico/index.php?respuesta=error&mensaje=Error al guardar");
+            }
+        } catch (\Exception $e) {
+            //var_dump($e);
+            header("Location: ../../Vistas/modules/medico/index.php?respuesta=error");
+        }
+    }
+
+    static public function buscarID ($id){
+        try {
+            return medico::searchForIdMedico($id);
+        } catch (\Exception $e) {
+            var_dump($e);
+            //header("Location: ../../views/modules/persona/manager.php?respuesta=error");
+        }
+    }
+
+    static public function getAll (){
+        try {
+            return medico::getAll();
+        } catch (\Exception $e) {
+            var_dump($e);
+            //header("Location: ../Vista/modules/persona/manager.php?respuesta=error");
+        }
+    }
     /*public static function personaIsInArray($idPersona, $ArrPersonas){
         if(count($ArrPersonas) > 0){
             foreach ($ArrPersonas as $Persona){
@@ -239,3 +309,5 @@ class medicocontrolador{
 
 
 }
+
+

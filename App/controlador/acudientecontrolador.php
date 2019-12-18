@@ -2,8 +2,7 @@
 
 
 namespace App\Controlador;
-require('../Modelos/acudiente.php');
-
+require(__DIR__.'/../Modelos/persona.php');
 use App\Modelos\acudiente;
 
 if(!empty($_GET['action'])){
@@ -19,15 +18,17 @@ class acudientecontrolador{
     {
         if ($action == "create") {
             acudientecontrolador::create();
-        }/* else if ($action == "editar") {
+        }else if ($action == "editar") {
             acudientecontrolador::editar();
-        } else if ($action == "buscarID") {
-            acudientecontrolador::buscarID($_REQUEST['idAcudiente']);
+        } else if ($action == "searchForIdAcudiente") {
+            acudientecontrolador::searchForIdAcudiente($_REQUEST['idAcudiente']);
+        } else if ($action == "searchAll") {
+            personacontrolador::getAll();
         } else if ($action == "Activaracudiente") {
             acudientecontrolador::Activaracudiente();
         } else if ($action == "Inactivarpersona") {
             acudientecontrolador::Inactivaracudiente();
-        }else if ($action == "login"){
+        }/* else if ($action == "login"){
             acudientecontrolador::login();
         }else if($action == "cerrarSession"){
             acudientecontrolador::cerrarSession();
@@ -52,6 +53,72 @@ class acudientecontrolador{
             }
         } catch (Exception $e) {
             header("Location: ../../Vistas/modules/acudiente/create.php?respuesta=error&mensaje=" . $e->getMessage());
+        }
+    }
+
+    static public function editar (){
+        try {
+
+            $arrayacudiente = array();
+            $arrayacudiente['parentezco'] = $_POST['parentezco'];
+            $arrayacudiente['getIdAcudiente'] = $_POST['getIdAcudiente'];
+
+
+            $user = new acudiente($arrayacudiente);
+            $user->update();
+
+            header("Location: ../../Vistas/modules/persona/show.php?id=".$user->getIdAcudiente()."&respuesta=correcto");
+        } catch (\Exception $e) {
+            //var_dump($e);
+            header("Location: ../../Vistas/modules/persona/edit.php?respuesta=error&mensaje=".$e->getMessage());
+        }
+    }
+
+    static public function Activaracudiente (){
+        try {
+            $Objpersona = acudiente::searchForIdAcudiente($_GET['Id']);
+            $Objpersona->setEstado("Activo");
+            if($Objpersona->update()){
+                header("Location: ../../Vistas/modules/persona/index.php");
+            }else{
+                header("Location: ../../Vistas/modules/persona/index.php?respuesta=error&mensaje=Error al guardar");
+            }
+        } catch (\Exception $e) {
+            //var_dump($e);
+            header("Location: ../../Vistas/modules/persona/index.php?respuesta=error&mensaje=".$e->getMessage());
+        }
+    }
+
+    static public function Inactivaracudiente (){
+        try {
+            $Objacudiente = acudiente::searchForIdAcudiente($_GET['Id']);
+            $Objacudiente->setEstado("Inactivo");
+            if($Objacudiente->update()){
+                header("Location: ../../Vistas/modules/acudiente/index.php");
+            }else{
+                header("Location: ../../Vistas/modules/acudiente/index.php?respuesta=error&mensaje=Error al guardar");
+            }
+        } catch (\Exception $e) {
+            //var_dump($e);
+            header("Location: ../../Vistas/modules/acudiente/index.php?respuesta=error");
+        }
+    }
+
+    static public function searchForID ($id){
+        try {
+            return acudiente::searchForIdPAcudiente($id);
+        } catch (\Exception $e) {
+            var_dump($e);
+            //header("Location: ../../views/modules/persona/manager.php?respuesta=error");
+        }
+    }
+
+    static public function getAll (){
+        try {
+            return acudiente::getAll();
+        } catch (\Exception $e) {
+            var_dump($e);
+            //header("Location: ../Vista/modules/persona/manager.php?respuesta=error");
         }
     }
 
