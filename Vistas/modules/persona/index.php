@@ -1,9 +1,17 @@
-<?php require("../../partials/routes.php"); ?>
+<?php require("../../partials/routes.php");
+require("../../../App/controlador/personacontrolador.php");
+
+use App\controlador\personacontrolador; ?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <title><?= getenv('TITLE_SITE') ?> | Layout</title>
     <?php require("../../partials/head_imports.php"); ?>
+    <!-- DataTables -->
+    <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-responsive/css/responsive.bootstrap4.css">
+    <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-buttons/css/buttons.bootstrap4.css">
 </head>
 <body class="hold-transition sidebar-mini">
 
@@ -43,7 +51,7 @@
                         <?php if ($_GET['action'] == "create"){ ?>
                             El usuario ha sido creado con exito!
                         <?php }else if($_GET['action'] == "update"){ ?>
-                            Los datos del usuario han sido actualizados correctamente!
+                            Los datos de la persona han sido actualizados correctamente!
                         <?php } ?>
                     </div>
                 <?php } ?>
@@ -52,8 +60,7 @@
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Título Modulo</h3>
-
+                    <h3 class="card-title">Gestionar Persona</h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                             <i class="fas fa-minus"></i></button>
@@ -62,7 +69,89 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    Contenido del modulo
+                    <div class="row">
+                        <div class="col-auto mr-auto"></div>
+                        <div class="col-auto">
+                            <a role="button" href="create.php" class="btn btn-primary float-right" style="margin-right: 5px;">
+                                <i class="fas fa-plus"></i> Crear Persona
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <table id="tblpersona" class="datatable table table-bordered table-striped">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>nombres</th>
+                                    <th>apellidos</th>
+                                    <th>numero_documento</th>
+                                    <th>tipo_documento</th>
+                                    <th>ciudad</th>
+                                    <th>genero</th>
+                                    <th>email</th>
+                                    <th>telefono</th>
+                                    <th>estado</th>
+                                    <th>rol</th>
+                                    <th>direccion</th>
+                                    <th>fecha_nacimiento</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                $arrpersona = personacontrolador::getAll();
+                                foreach ($arrpersona as $persona){
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $persona->getIdPersona(); ?></td>
+                                        <td><?php echo $persona->getNombres(); ?></td>
+                                        <td><?php echo $persona->getApellidos(); ?></td>
+                                        <td><?php echo $persona->getNumeroDocumento(); ?></td>
+                                        <td><?php echo $persona->getTipoDocumento(); ?></td>
+                                        <td><?php echo $persona->getCiudad(); ?></td>
+                                        <td><?php echo $persona->getGenero(); ?></td>
+                                        <td><?php echo $persona->getEmail(); ?></td>
+                                        <td><?php echo $persona->getTelefono(); ?></td>
+                                        <td><?php echo $persona->getEstado(); ?></td>
+                                        <td><?php echo $persona->getrol(); ?></td>
+                                        <td><?php echo $persona->getDireccion(); ?></td>
+                                        <td><?php echo $persona->getestado(); ?></td>
+                                        <td><?php echo $persona->getrol(); ?></td>
+                                        <td><?php echo $persona->getdireccion(); ?></td>
+                                        <td><?php echo $persona->getFechaNacimiento(); ?></td>
+                                        <td>
+                                            <a href="edit.php?id=<?php echo $persona->getIdPersona(); ?>" type="button" data-toggle="tooltip" title="Actualizar" class="btn docs-tooltip btn-primary btn-xs"><i class="fa fa-edit"></i></a>
+                                            <a href="show.php?id=<?php echo $persona->getIdPersona(); ?>" type="button" data-toggle="tooltip" title="Ver" class="btn docs-tooltip btn-warning btn-xs"><i class="fa fa-eye"></i></a>
+                                            <?php if ($persona->getEstado() != "Activo"){ ?>
+                                                <a href="../../../App/controlador/personacontrolador.php?action=activate&Id=<?php echo $persona->getIdPersona(); ?>" type="button" data-toggle="tooltip" title="Activar" class="btn docs-tooltip btn-success btn-xs"><i class="fa fa-check-square"></i></a>
+                                            <?php }else{ ?>
+                                                <a type="button" href="../../../App/controlador/personacontrolador.php?action=inactivate&Id=<?php echo $persona->getIdPersona(); ?>" data-toggle="tooltip" title="Inactivar" class="btn docs-tooltip btn-danger btn-xs"><i class="fa fa-times-circle"></i></a>
+                                            <?php } ?>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <th>#</th>
+                                    <th>nombres</th>
+                                    <th>apellidos</th>
+                                    <th>numero_documento</th>
+                                    <th>tipo_documento</th>
+                                    <th>ciudad</th>
+                                    <th>genero</th>
+                                    <th>email</th>
+                                    <th>telefono</th>
+                                    <th>estado</th>
+                                    <th>rol</th>
+                                    <th>direcion</th>
+                                    <th>fecha_nacimiento</th>
+                                    <th>Acciones</th>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
@@ -80,5 +169,41 @@
 </div>
 <!-- ./wrapper -->
 <?php require ('../../partials/scripts.php');?>
+<!-- DataTables -->
+<script src="<?= $adminlteURL ?>/plugins/datatables/jquery.dataTables.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-responsive/js/dataTables.responsive.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-responsive/js/responsive.bootstrap4.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-buttons/js/dataTables.buttons.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-buttons/js/buttons.bootstrap4.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/jszip/jszip.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/pdfmake/pdfmake.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-buttons/js/buttons.html5.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-buttons/js/buttons.print.js"></script>
+<script src="<?= $adminlteURL ?>/plugins/datatables-buttons/js/buttons.colVis.js"></script>
+
+<script>
+    $(function () {
+        $('.datatable').DataTable({
+            "dom": 'Bfrtip',
+            "paging": true,
+            "lengthChange": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": true,
+            "language": {
+                "url": "../../components/Spanish.json" //Idioma
+            },
+            "buttons": [
+                'copy', 'print', 'excel', 'pdf'
+            ],
+            "pagingType": "full_numbers",
+            "responsive": true,
+            "stateSave" : true, //Guardar la configuracion del usuario
+        });
+    });
+</script>
+
 </body>
 </html>

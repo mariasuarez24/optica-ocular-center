@@ -265,7 +265,7 @@ class persona extends db_abstract_class
         $this->fecha_nacimiento = $fecha_nacimiento;
     }
 
-    public function store()
+    public function create()
     {
         $this->insertRow("INSERT INTO optica.persona VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", array(
                 $this->nombres,
@@ -309,18 +309,18 @@ class persona extends db_abstract_class
         // TODO: Implement deleted() method.
     }
 
-    public static function search($query)
+    public static function search($query) : array
     {
-        $persona = array();
+        $ArrPersona = array();
         $tmp = new persona();
         $getrows = $tmp->getRows($query);
 
         foreach ($getrows as $valor) {
-            $persona = new $persona();
+            $persona = new persona();
             $persona->idPersona = $valor['idPersona'];
             $persona->nombres = $valor['nombres'];
             $persona->apellidos = $valor['apellidos'];
-            $persona->numero_documento = $valor['nuemro_documento'];
+            $persona->numero_documento = $valor['numero_documento'];
             $persona->tipo_documento = $valor['tipo_documento'];
             $persona->ciudad = $valor['ciudad'];
             $persona->genero = $valor['genero'];
@@ -331,10 +331,10 @@ class persona extends db_abstract_class
             $persona->direccion = $valor['direccion'];
             $persona->fecha_nacimiento = $valor['fecha_nacimiento'];
             $persona->Disconnect();
-            array_push($persona, $persona);
+            array_push($ArrPersona, $persona);
         }
         $tmp->Disconnect();
-        return $persona;
+        return $ArrPersona;
     }
 
     public static function searchForId($idPersona)
@@ -371,7 +371,7 @@ class persona extends db_abstract_class
 
     public static function personaregistrada ($numero_documento) : bool
     {
-        $result = persona::search("SELECT idPersona FROM optica.persona where numero_documento = ".$numero_documento);
+        $result = persona::search("SELECT * FROM optica.persona where numero_documento = '".$numero_documento."'");
         if (count($result) > 0){
             return true;
         }else{
@@ -380,8 +380,10 @@ class persona extends db_abstract_class
     }
 
 
-
-
+    protected function store()
+    {
+        // TODO: Implement store() method.
+    }
 }
 
 
