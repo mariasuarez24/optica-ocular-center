@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="18b4d782-248f-447e-a40e-e5897b8218f9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controlador/Prescripcionfinalcontrolador.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controlador/Prescripcionfinalcontrolador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Modelos/PrescripcionFinal.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Modelos/PrescripcionFinal.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/prescripcion_final/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/prescripcion_final/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/prescripcion_final/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/prescripcion_final/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vistas/modules/prescripcion_final/show.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/prescripcion_final/show.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controlador/Parametroscontrolador.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controlador/Parametroscontrolador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vistas/modules/examenes/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/examenes/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vistas/modules/examenes/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/examenes/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vistas/modules/valores_parametros/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vistas/modules/valores_parametros/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +106,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Vistas/modules/examen_historial" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -115,7 +114,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -145,12 +144,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@21f64920" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -161,7 +155,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a8a912c3-aa07-481e-93fd-4db48831a2ef" name="Default Changelist" comment="" />
+      <changelist id="18b4d782-248f-447e-a40e-e5897b8218f9" name="Default Changelist" comment="" />
       <created>1575313244614</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -192,6 +186,7 @@
       <workItem from="1576626272596" duration="8158000" />
       <workItem from="1576682814777" duration="9254000" />
       <workItem from="1576696107065" duration="6404000" />
+      <workItem from="1582055292768" duration="5065000" />
     </task>
     <task id="LOCAL-00001" summary="cree clases Examenes_Cita; FormulaMedica y MotivoConsulta">
       <created>1575318072940</created>
@@ -305,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576502980243</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="* Controladores">
+      <created>1576705950959</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1576705950959</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

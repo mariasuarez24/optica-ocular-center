@@ -1,5 +1,5 @@
 <?php require("../../partials/routes.php");
-require("../../../app/Controllers/UsuariosController.php");
+require("../../../app/Controllers/ValoresparametrosController.php");
 
 use App\Controllers\UsuariosController; ?>
 <!DOCTYPE html>

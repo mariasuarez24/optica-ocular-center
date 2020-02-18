@@ -40,7 +40,7 @@ class Parametroscontrolador
             $arrayParametros['Descripcion'] = $_POST['Descripcion'];
             $Parametros = new Parametros ($arrayParametros);
             $Parametros->create();
-            header("Location: ../../Vistas/modules/parametros/index.php?respuesta=correcto&action=create");
+            header("Location: ../../Vistas/modules/parametros/index.php?respuesta=correcto");
         } catch (Exception $e) {
             header("Location: ../../Vistas/modules/parametros /create.php?respuesta=error&mensaje=" . $e->getMessage());
         }

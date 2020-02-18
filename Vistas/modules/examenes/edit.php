@@ -1,6 +1,6 @@
 <?php
 require("../../partials/routes.php");
-require("../../../App/Controlador/Examenescontrolador.php");
+require_once("../../../App/Controlador/Examenescontrolador.php");
 
 use App\Controlador\Examenescontrolador; ?>
 <!DOCTYPE html>
