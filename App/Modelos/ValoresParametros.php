@@ -184,23 +184,20 @@ class ValoresParametros extends db_abstract_class
     }
 
 
-    /*Hace falta la parte de search($query) y searchForId($id)  */
-
-
     public static function getAll(): array
     {
         return ValoresParametros:: search("SELECT * FROM optica.valores_paremetros");
     }
 
-    public static function valoresparametrosRegistrado ($idExamenes): bool
-    {
-        $result = ValoresParametros::search("SELECT idValoresParametros FROM optica.valores_paremetros where Examenes_idExamenes = " . $idExamenes);
-        if (count($result) > 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    /* public static function valoresparametrosRegistrado ($idExamenes): bool
+     {
+         $result = ValoresParametros::search("SELECT idValoresParametros FROM optica.valores_paremetros where Examenes_idExamenes = " . $idExamenes);
+         if (count($result) > 0) {
+             return true;
+         } else {
+             return false;
+         }
+     } */
 
 
     protected function store()

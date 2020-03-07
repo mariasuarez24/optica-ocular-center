@@ -6,7 +6,7 @@ use App\Controlador\FormulaMedicaControlador; ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= getenv('TITLE_SITE') ?> | Datos de la Formula Medica</title>
+    <title><?= getenv('TITLE_SITE') ?> Datos de la Formula Medica</title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -121,4 +121,3 @@ use App\Controlador\FormulaMedicaControlador; ?>
 <?php require ('../../partials/scripts.php');?>
 </body>
 </html>
-sss

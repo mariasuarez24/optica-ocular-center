@@ -4,7 +4,7 @@ namespace App\Modelos;
 
 /**
  * Created by PhpStorm.
- * User: Victor-PC
+ * User: Maria-PC
  * Date: 10/12/2019
  * Time: 9:17
  */
@@ -22,7 +22,7 @@ abstract class db_abstract_class {
     abstract protected static function search($query);
     abstract protected static function getAll();
     abstract protected static function searchForId($id);
-    abstract protected function store();
+    abstract protected function create();
     abstract protected function update();
     abstract protected function deleted($id);
 
@@ -32,7 +32,7 @@ abstract class db_abstract_class {
             $this->datab = new \PDO(
                 ($this->driver != "sqlsrv") ?
                     "$this->driver:host={$this->host};dbname={$this->dbname};charset=utf8" :
-                    "$this->driver:Server=$this->host;Database=$this->dbname",
+                    "$this->driver:Server=$this->host;database=$this->dbname",
                 $this->username, $this->password, array(\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8')
             );
             $this->datab->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);

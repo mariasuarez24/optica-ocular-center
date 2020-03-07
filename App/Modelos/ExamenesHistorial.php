@@ -2,15 +2,19 @@
 
 
 namespace App\Modelos;
-include ('db_abstract_class.php');
+require ('db_abstract_class.php');
 
 class ExamenesHistorial extends db_abstract_class
 {
     private $idExamenesHistorial;
-    private $Valores_parametros_idValoresParametros;
     private $Ojo_Derecho;
     private $Ojo_Izquierdo;
+
+
+    /* Relaciones */
+    private $Valores_parametros_idValoresParametros;
     private $historial_idHistorial;
+
     /**
      * ExamenesHistorial constructor.
      * @param $idExamenHistorial
@@ -20,7 +24,7 @@ class ExamenesHistorial extends db_abstract_class
      * @param $historial_idHistorial
      */
 
-    public function __construct()
+    public function __construct($ExamenesHistorial = array())
     {
         parent::__construct();
         $this->idExamenesHistorial = $ExamenesHistorial ['idExamenHistorial'] ?? null;
@@ -31,15 +35,15 @@ class ExamenesHistorial extends db_abstract_class
     }
 
     /*Metodo destructor cierra conexion. */
-    function __destruct()
-    {
+    function __destruct(){
+
         $this->Disconnect();
     }
 
     /**
      * @return mixed
      */
-    public function getidExamenesHistorial()
+    public function getidExamenesHistorial() : int
     {
         return $this->idExamenesHistorial;
     }
@@ -47,7 +51,7 @@ class ExamenesHistorial extends db_abstract_class
     /**
      * @param mixed $idExamenesHistorial
      */
-    public function setidExamenesHistorial($idExamenesHistorial): void
+    public function setidExamenesHistorial($idExamenesHistorial): int
     {
         $this->$idExamenesHistorial = $idExamenesHistorial;
     }
@@ -55,23 +59,23 @@ class ExamenesHistorial extends db_abstract_class
     /**
      * @return mixed
      */
-    public function getValores_parametros_idValoresParametros()
+    public function getValores_parametros_idValoresParametros() : int
     {
         return $this->Valores_parametros_idValoresParametros;
     }
 
     /**
-     * @param mixed $Valores_paremetros_idValoresParametros
+     * @param mixed $Valores_parametros_idValoresParametros
      */
-    public function setValores_parametros_idValoresParametros($Valores_parametros_idValoresParametros): string
+    public function setValores_parametros_idValoresParametros($Valores_parametros_idValoresParametros): int
     {
-        $this->Valores_paremetros_idValoresParametros = $Valores_parametros_idValoresParametros;
+        $this->Valores_parametros_idValoresParametros = $Valores_parametros_idValoresParametros;
     }
 
     /**
      * @return mixed
      */
-    public function getOjo_Derecho()
+    public function getOjo_Derecho() : string
     {
         return $this->Ojo_Derecho;
     }
@@ -87,7 +91,7 @@ class ExamenesHistorial extends db_abstract_class
     /**
      * @return mixed
      */
-    public function getOjo_Izquierdo()
+    public function getOjo_Izquierdo() : string
     {
         return $this->Ojo_Izquierdo;
     }
@@ -103,7 +107,7 @@ class ExamenesHistorial extends db_abstract_class
     /**
      * @return mixed
      */
-    public function gethistorial_idHistorial()
+    public function gethistorial_idHistorial() : int
     {
         return $this->historial_idHistorial;
     }
@@ -188,8 +192,7 @@ class ExamenesHistorial extends db_abstract_class
             return $idExamenesHistorial;
         } else {
             $idExamenesHistorial->Disconnect();
-            unset($idExamenesHistorial);
-            return NULL;
+            return $idExamenesHistorial;
         }
     }
 
@@ -200,13 +203,14 @@ class ExamenesHistorial extends db_abstract_class
 
     public static function ExamenesHistorialRegistrado($Descripcion): bool
     {
-        $result = ExamenesHistorial::search("SELECT id FROM optica.examenes_historial where Valores_paremetros_idValoresParametros = " . $Valores_paremetros_idValoresParametros);
+        $result = ExamenesHistorial::search("SELECT id FROM optica.examenes_historial where Valores_Parametros_idValoresParametros = " . Valores_parametros_idValoresParametros);
         if (count($result) > 0) {
             return true;
         } else {
             return false;
         }
     }
+
 
 
 

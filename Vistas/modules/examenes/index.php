@@ -1,6 +1,6 @@
 <?php require("../../partials/routes.php");
-require("../../../App/Controlador/Parametroscontrolador.php");
-use App\Controlador\Parametroscontrolador; ?>
+require_once("../../../App/Controlador/Examenescontrolador.php");
+use App\Controlador\Examenescontrolador; ?>
 <!DOCTYPE html>
 <html>
 <head>
