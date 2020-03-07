@@ -16,7 +16,7 @@ class Parametros extends db_abstract_class
      * @param $idparametros
      * @param $Nombre
      * @param $Descripcion
-     * @throws \Exception
+     * @throws \Excepn
      */
     public function __construct($parametros = array())
     {
@@ -30,7 +30,7 @@ class Parametros extends db_abstract_class
     /**
      * @return mixed|null
      */
-    public function getIdParametros(): int
+    public function getIdParametros()
     {
         return $this->idParametros;
     }
@@ -38,7 +38,7 @@ class Parametros extends db_abstract_class
     /**
      * @param mixed|null $idParametros
      */
-    public function setIdParametros(int $idParametros): void
+    public function setIdParametros(int $idParametros)
     {
         $this->idParametros = $idParametros;
     }

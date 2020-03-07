@@ -64,13 +64,17 @@ use App\Controlador\ExamenesHistorialControlador; ?>
                 <?php if(!empty($_GET["idExamenhistorial"]) && isset($_GET["idExamenhistorial"])){ ?>
                     <p>
                     <?php
-                    $DataExamenesHistorial = ExamenesHistorialControlador::searchForID($_GET["idExamenhistorial"]);
+                    $DataExamenesHistorial = ExamenesHistorialControlador::searchForID($_GET["id"]);
                         if(!empty($DataExamenesHistorial)){
                     ?>
                             <!-- form start -->
-                            <form class="form-horizontal" method="post" id="frmEditExamenesHistorial" name="frmEditExamenesHistorial" action="../../../App/Controlador/ExamenesHistorialControlador.php?action=edit">
-                                <input id="id" name="id" value="<?php echo $DataExamenesHistorial->getId(); ?>" hidden required="required" type="text">
-                    <div class="form-group row">
+                            <form class="form-horizontal" method="post" id="frmEditExamenesHistorialfrmEditExamenesHistorialfrmEditExamenesHistorialv" name="frmEditExamenesHistorial"
+                                  action="../../../App/Controlador/ExamenesHistorialControlador.php?action=edit">
+                                <input id="idExamenHistorial" name="idExamenHistorial" value="<?php echo $DataExamenesHistorial->getidExamenesHistorial(); ?>" hidden
+                                       required="required" type="text">
+                                <div class="card-body">
+                                    <div class="form-group row">
+
                         <label for="Valores_Parametros_idValoresParametros" class="col-sm-2 col-form-label">Valores_Parametros_idValoresParametros</label>
                         <div class="col-sm-10">
                             <select id="Valores_Parametros_idValoresParametros" name="Valores_Parametros_idValoresParametros" class="custom-select">
@@ -80,7 +84,7 @@ use App\Controlador\ExamenesHistorialControlador; ?>
                         </div>
                     </div>
 
-            </div>
+
                                 <div class="card-body">
                                     <div class="form-group row">
                                         <label for="Ojo_Derecho" class="col-sm-2 col-form-label">Ojo_Derecho</label>
@@ -107,22 +111,22 @@ use App\Controlador\ExamenesHistorialControlador; ?>
                                                 </div>
                                             </div>
 
-                                    </div>
+                                            <!-- /.card-body -->
 
-                                <!-- /.card-body -->
-                                <div class="card-footer">
-                                    <button type="submit" class="btn btn-info">Enviar</button>
-                                    <a href="index.php" role="button" class="btn btn-default float-right">Cancelar</a>
-                                </div>
-                                <!-- /.card-footer -->
-                            </form>
-                    <?php }else{ ?>
+                                            <div class="card-footer">
+                                                <button type="submit" class="btn btn-info">Enviar</button>
+                                                <a href="index.php" role="button" class="btn btn-default float-right">Cancelar</a>
+                                            </div>
+                                            <!-- /.card-footer -->
+                                        </form>
+                        <?php } else { ?>
                             <div class="alert alert-danger alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                 <h5><i class="icon fas fa-ban"></i> Error!</h5>
-                                No se encontro ningun registro con estos parametros de busqueda <?= ($_GET['mensaje']) ?? "" ?>
+                                No se encontro ningun registro con estos parametros de
+                                busqueda <?= ($_GET['mensaje']) ?? "" ?>
                             </div>
-                    <?php } ?>
+                        <?php } ?>
                     </p>
                 <?php } ?>
             </div>
@@ -132,9 +136,9 @@ use App\Controlador\ExamenesHistorialControlador; ?>
     </div>
     <!-- /.content-wrapper -->
 
-    <?php require ('../../partials/footer.php');?>
+    <?php require('../../partials/footer.php'); ?>
 </div>
 <!-- ./wrapper -->
-<?php require ('../../partials/scripts.php');?>
+<?php require('../../partials/scripts.php'); ?>
 </body>
 </html>

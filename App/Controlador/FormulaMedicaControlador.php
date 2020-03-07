@@ -69,7 +69,7 @@ class FormulaMedicaControlador
 
     static public function activate (){
         try {
-            $ObjFormulamedica = FormulaMedica::searchForId($_GET['Formulamedica']);
+            $ObjFormulamedica = FormulaMedica::searchForId($_GET['idFormulamedica']);
             $ObjFormulamedica->setPrescripcion_idPrescripcion_final("");
             if($ObjFormulamedica->update()){
                 header("Location: ../../Vistas/modules/formula_medica/index.php");
@@ -111,7 +111,7 @@ class FormulaMedicaControlador
             return FormulaMedica::getAll();
         } catch (\Exception $e) {
             var_dump($e);
-            //header("Location: ../Vista/modules/formula_medica/manager.php?respuesta=error");
+            //header("Location: ../Vistas/modules/persona/manager.php?respuesta=error");
         }
     }
 

@@ -54,39 +54,39 @@
                             </div>
                         </div>
 
-                    <div class="form-group row">
-                        <label for="Parametros_idParametros" class="col-sm-2 col-form-label">Id parametros</label>
-                        <div class="col-sm-10">
-                            <select id="Parametros_idParametros" name="Parametros_idParametros"
-                                    class="custom-select">
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                            </select>
+                        <div class="form-group row">
+                            <label for="Parametros_idParametros" class="col-sm-2 col-form-label">Id parametros</label>
+                            <div class="col-sm-10">
+                                <select id="Parametros_idParametros" name="Parametros_idParametros"
+                                        class="custom-select">
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="Ojo_derecho" class="col-sm-2 col-form-label">Ojo derecho</label>
-                        <div class="col-sm-10">
-                            <input required type="text" class="form-control" id="Ojo_derecho" name="Ojo_derecho"
-                                   placeholder="Ingrese dato ojo derecho">
+                        <div class="form-group row">
+                            <label for="Ojo_derecho" class="col-sm-2 col-form-label">Ojo derecho</label>
+                            <div class="col-sm-10">
+                                <input required type="text" class="form-control" id="Ojo_derecho" name="Ojo_derecho"
+                                       placeholder="Ingrese dato ojo derecho">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="Ojo_izquierdo" class="col-sm-2 col-form-label">Ojo izquierdo</label>
-                        <div class="col-sm-10">
-                            <input required type="text" class="form-control" id="Ojo_izquierdo" name="Ojo_izquierdo"
-                                   placeholder="Ingrese dato ojo izquierdo">
+                        <div class="form-group row">
+                            <label for="Ojo_izquierdo" class="col-sm-2 col-form-label">Ojo izquierdo</label>
+                            <div class="col-sm-10">
+                                <input required type="text" class="form-control" id="Ojo_izquierdo" name="Ojo_izquierdo"
+                                       placeholder="Ingrese dato ojo izquierdo">
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- /.card-body -->
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-info">Enviar</button>
-                        <button type="submit" class="btn btn-default float-right">Cancelar</button>
-                    </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-info">Enviar</button>
+                            <button type="submit" class="btn btn-default float-right">Cancelar</button>
+                        </div>
                 </form>
-                    <!-- /.card-footer -->
+                <!-- /.card-footer -->
             </div>
         </section>
     </div>

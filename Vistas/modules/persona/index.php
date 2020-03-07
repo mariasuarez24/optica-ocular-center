@@ -1,7 +1,7 @@
 <?php require("../../partials/routes.php");
-require("../../../App/controlador/personacontrolador.php");
+require("../../../App/Controlador/personacontrolador.php");
 
-use App\controlador\personacontrolador; ?>
+use App\Controlador\personacontrolador; ?>
 
 <!DOCTYPE html>
 <html>

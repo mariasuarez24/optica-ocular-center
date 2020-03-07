@@ -58,14 +58,14 @@ use App\Controlador\FormulaMedicaControlador; ?>
             <!-- Horizontal Form -->
             <div class="card card-info">
                 <div class="card-header">
-                    <h3 class="card-title">Motivos Consulta</h3>
+                    <h3 class="card-title">Formula Medica</h3>
                 </div>
                 <!-- /.card-header -->
-                <?php if(!empty($_GET["idFormulamedica"]) && isset($_GET["idFormulamedica"])){ ?>
+                <?php if(!empty($_GET["id"]) && isset($_GET["id"])){ ?>
                 <p>
                     <?php
-                    $DataFormulaMedica = FormulaMedicaControlador::searchForID($_GET["idFormulamedica"]);
-                    if(!empty($DataMotivoConsulta)){
+                    $DataFormulaMedica = FormulaMedicaControlador::searchForID($_GET["id"]);
+                    if(!empty($DataFormulaMedica)){
                     ?>
 
                     <!-- form start -->
@@ -82,12 +82,14 @@ use App\Controlador\FormulaMedicaControlador; ?>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label for="Descripcion" class="col-sm-2 col-form-label">Descripcion</label>
-                                        <div class="col-sm-10">
-                                            <input required type="text" class="form-control" id="Descripcion" name="Descripcion" value="<?= $DataFormulaMedica->getDescripcion(); ?>" placeholder="Ingrese su descripcion">
-                                        </div>
-                                    </div
+                    <div class="form-group row">
+                        <label for="Descripcion" class="col-sm-2 col-form-label">Descripción</label>
+                        <div class="col-sm-10">
+                            <input required type="text" class="form-control" id="Descripcion" name="Descripcion"
+                                   value="<?= $DataFormulaMedica->getDescripcion(); ?>"
+                                   placeholder="Ingrese la descripción">
+                        </div>
+                    </div>
                                     <div class="form-group row">
                                         <label for="Prescripcion_IdPrescripcion_final" class="col-sm-2 col-form-label">Prescripcion_IdPrescripcion_final</label>
                                         <div class="col-sm-10">
@@ -98,28 +100,40 @@ use App\Controlador\FormulaMedicaControlador; ?>
                                         </div>
                                     </div>
 
-                                </div>
-        <!-- /.card-footer -->
-            </section>
-        <?php }else{ ?>
-            <div class="alert alert-danger alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <h5><i class="icon fas fa-ban"></i> Error!</h5>
-                No se encontro ningun registro con estos parametros de busqueda <?= ($_GET['mensaje']) ?? "" ?>
-            </div>
-        <?php } ?>
-            </p>
-        <?php } ?>
-    </div>
-    <!-- /.card -->
-    </section>
-    <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
 
-<?php require ('../../partials/footer.php');?>
+                                <!-- /.card-body -->
+
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-info">Enviar</button>
+                                    <a href="index.php" role="button" class="btn btn-default float-right">Cancelar</a>
+                                </div>
+                                <!-- /.card-footer -->
+                            </form>
+                    <?php } else { ?>
+                        <div class="alert alert-danger alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <h5><i class="icon fas fa-ban"></i> Error!</h5>
+                            No se encontro ningun registro con estos parametros de
+                            busqueda <?= ($_GET['mensaje']) ?? "" ?>
+                        </div>
+                    <?php } ?>
+                    </p>
+                <?php } ?>
+            </div>
+            <!-- /.card -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <?php require('../../partials/footer.php'); ?>
 </div>
 <!-- ./wrapper -->
-<?php require ('../../partials/scripts.php');?>
+<?php require('../../partials/scripts.php'); ?>
 </body>
 </html>
+
+
+
+
+
