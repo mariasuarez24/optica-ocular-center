@@ -1,6 +1,6 @@
 <?php
 require("../../partials/routes.php");
-require("../../../App/Controlador/Examenescontrolador.php");
+require_once("../../../App/Controlador/Examenescontrolador.php");
 
 use App\Controlador\Examenescontrolador; ?>
 <!DOCTYPE html>
@@ -56,7 +56,7 @@ use App\Controlador\Examenescontrolador; ?>
     <!-- Horizontal Form -->
     <div class="card card-info">
         <div class="card-header">
-            <h3 class="card-title">Horizontal Form</h3>
+            <h3 class="card-title">Examenes</h3>
         </div>
         <!-- /.card-header -->
         <?php if (!empty($_GET["id"]) && isset($_GET["id"])) { ?>

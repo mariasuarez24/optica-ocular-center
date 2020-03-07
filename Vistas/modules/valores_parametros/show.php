@@ -1,22 +1,20 @@
 <?php
 require("../../partials/routes.php");
-require("../../../app/Controlador/MotivoConsultaControlador.php");
+require("../../../App/Controlador/Valoresparametroscontrolador.php.php");
 
-use App\Controlador\MotivoConsultaControlador; ?>
+use App\Controlador\Valoresparametroscontrolador; ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= getenv('TITLE_SITE') ?> | Datos de la consulta medica</title>
+    <title><?= getenv('TITLE_SITE') ?> | Datos de los valores parametros</title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
-
 <!-- Site wrapper -->
 <div class="wrapper">
     <?php require("../../partials/navbar_customization.php"); ?>
 
     <?php require("../../partials/sliderbar_main_menu.php"); ?>
-
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -24,18 +22,17 @@ use App\Controlador\MotivoConsultaControlador; ?>
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Informacion del Motivo de Consulta</h1>
+                        <h1>Informacion de los valores parametros/h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="<?= $baseURL; ?>/Vistas/">optica-ocular-center</a></li>
+                            <li class="breadcrumb-item"><a href="<?= $baseURL; ?>/Vistas/">Optica ocular center </a></li>
                             <li class="breadcrumb-item active">Inicio</li>
                         </ol>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
         </section>
-
         <!-- Main content -->
         <section class="content">
 
@@ -44,7 +41,7 @@ use App\Controlador\MotivoConsultaControlador; ?>
                     <div class="alert alert-danger alert-dismissible">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                         <h5><i class="icon fas fa-ban"></i> Error!</h5>
-                            Error al consultar el motivo de consulta: <?= ($_GET['mensaje']) ?? "" ?>
+                        Error al consultar el parametro: <?= ($_GET['mensaje']) ?? "" ?>
                     </div>
                 <?php } ?>
             <?php } else if (empty($_GET['id'])) { ?>
@@ -54,43 +51,43 @@ use App\Controlador\MotivoConsultaControlador; ?>
                     Faltan criterios de busqueda <?= ($_GET['mensaje']) ?? "" ?>
                 </div>
             <?php } ?>
-
             <!-- Horizontal Form -->
             <div class="card card-info">
                 <?php if(!empty($_GET["id"]) && isset($_GET["id"])){
-                    $DataMotivoConsulta = MotivoConsultaControlador::searchForID($_GET["idMotivos_consulta"]);
-                    if(!empty($DataMotivoConsulta)){
-                ?>
-                <div class="card-header">
-                    <h3 class="card-title"><?= $DataMotivoConsulta->getDescripcion()  ?></h3>
-                </div>
-                <div class="card-body">
-                    <p>
-
-                        <strong><i class="fas fa-book mr-1"></i> idMotivos_consulta</strong>
-                        <p class="text-muted">
-                            <?= $DataMotivoConsulta->getDescripcion()." ".$DataMotivoConsulta->getEstado() ?>
-                        </p>
-                        <hr>
-                        <strong><i class="fas fa-user mr-1"></i> Descripcion</strong>
-                        <p class="text-muted"><?= $DataMotivoConsulta->getDescripcion().": ".$DataMotivoConsulta->getEstado() ?></p>
-                    </p>
-
-                </div>
-                <div class="card-footer">
-                    <div class="row">
-                        <div class="col-auto mr-auto">
-                            <a role="button" href="index.php" class="btn btn-success float-right" style="margin-right: 5px;">
-                                <i class="fas fa-tasks"></i> Gestionar Motivo Consulta
-                            </a>
+                    $DataValoresparametros = Valoresparametroscontrolador::searchForID($_GET["id"]);
+                    if(!empty($DataValoresparametros)){
+                        ?>
+                        <div class="card-header">
+                            <h3 class="card-title"><?= $DataValoresparametros->getIdParametros()  ?></h3>
                         </div>
-                        <div class="col-auto">
-                            <a role="button" href="create.php" class="btn btn-primary float-right" style="margin-right: 5px;">
-                                <i class="fas fa-plus"></i> Crear Motivo Consulta
-                            </a>
+                        <div class="card-body">
+                            <p>
+                                <strong><i class="fas fa-book mr-1"></i> IdParamteros</strong>
+                            <p class="text-muted" <?= $DataValoresparametros->getIdParametros() ?>
+                            </p>
+                            <hr>
+                            <strong><i class="fas fa-user mr-1"></i>Ojo derecho</strong>
+                            <p class="text-muted"><?= $DataValoresparametros->getOjoDerecho() ?></p>
+                            </p>
+                            <strong><i class="fas fa-user mr-1"></i> Ojo izquierdo</strong>
+                            <p class="text-muted"><?= $DataValoresparametros->getOjoIzquierdo() ?></p>
+                            </p>
                         </div>
-                    </div>
-                </div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-auto mr-auto">
+                                    <a role="button" href="index.php" class="btn btn-success float-right" style="margin-right: 5px;">
+                                        <i class="fas fa-tasks"></i> Gestionar Valores Parametros
+                                    </a>
+                                </div>
+                                <div class="col-auto">
+                                    <a role="button" href="create.php" class="btn btn-primary float-right" style="margin-right: 5px;">
+                                        <i class="fas fa-plus"></i> Crear Valores Parametros
+                                        -0
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     <?php }else{ ?>
                         <div class="alert alert-danger alert-dismissible">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

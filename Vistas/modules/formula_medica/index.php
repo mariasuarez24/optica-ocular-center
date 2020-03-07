@@ -1,11 +1,10 @@
 <?php require("../../partials/routes.php");
-require("../../../App/Controlador/FormulaMedicaControlador.php");
-
-use App\Controlador\FormulaMedica; ?>
+require_once("../../../App/Controlador/FormulaMedicaControlador.php");
+use App\Controlador\FormulaMedicaControlador; ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= getenv('TITLE_SITE') ?> | Layout</title>
+    <title><?= getenv('TITLE_SITE') ?>  Formula Medica</title>
     <?php require("../../partials/head_imports.php"); ?>
     <!-- DataTables -->
     <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
@@ -13,12 +12,12 @@ use App\Controlador\FormulaMedica; ?>
     <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-buttons/css/buttons.bootstrap4.css">
 </head>
 <body class="hold-transition sidebar-mini">
-
 <!-- Site wrapper -->
 <div class="wrapper">
     <?php require("../../partials/navbar_customization.php"); ?>
 
     <?php require("../../partials/sliderbar_main_menu.php"); ?>
+
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -55,6 +54,7 @@ use App\Controlador\FormulaMedica; ?>
                     </div>
                 <?php } ?>
             <?php } ?>
+
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
@@ -75,7 +75,7 @@ use App\Controlador\FormulaMedica; ?>
                             </a>
                         </div>
                     </div>
-                    <div class="row">s
+                    <div class="row">
                         <div class="col">
                             <table id="tblFormulamedica" class="datatable table table-bordered table-striped">
                                 <thead>
@@ -89,21 +89,21 @@ use App\Controlador\FormulaMedica; ?>
                                 </thead>
                                 <tbody>
                                 <?php
-                                $arrFormulamedica = FormulaMedicaControlador::getAll();
-                                foreach ($arrFormulamedica as $Formulamedica){
-                                    ?>
+                                $arrFormulaMedica = FormulaMedicaControlador::getAll();
+                                foreach ($arrFormulaMedica as $idFormulamedica){
+                                    ?>Ss
                                     <tr>
-                                        <td><?php echo $Formulamedica->getidFormulamedica(); ?></td>
-                                        <td><?php echo $Formulamedica->getFecha(); ?></td>
-                                        <td><?php echo $Formulamedica->getDescripcion(); ?></td>
-                                        <td><?php echo $Formulamedica->getPrescripcion_idPrescripcion_final(); ?></td>
+                                        <td><?php echo $idFormulamedica->getidFormulamedica(); ?></td>
+                                        <td><?php echo $idFormulamedica->getFecha(); ?></td>
+                                        <td><?php echo $idFormulamedica->getDescripcion(); ?></td>
+                                        <td><?php echo $idFormulamedica->getPrescripcion_idPrescripcion_final(); ?></td>
                                         <td>
-                                            <a href="edit.php?id=<?php echo $Formulamedica->getidFormulamedica(); ?>" type="button" data-toggle="tooltip" title="Actualizar" class="btn docs-tooltip btn-primary btn-xs"><i class="fa fa-edit"></i></a>
-                                            <a href="show.php?id=<?php echo $Formulamedica->getidFormulamedica(); ?>" type="button" data-toggle="tooltip" title="Ver" class="btn docs-tooltip btn-warning btn-xs"><i class="fa fa-eye"></i></a>
-                                            <?php if ($Formulamedica->getPrescripcion_idPrescripcion_final() != ""){ ?>
-                                                <a href="../../../App/Controlador/FormulaMedicaControlador.php?action=activate&id=<?php echo $Formulamedica->getidFormulamedica(); ?>" type="button" data-toggle="tooltip" title="Activar" class="btn docs-tooltip btn-success btn-xs"><i class="fa fa-check-square"></i></a>
+                                            <a href="edit.php?id=<?php echo $idFormulamedica->getidFormulamedica(); ?>" type="button" data-toggle="tooltip" title="Actualizar" class="btn docs-tooltip btn-primary btn-xs"><i class="fa fa-edit"></i></a>
+                                            <a href="show.php?id=<?php echo $idFormulamedica->getidFormulamedica(); ?>" type="button" data-toggle="tooltip" title="Ver" class="btn docs-tooltip btn-warning btn-xs"><i class="fa fa-eye"></i></a>
+                                            <?php if ($idFormulamedica->getPrescripcion_idPrescripcion_final() != ""){ ?>
+                                                <a href="../../../App/Controlador/FormulaMedicaControlador.php?action=activate&id=<?php echo $idFormulamedica->getidFormulamedica(); ?>" type="button" data-toggle="tooltip" title="Activar" class="btn docs-tooltip btn-success btn-xs"><i class="fa fa-check-square"></i></a>
                                             <?php }else{ ?>
-                                                <a type="button" href="../../../App/Controlador/FormulaMedicaControlador.php?action=inactivate&Id=<?php echo $Formulamedica->getidFormulamedica(); ?>" data-toggle="tooltip" title="Inactivar" class="btn docs-tooltip btn-danger btn-xs"><i class="fa fa-times-circle"></i></a>
+                                                <a type="button" href="../../../App/Controlador/FormulaMedicaControlador.php?action=inactivate&Id=<?php echo $idFormulamedica->getidFormulamedica(); ?>" data-toggle="tooltip" title="Inactivar" class="btn docs-tooltip btn-danger btn-xs"><i class="fa fa-times-circle"></i></a>
                                             <?php } ?>
                                         </td>
                                     </tr>

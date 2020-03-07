@@ -1,6 +1,6 @@
 <?php
 require("../../partials/routes.php");
-require("../../../app/Controlador/MotivoConsultaControlador.php");
+require_once("../../../App/Controlador/MotivoConsultaControlador.php");
 
 use App\Controlador\MotivoConsultaControlador; ?>
 <!DOCTYPE html>
@@ -35,7 +35,6 @@ use App\Controlador\MotivoConsultaControlador; ?>
                 </div>
             </div><!-- /.container-fluid -->
         </section>
-
         <!-- Main content -->
         <section class="content">
 
@@ -61,47 +60,54 @@ use App\Controlador\MotivoConsultaControlador; ?>
                     <h3 class="card-title">Motivos Consulta</h3>
                 </div>
                 <!-- /.card-header -->
-                <?php if(!empty($_GET["idMotivos_consulta"]) && isset($_GET["idMotivos_consulta"])){ ?>
+                <?php if(!empty($_GET["id"]) && isset($_GET["id"])){ ?>
                     <p>
                     <?php
-                    $DataMotivoConsulta = MotivoConsultaControlador::searchForID($_GET["idMotivos_consulta"]);
+                    $DataMotivoConsulta = MotivoConsultaControlador::searchForID($_GET["id"]);
                         if(!empty($DataMotivoConsulta)){
                     ?>
                             <!-- form start -->
-                            <form class="form-horizontal" method="post" id="frmEditMotivoConsulta" name="frmEditMotivoConsulta" action="../../../app/Controlador/MotivoConsultaControlador.php?action=edit">
-                                <input id="id" name="id" value="<?php echo $DataMotivoConsulta->getId(); ?>" hidden required="required" type="text">
+                            <form class="form-horizontal" method="post" id="frmEditMotivoConsulta" name="frmEditMotivoConsulta"
+                                  action="../../../App/Controlador/MotivoConsultaControlador.php?action=edit">
+                                <input id="idMotivos_consulta" name="idMotivos_consulta" value="<?php echo $DataMotivoConsulta->getidMotivos_consulta(); ?>" hidden
+                                       required="required" type="text">
                                 <div class="card-body">
                                     <div class="form-group row">
-                                        <label for="Descripcion" class="col-sm-2 col-form-label">Descripcion</label>
+                                        <label for="Descripcion" class="col-sm-2 col-form-label">Descripción</label>
                                         <div class="col-sm-10">
-                                            <input required type="text" class="form-control" id="Descripcion" name="Descripcion" value="<?= $DataMotivoConsulta->getDescripcion(); ?>" placeholder="Ingrese su descripcion">
+                                            <input required type="text" class="form-control" id="Descripcion" name="Descripcion"
+                                                   value="<?= $DataMotivoConsulta->getDescripcion(); ?>"
+                                                   placeholder="Ingrese la descripción">
                                         </div>
-                                    </div
+                                    </div>
                                     <div class="form-group row">
                                         <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                         <div class="col-sm-10">
-                                            <select id="Estado" name="Estado" class="custom-select">
+                                            <imput required type="text" class="form-control "id="Estado" name="Estado"
+                                                   value="<?= $DataMotivoConsulta->getEstado(); ?>"
                                                 <option <?= ($DataMotivoConsulta->getEstado() == "Activo") ? "selected":""; ?> value="Activo">Activo</option>
                                                 <option <?= ($DataMotivoConsulta->getEstado() == "Inactivo") ? "selected":""; ?> value="Inactivo">Inactivo</option>
-                                            </select>
+
                                         </div>
                                     </div>
 
-                                </div>
-                                <!-- /.card-body -->
-                                <div class="card-footer">
-                                    <button type="submit" class="btn btn-info">Enviar</button>
-                                    <a href="index.php" role="button" class="btn btn-default float-right">Cancelar</a>
-                                </div>
-                                <!-- /.card-footer -->
+
+                                    <!-- /.card-body -->
+
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-info">Enviar</button>
+                                        <a href="index.php" role="button" class="btn btn-default float-right">Cancelar</a>
+                                    </div>
+                                    <!-- /.card-footer -->
                             </form>
-                    <?php }else{ ?>
+                        <?php } else { ?>
                             <div class="alert alert-danger alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                 <h5><i class="icon fas fa-ban"></i> Error!</h5>
-                                No se encontro ningun registro con estos parametros de busqueda <?= ($_GET['mensaje']) ?? "" ?>
+                                No se encontro ningun registro con estos parametros de
+                                busqueda <?= ($_GET['mensaje']) ?? "" ?>
                             </div>
-                    <?php } ?>
+                        <?php } ?>
                     </p>
                 <?php } ?>
             </div>
@@ -111,9 +117,14 @@ use App\Controlador\MotivoConsultaControlador; ?>
     </div>
     <!-- /.content-wrapper -->
 
-    <?php require ('../../partials/footer.php');?>
+    <?php require('../../partials/footer.php'); ?>
 </div>
 <!-- ./wrapper -->
-<?php require ('../../partials/scripts.php');?>
+<?php require('../../partials/scripts.php'); ?>
 </body>
 </html>
+
+
+
+
+

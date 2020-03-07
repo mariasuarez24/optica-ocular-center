@@ -6,7 +6,7 @@ use App\Controlador\ExamenesHistorialControlador; ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= getenv('TITLE_SITE') ?> | Datos de la consulta medica</title>
+    <title><?= getenv('TITLE_SITE') ?> | Datos de examenes historial</title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -16,15 +16,20 @@ use App\Controlador\ExamenesHistorialControlador; ?>
     <?php require("../../partials/navbar_customization.php"); ?>
 
     <?php require("../../partials/sliderbar_main_menu.php"); ?>
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <?php require("../../partials/navbar_customization.php"); ?>
 
-    <!-- Content Wrapper. Contains page content -->
+        <?php require("../../partials/sliderbar_main_menu.php"); ?>
+
+        <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Informacion del Motivo de Consulta</h1>
+                        <h1>Informacion de examenes historial</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -44,7 +49,7 @@ use App\Controlador\ExamenesHistorialControlador; ?>
                     <div class="alert alert-danger alert-dismissible">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                         <h5><i class="icon fas fa-ban"></i> Error!</h5>
-                            Error al consultar el motivo de consulta: <?= ($_GET['mensaje']) ?? "" ?>
+                            Error al consultar examenes historial: <?= ($_GET['mensaje']) ?? "" ?>
                     </div>
                 <?php } ?>
             <?php } else if (empty($_GET['id'])) { ?>
@@ -57,8 +62,8 @@ use App\Controlador\ExamenesHistorialControlador; ?>
 
             <!-- Horizontal Form -->
             <div class="card card-info">
-                <?php if(!empty($_GET["idExamenhistorial"]) && isset($_GET["idExamenhistorial"])){
-                    $DataExamenesHistorial= ExamenesHistorialControlador::searchForID($_GET["idExamenhistorial"]);
+                <?php if(!empty($_GET["id"]) && isset($_GET["id"])){
+                    $DataExamenesHistorial= ExamenesHistorialControlador::searchForID($_GET["id"]);
                     if(!empty($DataExamenesHistorial)){
                 ?>
                 <div class="card-header">
@@ -66,14 +71,13 @@ use App\Controlador\ExamenesHistorialControlador; ?>
                 </div>
                 <div class="card-body">
                     <p>
-
-                        <strong><i class="fas fa-book mr-1"></i> idExamenhistorial</strong>
+                        <strong><i class="fas fa-book mr-1"></i> Ojo_Derecho</strong>
                         <p class="text-muted">
-                            <?= $DataExamenesHistorial->getOjo_Derecho()." ".$DataExamenesHistorial->getOjo_Derecho() ?>
+                            <?= $DataExamenesHistorial->getOjo_Derecho() ?>
                         </p>
                         <hr>
-                        <strong><i class="fas fa-user mr-1"></i> Ojo_Derecho</strong>
-                        <p class="text-muted"><?= $DataExamenesHistorial->getOjo_Derecho().": ".$DataExamenesHistorial->getOjo_Izquierdo() ?></p>
+                        <strong><i class="fas fa-user mr-1"></i> Ojo_Izquierdo</strong>
+                        <p class="text-muted"><?= $DataExamenesHistorial->getOjo_Izquierdo()?></p>
                     </p>
 
                 </div>
@@ -104,12 +108,17 @@ use App\Controlador\ExamenesHistorialControlador; ?>
         </section>
         <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
+        <!-- /.content-wrapper -->
 
-    <?php require ('../../partials/footer.php');?>
-</div>
-<!-- ./wrapper -->
-<?php require ('../../partials/scripts.php');?>
+        <?php require ('../../partials/footer.php');?>
+    </div>
+    <!-- ./wrapper -->
+    <?php require ('../../partials/scripts.php');?>
 </body>
 </html>
-sss
+
+
+
+
+
+</html>
