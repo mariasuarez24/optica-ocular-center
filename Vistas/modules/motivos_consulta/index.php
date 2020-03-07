@@ -4,7 +4,7 @@ use App\Controlador\MotivoConsultaControlador; ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= getenv('TITLE_SITE') ?> | Layout</title>
+    <title><?= getenv('TITLE_SITE') ?> Motivo Consulta</title>
     <?php require("../../partials/head_imports.php"); ?>
     <!-- DataTables -->
     <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
@@ -12,7 +12,6 @@ use App\Controlador\MotivoConsultaControlador; ?>
     <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-buttons/css/buttons.bootstrap4.css">
 </head>
 <body class="hold-transition sidebar-mini">
-
 <!-- Site wrapper -->
 <div class="wrapper">
     <?php require("../../partials/navbar_customization.php"); ?>

@@ -35,7 +35,6 @@
 
             <!-- Main content -->
             <section class="content">
-
                 <!-- Horizontal Form -->
                 <div class="card card-info">
                     <div class="card-header">

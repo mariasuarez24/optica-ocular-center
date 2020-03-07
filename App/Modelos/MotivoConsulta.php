@@ -126,16 +126,16 @@ public function update(): bool
     }
  public static function searchForId($idMotivos_consulta) : MotivoConsulta
     {
-        $idMotivoConsulta = new MotivoConsulta();
-        if ($idMotivoConsulta > 0){
-            $getrow = $idMotivoConsulta->getRow("SELECT * FROM optica.motivos_consulta WHERE idMotivos_consulta =?", array($idMotivos_consulta));
+        $idMotivos_consulta = new MotivoConsulta();
+        if ($idMotivos_consulta> 0){
+            $getrow = $idMotivos_consulta->getRow("SELECT * FROM optica.motivos_consulta WHERE idMotivos_consulta =?", array($idMotivos_consulta));
             $idMotivos_consulta->id = $getrow['idMotivos_consulta'];
             $idMotivos_consulta->Descripcion = $getrow['Descripcion'];
             $idMotivos_consulta->Estado = $getrow['Estado'];
-            $idMotivos_consulta->Disconnect();
+
             return $idMotivos_consulta;
         }else{
-            $idMotivoConsulta->Disconnect();
+            $idMotivos_consulta->Disconnect();
             unset($idMotivos_consulta);
             return NULL;
         }
