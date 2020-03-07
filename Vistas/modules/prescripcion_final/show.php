@@ -56,7 +56,7 @@ use App\Controlador\Prescripcionfinalcontroladorntrolador; ?>
             <!-- Horizontal Form -->
             <div class="card card-info">
                 <?php if(!empty($_GET["id"]) && isset($_GET["id"])){
-                    $Dataprescripcionfinal = Prescripcionfinalcontrolador::searchForID($_GET["id"]);
+                    $Dataprescripcionfinal = \App\Controlador\Prescripcionfinalcontrolador::searchForID($_GET["id"]);
                     if(!empty($Dataprescripcionfinal)){
                         ?>
                         <div class="card-header">
